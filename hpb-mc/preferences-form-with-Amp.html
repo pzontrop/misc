@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style type="text/css">
+        body {
+            display: flex;
+            color: #5f5959;
+            font-family: "Fira Sans", sans-serif;
+        }
+        form {
+            max-width: 1000px;
+            margin: auto auto 30px auto;
+        }
+        h1 {
+            margin: 4% 39% 1% 0;
+            text-align: center;
+            font-style: italic;
+            font-weight: bold;
+            Font-size: 26px;
+        }
+        h2 {
+            font-size: 16px;
+            font-weight: 400;
+            max-width: 210px;
+        }
+        h3 {
+            font-size: 18px;
+            margin-bottom: -2px;
+        }
+        h4 {
+            font-size: 22px;
+            font-weight: 700;
+            margin: 80px 0 -4px -20px;
+        }
+        .underline {
+            padding-left: 20px;
+            margin-left: -20px;
+            border-bottom: 1px #5f5959 solid;
+            width: 120%;
+        }
+        input[type=radio] {
+            margin-right: 30px;
+        }
+    </style>
+</head>
+<body>
+<script runat="server">
+    Platform.Load("core","1");
+    try {
+</script>
+<script runat="server">
+    }
+    catch (err) {
+        Variable.SetValue("@errorMessage", Stringify(err.message) + Stringify(err.description));
+    }
+</script>
+<script runat="client">
+    console.log(`%%=v(@errorMessage)=%%`);
+</script>
+%%[
+var @rows, @row, @rowCount, @prefid
+
+set @prefid = RequestParameter('prefid')
+set @rows = LookupRows("Individual","prefid", @prefid)
+set @rowCount = rowcount(@rows)
+
+output(concat("prefid: ", @prefid))
+
+if @rowCount > 0 then
+var @PBNews, @PBWebshop, @PbSms, @X4BNews, @X4BSms, @WWNews, @WWJobsalerts, @WWSms
+set @row = row(@rows, 1) /* only use first row */
+/* TODO: GET ALL THE FIELDS FROM THE ROW AND PARSE THE FORM USING THESE FIELDS!!!!!!!!!!!!!!!!!!! */
+set @PBNews = field(@row,"PBNews_p__c")
+set @PBNews = field(@row,"PBNews_p__c")
+set @PBWebshop = field(@row,"PBWebshop_p__c")
+set @PbSms = field(@row,"PbSms_p__c")
+set @X4BNews = field(@row,"X4BNews_p__c")
+set @X4BSms = field(@row,"X4BSms_p__c")
+set @WWNews = field(@row,"WWNews_p__c")
+set @WWJobsalerts = field(@row,"WWJobsalerts_p__c")
+set @WWSms = field(@row,"WWSms_p__c")
+
+]%%
+
+<br>Pref values, PBNews: %%=v(@PBNews)=%%, PBWebshop: %%=v(@PBWebshop)=%%, PbSms: %%=v(@PbSms)=%%
+, X4BNews: %%=v(@X4BNews)=%%, X4BSms: %%=v(@X4BSms)=%%, WWNews: %%=v(@WWNews)=%%, WWJobsalerts: %%=v(@WWJobsalerts)=%%
+, WWSms: %%=v(@WWSms)=%%
+<form action="https://cloud.info.poetsbureau.be/preference-handler" method="post">
+    <table>
+        <tbody>
+        <tr>
+            <td>
+                <img src="https://image.info.poetsbureau.be/lib/fe3c11717564047d711174/m/1/dbf224f3-5175-436b-a520-5ad823ca22ca.png" alt="banner" title="banner" width="115%">
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <h1 style="margin-right:-13%;">
+                    Laat ons weten hoe je graag op de hoogte wordt gehouden.<br>
+                    Geef hier je communicatievoorkeur aan.
+                </h1>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><h4>Het Poetsbureau</h4></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><h3 class="underline">E-mail</h3></td>
+            <td><h3 class="underline">&ensp; JA &ensp; &ensp;NEE</h3></td>
+        </tr>
+        <tr>
+            <td><h2>Nieuws, belangrijke updates en informatie over producten, diensten en acties</h2></td>
+            <td>
+                <fieldset style="border: none;">
+                    <table role="presentation" style="margin-top: -10px;  font-size:18px;">
+                        <tbody>
+                        <tr>
+                            <td>
+                                <input type="radio" checked="checked" name="PBNews_p__c" id="PBNews_p__c_yes" value="Yes">
+                                <label for="PBNews_p__c_yes"></label>
+                            </td>
+                            <td>
+                                <input type="radio" name="PBNews_p__c" id="PBNews_p__c_no" value="No">
+                                <label for="PBNews_p__c_no"></label>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+            </td>
+        </tr>
+        <tr>
+            <td><h2>Webshop</h2></td>
+            <td>
+                <fieldset style="border: none;">
+                    <table role="presentation" style="margin-top: -10px;  font-size:18px;">
+                        <tbody>
+                        <tr>
+                            <td>
+                                <input type="radio" checked="checked" name="PBWebshop_p__c" id="PBWebshop_p__c_yes" value="Yes">
+                                <label for="PBWebshop_p__c_yes"></label></td>
+                            <td>
+                                <input type="radio" name="PBWebshop_p__c" id="PBWebshop_p__c_no" value="No">
+                                <label for="PBWebshop_p__c_no"></label></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+            </td>
+        </tr>
+        <tr>
+            <td><h3 class="underline">SMS</h3></td><td>
+            <h3 class="underline">
+                &ensp; &ensp; &ensp; &ensp;
+            </h3></td>
+        </tr>
+        <tr>
+            <td><h2>Urgente en belangrijke berichtgeving</h2></td>
+            <td><label>
+                <fieldset style="border: none;">
+                    <table role="presentation" style="margin-top: -10px;  font-size:18px;">
+                        <tbody>
+                        <tr>
+                            <td>
+                                <input type="radio" checked="checked" name="PbSms_p__c" id="PbSms_p__c_yes" value="Yes">
+                                <label for="PbSms_p__c_yes"></label></td>
+                            <td>
+                                <input type="radio" name="PbSms_p__c" id="PbSms_p__c_no" value="No">
+                                <label for="PbSms_p__c_no"></label></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+            </label></td>
+        </tr>
+        <tr>
+            <td><h4>Het Poetsbureau for bussiness</h4></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><h3 class="underline">E-mail</h3></td>
+            <td><h3 class="underline">&ensp; JA &ensp; &ensp;NEE</h3></td>
+        </tr>
+        <tr>
+            <td><h2>Nieuws, belangrijke updates en informatie over producten, diensten en acties</h2></td>
+            <td>
+                <fieldset style="border: none;">
+                    <table role="presentation" style="margin-top: -10px;  font-size:18px;">
+                        <tbody>
+                        <tr>
+                            <td>
+                                <input type="radio" checked="checked" name="X4BNews_p__c" id="X4BNews_p__c_yes" value="Yes">
+                                <label for="X4BNews_p__c_yes"></label>
+                            </td>
+                            <td>
+                                <input type="radio" name="X4BNews_p__c" id="X4BNews_p__c_no" value="No">
+                                <label for="X4BNews_p__c_no"></label></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+            </td>
+        </tr>
+        <tr>
+            <td><h3 class="underline">SMS</h3></td>
+            <td><h3 class="underline">&ensp; &ensp; &ensp; &ensp;</h3></td>
+        </tr>
+        <tr>
+            <td><h2>Urgente en belangrijke berichtgeving</h2></td>
+            <td>
+                <fieldset style="border: none;">
+                    <table role="presentation" style="margin-top: -10px;  font-size:18px;">
+                        <tbody>
+                        <tr>
+                            <td>
+                                <input type="radio" checked="checked" name="X4BSms_p__c" id="X4BSms_p__c_yes" value="Yes">
+                                <label for="X4BSms_p__c_yes"></label>
+                            </td>
+                            <td>
+                                <input type="radio" name="X4BSms_p__c" id="X4BSms_p__c_no" value="No">
+                                <label for="X4BSms_p__c_no"></label></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+            </td>
+        </tr>
+        <tr>
+            <td><h4>Work Wizards</h4></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><h3 class="underline">E-mail</h3></td>
+            <td><h3 class="underline">&ensp; JA &ensp; &ensp;NEE</h3></td>
+        </tr>
+        <tr>
+            <td><h2>Nieuws, belangrijke updates en informatie over producten, diensten en acties</h2></td>
+            <td>
+                <fieldset style="border: none;">
+                    <table role="presentation" style="margin-top: -10px;  font-size:18px;">
+                        <tbody>
+                        <tr>
+                            <td>
+                                <input type="radio" checked="checked" name="WWNews_p__c" id="WWNews_p__c_yes" value="Yes">
+                                <label for="WWNews_p__c_yes"></label>
+                            </td>
+                            <td>
+                                <input type="radio" name="WWNews_p__c" id="WWNews_p__c_no" value="No">
+                                <label for="WWNews_p__c_no"></label></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+            </td>
+        </tr>
+        <tr>
+            <td><h2>Jobalerts</h2></td>
+            <td>
+                <fieldset style="border: none;">
+                    <table role="presentation" style="margin-top: -10px;  font-size:18px;">
+                        <tbody>
+                        <tr>
+                            <td>
+                                <input type="radio" checked="checked" name="WWJobsalerts_p__c" id="WWJobsalerts_p__c_yes" value="Yes">
+                                <label for="WWJobsalerts_p__c_yes"></label></td>
+                            <td>
+                                <input type="radio" name="WWJobsalerts_p__c" id="WWJobsalerts_p__c_no" value="No">
+                                <label for="WWJobsalerts_p__c_no"></label></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+            </td>
+        </tr>
+        <tr>
+            <td><h3 class="underline">SMS</h3></td>
+            <td><h3 class="underline">&ensp; &ensp; &ensp; &ensp;</h3></td>
+        </tr>
+        <tr>
+            <td><h2>Urgente en belangrijke berichtgeving</h2></td>
+            <td>
+                <fieldset style="border: none;">
+                    <table role="presentation" style="margin-top: -10px;  font-size:18px;">
+                        <tbody>
+                        <tr>
+                            <td>
+                                <input type="radio" checked="checked" name="WWSms_p__c" id="WWSms_p__c_yes" value="Yes">
+                                <label for="WWSms_p__c_yes"></label></td>
+                            <td>
+                                <input type="radio" name="WWSms_p__c" id="WWSms_p__c_no" value="No">
+                                <label for="WWSms_p__c_no"></label></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <input type="submit" value="Opslaan" style="background-color:#ed9d1c; float:right; margin-right:2%; font-size:23px; padding:10px 20px 10px 20px; color:white; border:none;">
+</form>
+
+%%[ else ]%%
+
+No account found
+
+%%[ endif ]%%
+<script type="application/javascript">
+    var form = document.querySelector('form');
+    form.addEventListener("submit", postFormData);
+
+    function postFormData(e) {
+        e.preventDefault();
+        var payload = {};
+        var formData = new FormData(form);
+        for (var pair of formData.entries()) {
+            payload[pair[0]] = pair[1];
+        }
+
+        fetch(form.getAttribute("action"), {
+            method: "POST",
+            headers: {'Content-Type': 'application/json; charset=utf-8'},
+            body: JSON.stringify(payload)
+        })
+            .then(function (result) {
+                return result.json();
+            })
+            .then(function (data) {
+                if(data.Status != 'OK') {
+                    console.error(data.Message);
+                } else {
+                    console.info(data.Message);
+                }
+                toggleMessage(data.Status);
+            })
+            .catch(function (error) {
+                console.error(error);
+                toggleMessage('Error');
+            });
+
+    }
+
+    function toggleMessage(status) {
+        var fieldsets = form.querySelectorAll('fieldset');
+
+        fieldsets.forEach(function(fieldset) {
+            if(fieldset.classList.contains(status.toLowerCase())) {
+                fieldset.classList.remove("hidden");
+            } else {
+                fieldset.classList.add("hidden");
+            }
+        });
+    }
+</script>
+</body>
+</html>

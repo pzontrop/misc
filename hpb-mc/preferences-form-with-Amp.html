@@ -46,11 +46,47 @@
     </style>
 </head>
 <body>
+<script runat="server">
+    Platform.Load("core","1");
+    try {
+</script>
+<script runat="server">
+    }
+    catch (err) {
+        Variable.SetValue("@errorMessage", Stringify(err.message) + Stringify(err.description));
+    }
+</script>
+<script runat="client">
+    console.log(`%%=v(@errorMessage)=%%`);
+</script>
 %%[
-var @rows
-set @rows = LookupRows("Individual", "prefid", "0PK1l000001ixDwGAI")
+var @rows, @row, @rowCount, @prefid
+
+set @prefid = RequestParameter('prefid')
+set @rows = LookupRows("Individual","prefid", @prefid)
+set @rowCount = rowcount(@rows)
+
+output(concat("prefid: ", @prefid))
+
+if @rowCount > 0 then
+var @PBNews, @PBWebshop, @PbSms, @X4BNews, @X4BSms, @WWNews, @WWJobsalerts, @WWSms
+set @row = row(@rows, 1) /* only use first row */
+/* TODO: GET ALL THE FIELDS FROM THE ROW AND PARSE THE FORM USING THESE FIELDS!!!!!!!!!!!!!!!!!!! */
+set @PBNews = field(@row,"PBNews_p__c")
+set @PBNews = field(@row,"PBNews_p__c")
+set @PBWebshop = field(@row,"PBWebshop_p__c")
+set @PbSms = field(@row,"PbSms_p__c")
+set @X4BNews = field(@row,"X4BNews_p__c")
+set @X4BSms = field(@row,"X4BSms_p__c")
+set @WWNews = field(@row,"WWNews_p__c")
+set @WWJobsalerts = field(@row,"WWJobsalerts_p__c")
+set @WWSms = field(@row,"WWSms_p__c")
 
 ]%%
+
+<br>Pref values, PBNews: %%=v(@PBNews)=%%, PBWebshop: %%=v(@PBWebshop)=%%, PbSms: %%=v(@PbSms)=%%
+, X4BNews: %%=v(@X4BNews)=%%, X4BSms: %%=v(@X4BSms)=%%, WWNews: %%=v(@WWNews)=%%, WWJobsalerts: %%=v(@WWJobsalerts)=%%
+, WWSms: %%=v(@WWSms)=%%
 <form action="https://cloud.info.poetsbureau.be/preference-handler" method="post">
     <table>
         <tbody>
@@ -64,7 +100,7 @@ set @rows = LookupRows("Individual", "prefid", "0PK1l000001ixDwGAI")
             <td>
                 <h1 style="margin-right:-13%;">
                     Laat ons weten hoe je graag op de hoogte wordt gehouden.<br>
-                    Geef hier je communicatievoorkeur aan.1
+                    Geef hier je communicatievoorkeur aan.
                 </h1>
             </td>
             <td></td>
@@ -268,6 +304,12 @@ set @rows = LookupRows("Individual", "prefid", "0PK1l000001ixDwGAI")
     </table>
     <input type="submit" value="Opslaan" style="background-color:#ed9d1c; float:right; margin-right:2%; font-size:23px; padding:10px 20px 10px 20px; color:white; border:none;">
 </form>
+
+%%[ else ]%%
+
+No account found
+
+%%[ endif ]%%
 <script type="application/javascript">
     var form = document.querySelector('form');
     form.addEventListener("submit", postFormData);

@@ -47,33 +47,10 @@
 </head>
 <body>
 %%[
-var @rows, @row, @rowCount, @prefid
-
-/* set @prefid = RequestParameter('prefid')
-set @rows = LookupRows("Individual","prefid", @prefid) */
+var @rows
 set @rows = LookupRows("Individual","prefid", "0PK1l000001ixDwGAI")
-set @rowCount = rowcount(@rows)
-
-output(concat("prefid: ", @prefid))
-
-if @rowCount > 0 then
-var @PBNews, @PBWebshop, @PbSms, @X4BNews, @X4BSms, @WWNews, @WWJobsalerts, @WWSms
-set @row = row(@rows, 1) /* only use first row */
-set @PBNews = field(@row,"PBNews_p__c")
-set @PBNews = field(@row,"PBNews_p__c")
-set @PBWebshop = field(@row,"PBWebshop_p__c")
-set @PbSms = field(@row,"PbSms_p__c")
-set @X4BNews = field(@row,"X4BNews_p__c")
-set @X4BSms = field(@row,"X4BSms_p__c")
-set @WWNews = field(@row,"WWNews_p__c")
-set @WWJobsalerts = field(@row,"WWJobsalerts_p__c")
-set @WWSms = field(@row,"WWSms_p__c")
 
 ]%%
-
-<br>Pref values, PBNews: %%=v(@PBNews)=%%, PBWebshop: %%=v(@PBWebshop)=%%, PbSms: %%=v(@PbSms)=%%
-, X4BNews: %%=v(@X4BNews)=%%, X4BSms: %%=v(@X4BSms)=%%, WWNews: %%=v(@WWNews)=%%, WWJobsalerts: %%=v(@WWJobsalerts)=%%
-, WWSms: %%=v(@WWSms)=%%
 <form action="https://cloud.info.poetsbureau.be/preference-handler" method="post">
     <table>
         <tbody>
@@ -291,12 +268,6 @@ set @WWSms = field(@row,"WWSms_p__c")
     </table>
     <input type="submit" value="Opslaan" style="background-color:#ed9d1c; float:right; margin-right:2%; font-size:23px; padding:10px 20px 10px 20px; color:white; border:none;">
 </form>
-
-%%[ else ]%%
-
-No account found
-
-%%[ endif ]%%
 <script type="application/javascript">
     var form = document.querySelector('form');
     form.addEventListener("submit", postFormData);

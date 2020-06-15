@@ -46,7 +46,11 @@
     </style>
 </head>
 <body>
+%%[
+var @rows
+set @rows = LookupRows("Individual", "prefid", "0PK1l000001ixDwGAI")
 
+]%%
 <form action="https://cloud.info.poetsbureau.be/preference-handler" method="post">
     <table>
         <tbody>

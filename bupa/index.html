@@ -1,0 +1,108 @@
+<!DOCTYPE html><html ng-app="bupa"><head><base href="/"><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" name="viewport"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black-transculent"/><meta name="HandheldFriendly" content="True"/><meta name="format-detection" content="telephone=no"/><meta name="google" content="notranslate"/><link rel="icon" href="https://www.bupa.co.uk/favicon.ico" type="image/x-icon"/><link href="statics/assets/logo_57_57_transparent.png" rel="apple-touch-icon"/><link href="statics/assets/logo_57_57_transparent.png" rel="icon" type="image/png"/><link href="statics/assets/logo_114_114_transparent.png" rel="apple-touch-icon" sizes="114x114"/><link rel="icon" sizes="192x192" href="statics/assets/logo_192_192_transparent.png"/><link rel="icon" sizes="196x196" href="statics/assets/logo_196_196_transparent.png"/><title>Bupa - Code Search main</title><link rel="stylesheet" href="statics/vendors.min-b2e11d409d7b6a564d330174c5ad6abfd18d62d5.css"/><link rel="stylesheet" href="statics/bupa.min-b2e11d409d7b6a564d330174c5ad6abfd18d62d5.css"/><script type="text/javascript">try {
+      window.$SFDCLabels = window.$SFDCLabels || {};
+
+      window.$SFDCLabels.DiagnosticHeaderTitle = '{!JSENCODE($Label.DiagnosticHeaderTitle)}';
+      window.$SFDCLabels.DrugsHeaderTitle = '{!JSENCODE($Label.DrugsHeaderTitle)}';
+      window.$SFDCLabels.Fee_Checker_HelpText = '{!JSENCODE($Label.Fee_Checker_HelpText)}';
+      window.$SFDCLabels.HomeBrowserWarning = '{!JSENCODE($Label.HomeBrowserWarning)}';
+      window.$SFDCLabels.HomeCCSDMessage = '{!JSENCODE($Label.HomeCCSDMessage)}';
+      window.$SFDCLabels.HomeDescriptionDiagnostic = '{!JSENCODE($Label.HomeDescriptionDiagnostic)}';
+      window.$SFDCLabels.HomeDescriptionProcedure = '{!JSENCODE($Label.HomeDescriptionProcedure)}';
+      window.$SFDCLabels.HomeGoToSearch = '{!JSENCODE($Label.HomeGoToSearch)}';
+      window.$SFDCLabels.HomeHeaderTitle = '{!JSENCODE($Label.HomeHeaderTitle)}';
+      window.$SFDCLabels.HomeSelectLabelDiagnostic = '{!JSENCODE($Label.HomeSelectLabelDiagnostic	)}';
+      window.$SFDCLabels.HomeSelectLabelProcedure = '{!JSENCODE($Label.HomeSelectLabelProcedure)}';
+      window.$SFDCLabels.NavBarLinkContactUs = '{!JSENCODE($Label.NavBarLinkContactUs)}';
+      window.$SFDCLabels.NavBarLinkDiagnostic = '{!JSENCODE($Label.NavBarLinkDiagnostic)}';
+      window.$SFDCLabels.NavBarLinkHome = '{!JSENCODE($Label.NavBarLinkHome)}';
+      window.$SFDCLabels.NavBarLinkProcedure = '{!JSENCODE($Label.NavBarLinkProcedure)}';
+      window.$SFDCLabels.ProcedureHeaderTitle = '{!JSENCODE($Label.ProcedureHeaderTitle)}';
+      window.$SFDCLabels.ProcedureToolTip = '{!JSENCODE($Label.ProcedureToolTip)}';
+      window.$SFDCLabels.UnbundlingModuleSubtitle = '{!JSENCODE($Label.UnbundlingModuleSubtitle)}';
+      window.$SFDCLabels.UnbundlingModuleTitle = '{!JSENCODE($Label.UnbundlingModuleTitle)}';
+      window.$SFDCLabels.OpdtPricesModalTitle = '{!JSENCODE($Label.OpdtPricesModalTitle)}';
+      window.$SFDCLabels.OpdtPricesDiagnosticTestsTableHeader = '{!JSENCODE($Label.OpdtPricesDiagnosticTestsTableHeader)}';
+      window.$SFDCLabels.OpdtPricesModalSubTitle = '{!JSENCODE($Label.OpdtPricesModalSubTitle)}';
+      window.$SFDCLabels.OpdtPricesModalTableTitle = '{!JSENCODE($Label.OpdtPricesModalTableTitle)}';
+      window.$SFDCLabels.OpdtPricesModalColumnHeaderOutsideLondonPrice = '{!JSENCODE($Label.OpdtPricesModalColumnHeaderOutsideLondonPrice)}';
+      window.$SFDCLabels.OpdtPricesModalColumnHeaderLondonPrice = '{!JSENCODE($Label.OpdtPricesModalColumnHeaderLondonPrice)}';
+
+      window.$SFDCLabels.FooterProvidersTitle = '{!JSENCODE($Label.FooterProvidersTitle)}';
+      window.$SFDCLabels.FooterCustomersTitle = '{!JSENCODE($Label.FooterCustomersTitle)}';
+      window.$SFDCLabels.FooterProviderHealthcareTeam = '{!JSENCODE($Label.FooterProviderHealthcareTeam)}';
+      window.$SFDCLabels.FooterProviderHealthcareTeamPhone = '{!JSENCODE($Label.FooterProviderHealthcareTeamPhone)}';
+      window.$SFDCLabels.FooterProviderHealthcareTeamOpeningHoursWeekday = '{!JSENCODE($Label.FooterProviderHealthcareTeamOpeningHoursWeekday)}';
+      window.$SFDCLabels.FooterProviderHealthcareTeamOpeningHoursWeekend = '{!JSENCODE($Label.FooterProviderHealthcareTeamOpeningHoursWeekend)}';
+      window.$SFDCLabels.FooterCustomerServiceTeam = '{!JSENCODE($Label.FooterCustomerServiceTeam)}';
+      window.$SFDCLabels.FooterCustomerServicePersonalTeamPhone = '{!JSENCODE($Label.FooterCustomerServicePersonalTeamPhone)}';
+      window.$SFDCLabels.FooterCustomerServicePersonalOpeningHoursWeekday = '{!JSENCODE($Label.FooterCustomerServicePersonalOpeningHoursWeekday)}';
+      window.$SFDCLabels.FooterCustomerServicePersonalOpeningHoursWeekend = '{!JSENCODE($Label.FooterCustomerServicePersonalOpeningHoursWeekend)}';
+      window.$SFDCLabels.FooterCustomerServiceTeamPersonal = '{!JSENCODE($Label.FooterCustomerServiceTeamPersonal)}';
+      window.$SFDCLabels.FooterCustomerServiceTeamCompany = '{!JSENCODE($Label.FooterCustomerServiceTeamCompany)}';
+      window.$SFDCLabels.FooterCustomerServiceTeamCorporate = '{!JSENCODE($Label.FooterCustomerServiceTeamCorporate)}';
+      window.$SFDCLabels.FooterCustomerServiceCompanyTeamPhone = '{!JSENCODE($Label.FooterCustomerServiceCompanyTeamPhone)}';
+      window.$SFDCLabels.FooterCustomerServiceCompanyOpeningHoursWeekday = '{!JSENCODE($Label.FooterCustomerServiceCompanyOpeningHoursWeekday)}';
+      window.$SFDCLabels.FooterCustomerServiceCompanyOpeningHoursWeekend = '{!JSENCODE($Label.FooterCustomerServiceCompanyOpeningHoursWeekend)}';
+      window.$SFDCLabels.FooterCustomerServiceCorporateTeamPhone = '{!JSENCODE($Label.FooterCustomerServiceCorporateTeamPhone)}';
+      window.$SFDCLabels.FooterCustomerServiceCorporateOpeningHoursWeekday = '{!JSENCODE($Label.FooterCustomerServiceCorporateOpeningHoursWeekday)}';
+      window.$SFDCLabels.FooterCustomerServiceCorporateOpeningHoursWeekend = '{!JSENCODE($Label.FooterCustomerServiceCorporateOpeningHoursWeekend)}';
+      window.$SFDCLabels.FooterCustomerServiceCallRecordingSafeGuard = '{!JSENCODE($Label.FooterCustomerServiceCallRecordingSafeGuard)}';
+      window.$SFDCLabels.FooterDisclaimer = '{!JSENCODE($Label.FooterDisclaimer)}';
+      window.$SFDCLabels.FooterLinkLabelBupaHomePage = '{!JSENCODE($Label.FooterLinkLabelBupaHomePage)}';
+      window.$SFDCLabels.FooterLinkLabelBupaAccessibilityPage = '{!JSENCODE($Label.FooterLinkLabelBupaAccessibilityPage)}';
+      window.$SFDCLabels.FooterLinkLabelBupaLegalNoticesPage = '{!JSENCODE($Label.FooterLinkLabelBupaLegalNoticesPage)}';
+      window.$SFDCLabels.FooterLinkLabelBupaCopyrightPage = '{!JSENCODE($Label.FooterLinkLabelBupaCopyrightPage)}';
+      window.$SFDCLabels.FooterLinkUrlBupaHomePage = '{!JSENCODE($Label.FooterLinkUrlBupaHomePage)}';
+      window.$SFDCLabels.FooterLinkUrlBupaAccessibilityPage = '{!JSENCODE($Label.FooterLinkUrlBupaAccessibilityPage)}';
+      window.$SFDCLabels.FooterLinkUrlBupaLegalNoticesPage = '{!JSENCODE($Label.FooterLinkUrlBupaLegalNoticesPage)}';
+      window.$SFDCLabels.FooterLinkUrlBupaCopyrightPage = '{!JSENCODE($Label.FooterLinkUrlBupaCopyrightPage)}';
+      window.$SFDCLabels.FooterLinkTooltipBupaHomePage = '{!JSENCODE($Label.FooterLinkTooltipBupaHomePage)}';
+      window.$SFDCLabels.FooterLinkTooltipBupaAccessibilityPage = '{!JSENCODE($Label.FooterLinkTooltipBupaAccessibilityPage)}';
+      window.$SFDCLabels.FooterLinkTooltipBupaLegalNoticesPage = '{!JSENCODE($Label.FooterLinkTooltipBupaLegalNoticesPage)}';
+      window.$SFDCLabels.FooterLinkTooltipBupaCopyrightPage = '{!JSENCODE($Label.FooterLinkTooltipBupaCopyrightPage)}';
+
+      window.$SFDCLabels.URLContactUs = '{!JSENCODE($Label.URLContactUs)}';
+      window.$SFDCLabels.URLDiagnostic = '{!JSENCODE($Label.URLDiagnostic)}';
+      window.$SFDCLabels.URLHome = '{!JSENCODE($Label.URLHome)}';
+      window.$SFDCLabels.URLProcedure = '{!JSENCODE($Label.URLProcedure)}';
+
+      window.$SFDCLabels.ChargeCodeCFieldsNameLabel = 'Code'; //'{!JSENCODE($ObjectType.ChargeCode__c.Fields.Name.label)}';
+      window.$SFDCLabels.ChargeCodeCFieldsDescriptionCLabel = '{!JSENCODE($ObjectType.ChargeCode__c.Fields.Description__c.label)}';
+      window.$SFDCLabels.ChargeCodeScheduleCFieldsSectionNameCLabel = '{!JSENCODE($ObjectType.ChargeCodeSchedule__c.Fields.Section_Name__c.label)}';
+      window.$SFDCLabels.ChargeCodeCFieldsSurgeonsCategoryCLabel = '{!JSENCODE($ObjectType.ChargeCode__c.Fields.Surgeons_Category__c.label)}';
+      window.$SFDCLabels.ChargeCodeCFieldsAnaesthetistsCategoryCLabel = '{!JSENCODE($ObjectType.ChargeCode__c.Fields.Anaesthetists_Category__c.label)}';
+      window.$SFDCLabels.ChargeCodeCFieldsHospitalCategoryCLabel = '{!JSENCODE($ObjectType.ChargeCode__c.Fields.Hospital_Category__c.label)}';
+      window.$SFDCLabels.ChargeCodeCFieldsAnticipatedLOSCLabel = '{!JSENCODE($ObjectType.ChargeCode__c.Fields.Anticipated_LOS__c.label)}';
+      window.$SFDCLabels.ChargeCodeCFieldsICLevel2CLabel = '{!JSENCODE($ObjectType.ChargeCode__c.Fields.IC_Level_2__c.label)}';
+      window.$SFDCLabels.ChargeCodeCFieldsICLevel3CLabel = '{!JSENCODE($ObjectType.ChargeCode__c.Fields.IC_Level_3__c.label)}';
+      window.$SFDCLabels.ChargeCodeCFieldsSpecimenTypeCLabel = '{!JSENCODE($ObjectType.ChargeCode__c.Fields.Specimen_type__c.label)}';
+
+    //  window.console.info('Custom label backed translations were successfully loaded:', window.$SFDCLabels);
+    } catch (ex) {
+    //  window.console.info('Failed to load the custom label backed translations. This is expected if you are running the app on your local web-server instead of hosting it on the Force.com back-end.');
+    }
+
+    try {
+      window.$SFDCServerSideRenderedConfig = {};
+      window.$SFDCServerSideRenderedConfig.resourceBaseUrl = "{!URLFOR($Resource.statics, '')}";
+
+      (function() {
+        var $SFDCOrganization = {};
+        $SFDCOrganization.DevSandboxOrgId = '00Dg0000006RUYqEAO';
+        $SFDCOrganization.Id = '{!JSENCODE($Organization.Id)}';
+        $SFDCOrganization.Id = $SFDCOrganization.Id.indexOf('JSENCODE($Organization.Id)') > -1 ? $SFDCOrganization.DevSandboxOrgId : $SFDCOrganization.Id; // For locally hosted apps simulate dev sandbox
+        $SFDCOrganization.IsSandbox = $SFDCOrganization.Id === $SFDCOrganization.DevSandboxOrgId;
+
+        window.$SFDCServerSideRenderedConfig.SF_ORG = $SFDCOrganization;
+      })();
+
+    //  window.console.info('Successfully parsed the app configuration entries that are rendered on the server side: ', window.$SFDCServerSideRenderedConfig);
+    } catch (ex) {
+    //  window.console.error('There was a problem with setting up some parts of the app configuration that are rendered server side. The exception:', ex);
+    }</script></head><body><ui-view></ui-view><script src="statics/vendors.min-b2e11d409d7b6a564d330174c5ad6abfd18d62d5.js"></script><script src="statics/bupa.min-b2e11d409d7b6a564d330174c5ad6abfd18d62d5.js"></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-50450870-1', 'force.com');
+  ga('send', 'pageview');</script></body></html>

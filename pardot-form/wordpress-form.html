@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wordpress Form</title>
+</head>
+<body>
+<form action="https://www2.atlascopcorental.com/l/710483/2020-04-06/38wql" method="post">
+    <table style="border-spacing: 5px;">
+        <tr>
+            <td><label for="email">Email*: </label></td>
+            <td><input type="email" id="email" name="email" required></td>
+        </tr>
+        <tr>
+            <td><label for="salutation">Salutation: </label></td>
+            <td>
+                <select id="salutation" name="salutation">
+                    <option value="Mr." selected>Mr.</option>
+                    <option value="Mrs.">Mrs.</option>
+                    <option value="Miss">Miss</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="name">Name: </label></td>
+            <td><input type="text" id="name" name="name"></td>
+        </tr>
+        <tr>
+            <td><label for="surname">Surname: </label></td>
+            <td><input type="text" id="surname" name="surname" required></td>
+        </tr>
+        <tr>
+            <td><label for="company">Company: </label></td>
+            <td><input type="text" id="company" name="company" required></td>
+        </tr>
+        <tr>
+            <td><label for="location">City: </label></td>
+            <td><input type="text" id="location" name="location"></td>
+        </tr>
+        <tr>
+            <td><label for="phone">Phone: </label></td>
+            <td><input type="tel" id="phone" name="phone"></td>
+        </tr>
+        <tr>
+            <td><label for="message">Message: </label></td>
+            <td><textarea rows="4" id="message" name="message"></textarea></td>
+        </tr>
+        <tr>
+            <td><input type="submit"></td>
+        </tr>
+        <input type="hidden" id="mailing-country" name="MailingCountry" value="ZA">
+        <input type="hidden" id="communication-language" name="CommunicationLanguage" value="English">
+    </table>
+</form>
+</body>
+</html>

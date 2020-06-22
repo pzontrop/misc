@@ -50,29 +50,20 @@
     Platform.Load("core","1");
     try {
 </script>
-<script runat="server">
-    }
-    catch (err) {
-        Variable.SetValue("@errorMessage", Stringify(err.message) + Stringify(err.description));
-    }
-</script>
-<script runat="client">
-    console.log(`%%=v(@errorMessage)=%%`);
-</script>
 %%[
 var @rows, @row, @rowCount, @prefid
 
-set @prefid = RequestParameter('prefid')
-set @rows = LookupRows("Individual","prefid", @prefid)
-set @rowCount = rowcount(@rows)
-
+/* set @prefid = RequestParameter('prefid')
 output(concat("prefid: ", @prefid))
+set @rows = RetrieveSalesforceObjects("Individual", "PBNews_p__c,PBWebshop_p__c,PbSms_p__c,X4BNews_p__c,X4BSms_p__c,WWNews_p__c,WWJobsalerts_p__c,WWSms_p__c","Id","=", @prefid)
+*/
+set @rows = RetrieveSalesforceObjects("Individual", "PBNews_p__c,PBWebshop_p__c,PbSms_p__c,X4BNews_p__c,X4BSms_p__c,WWNews_p__c,WWJobsalerts_p__c,WWSms_p__c","Id","=",
+0PK1l000001ixDwGAI)
+set @rowCount = rowcount(@rows)
 
 if @rowCount > 0 then
 var @PBNews, @PBWebshop, @PbSms, @X4BNews, @X4BSms, @WWNews, @WWJobsalerts, @WWSms
 set @row = row(@rows, 1) /* only use first row */
-/* TODO: GET ALL THE FIELDS FROM THE ROW AND PARSE THE FORM USING THESE FIELDS!!!!!!!!!!!!!!!!!!! */
-set @PBNews = field(@row,"PBNews_p__c")
 set @PBNews = field(@row,"PBNews_p__c")
 set @PBWebshop = field(@row,"PBWebshop_p__c")
 set @PbSms = field(@row,"PbSms_p__c")
@@ -310,6 +301,15 @@ set @WWSms = field(@row,"WWSms_p__c")
 No account found
 
 %%[ endif ]%%
+<script runat="server">
+    }
+    catch (err) {
+        Variable.SetValue("@errorMessage", Stringify(err.message) + Stringify(err.description));
+    }
+</script>
+<script runat="client">
+    console.log(`%%=v(@errorMessage)=%%`);
+</script>
 <script type="application/javascript">
     var form = document.querySelector('form');
     form.addEventListener("submit", postFormData);

@@ -1,0 +1,75 @@
+[
+  {
+    "statusCode": 200,
+    "type": "rpc",
+    "tid": 6,
+    "ref": false,
+    "action": "ChargeCodeHomeController",
+    "method": "getProcedureAttachmentWrapperList",
+    "result": [
+      {
+        "attachment": {
+          "Name": "Changes to procedures_15Dec14.pdf",
+          "ParentId": "a0Qb0000001eSCvEAM",
+          "Id": "00Pb0000008v6KpEAI",
+          "BodyLength": 133750,
+          "ContentType": "application/pdf"
+        }
+      },
+      {
+        "attachment": {
+          "Name": "Changes to procedures_15Sep14.pdf",
+          "ParentId": "a0Qb0000001eSCvEAM",
+          "Id": "00Pb0000006QozmEAC",
+          "BodyLength": 141748,
+          "ContentType": "application/pdf"
+        }
+      },
+      {
+        "attachment": {
+          "Name": "Changes to procedures_16Feb15.pdf",
+          "ParentId": "a0Qb0000001eSCvEAM",
+          "Id": "00Pb000000AYocoEAD",
+          "BodyLength": 554825,
+          "ContentType": "application/pdf"
+        }
+      },
+      {
+        "attachment": {
+          "Name": "Changes to procedures_17Nov14.pdf",
+          "ParentId": "a0Qb0000001eSCvEAM",
+          "Id": "00Pb0000008315KEAQ",
+          "BodyLength": 135869,
+          "ContentType": "application/pdf"
+        }
+      },
+      {
+        "attachment": {
+          "Name": "Changes to procedures_19Jan15.pdf",
+          "ParentId": "a0Qb0000001eSCvEAM",
+          "Id": "00Pb0000009uOKKEA2",
+          "BodyLength": 168688,
+          "ContentType": "application/pdf"
+        }
+      },
+      {
+        "attachment": {
+          "Name": "Changes to procedures_20Oct14.pdf",
+          "ParentId": "a0Qb0000001eSCvEAM",
+          "Id": "00Pb0000007XFe1EAG",
+          "BodyLength": 165760,
+          "ContentType": "application/pdf"
+        }
+      },
+      {
+        "attachment": {
+          "Name": "Excel list of procedures_2March2015.xls",
+          "ParentId": "a0Qb0000001eSCvEAM",
+          "Id": "00Pb000000BvvVdEAJ",
+          "BodyLength": 624128,
+          "ContentType": "application/vnd.ms-excel"
+        }
+      }
+    ]
+  }
+]

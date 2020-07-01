@@ -1,0 +1,107 @@
+<script runat='server'>
+    Platform.Load('core', '1.1.1');
+
+    try {
+        var referer = Platform.Request.ReferrerURL;
+        var regex = /^(https:\/\/(.*\.)?((poetsbureau)\.be))($|\/)/g;
+        var match = referer.match(regex);
+        var origin = (match.length > 0) ? match[1] : null;
+
+        if (origin != null) {
+            HTTPHeader.SetValue('Access-Control-Allow-Methods', 'POST');
+            HTTPHeader.SetValue('Access-Control-Allow-Origin', origin);
+            Platform.Response.SetResponseHeader('Strict-Transport-Security', 'max-age=200');
+            Platform.Response.SetResponseHeader('X-XSS-Protection', '1; mode=block');
+            Platform.Response.SetResponseHeader('X-Frame-Options', 'Deny');
+            Platform.Response.SetResponseHeader('X-Content-Type-Options', 'nosniff');
+            Platform.Response.SetResponseHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+            Platform.Response.SetResponseHeader('Content-Security-Policy', "default-src 'self'");
+        } else {
+            throw "Wrong origin";
+        }
+        // Submission is safe. Go ahead and process form
+        processForm();
+    } catch(error) {
+        Write(Stringify({ status: "Error", message: error }));
+    }
+
+    function processForm() {
+        try {
+            var data = Platform.Request.GetPostData();
+            var parsedData = Platform.Function.ParseJSON(data);
+            var listIdDict = {
+                3272: 'PBNews_p__c',
+                3273: 'PBWebshop_p__c',
+                3274: 'PbSms_p__c',
+                3276: 'X4BNews_p__c',
+                3277: 'X4BSms_p__c',
+                3279: 'WWNews_p__c',
+                3280: 'WWJobsalerts_p__c',
+                3281: 'WWSms_p__c'
+            };
+
+            if (parsedData.refId && parsedData.refId.length > 0) {
+                var dataArray = formatProps(parsedData);
+                var updateSFResults = updateSF(parsedData.refId, dataArray);
+
+                if(updateSFResults != 1) {
+                    Write(Stringify({ Status: 'Error', Message: 'Update failed' }));
+                } else{
+                    Write(Stringify({ Status: 'OK', Message: 'Update succesfull' }));
+                }
+
+                if (parsedData.listId && parsedData.listId.length > 0) {
+                    var field = listIdDict[parsedData.listId];
+                    if (parsedData[field] == 'No') {
+                        var prox = new Script.Util.WSProxy();
+                        var props = [
+                            { Name: "SubscriberKey", Value: parsedData.subId },
+                            { Name: "JobID", Value: parsedData.job },
+                            { Name: "ListID", Value: parsedData.listId },
+                            { Name: "BatchID", Value: '' }
+                        ];
+
+                        var data = prox.execute(props, "LogUnsubEvent");
+                    }
+                }
+            }
+
+        } catch(err) {
+            Write(Stringify({ Status: 'Error', Message: err }));
+        }
+    }
+
+    function formatProps(data) {
+        var arr = [];
+        for (k in data) {
+            if (k != 'refId' && k != 'job' && k != 'subId' && k != 'listId') {
+                arr.push(k);
+                arr.push(data[k]);
+            }
+        }
+        return arr;
+    }
+
+    function updateSF(subscriberKey, fieldArr) {
+        var results = 0;
+        var SFIDPattern = new RegExp("^[a-zA-Z0-9]{18}");
+
+        if (SFIDPattern.test(subscriberKey) == true) {
+            var updateSFObject = "";
+            updateSFObject += "\%\%[ ";
+            updateSFObject += "set @SFUpdateResults = UpdateSingleSalesforceObject('Individual',";
+            updateSFObject += "'" + subscriberKey + "','"+  fieldArr.join("','") + "'";
+            updateSFObject += ") ";
+            updateSFObject += "output(concat(@SFUpdateResults)) ";
+            updateSFObject += "]\%\%";
+
+            try {
+                results = Platform.Function.TreatAsContent(updateSFObject);
+            } catch (e2) {
+                Write("<br>e2: " + Stringify(e2));
+            }
+
+        }
+        return results
+    }
+</script>

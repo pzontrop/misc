@@ -13,6 +13,10 @@
             max-width: 1000px;
             margin: auto auto 30px auto;
         }
+        .success {
+            max-width: 1000px;
+            margin: 30px auto;
+        }
         h1 {
             margin: 4% 39% 1% 0;
             text-align: center;
@@ -43,6 +47,17 @@
         input[type=radio] {
             margin-right: 30px;
         }
+        .hidden {
+            display: none;
+        }
+
+        .submit-btn {
+            background-color:#ed9d1c;
+        }
+
+        .submit-btn.submit-btn__loading {
+            background-color:#a1a09e;
+        }
     </style>
 </head>
 <body>
@@ -51,14 +66,15 @@
     try {
 </script>
 %%[
-var @rows, @row, @rowCount, @prefid
+var @rows, @row, @rowCount, @prefid, @subId, @job, @listId
 
-/* set @prefid = RequestParameter('prefid')
-output(concat("prefid: ", @prefid))
-set @rows = RetrieveSalesforceObjects("Individual", "PBNews_p__c,PBWebshop_p__c,PbSms_p__c,X4BNews_p__c,X4BSms_p__c,WWNews_p__c,WWJobsalerts_p__c,WWSms_p__c","Id","=", @prefid)
-*/
+set @prefid = Base64Decode(RequestParameter('prefid'),'UTF-8');
+set @subId = Base64Decode(RequestParameter('subid'),'UTF-8');
+set @job = Base64Decode(RequestParameter('job'),'UTF-8');
+set @listId = Base64Decode(RequestParameter('listid'),'UTF-8');
+
 set @rows = RetrieveSalesforceObjects("Individual", "PBNews_p__c,PBWebshop_p__c,PbSms_p__c,X4BNews_p__c,X4BSms_p__c,WWNews_p__c,WWJobsalerts_p__c,WWSms_p__c","Id","=",
-0PK1l000001ixDwGAI)
+@prefid)
 set @rowCount = rowcount(@rows)
 
 if @rowCount > 0 then
@@ -70,15 +86,16 @@ set @PbSms = field(@row,"PbSms_p__c")
 set @X4BNews = field(@row,"X4BNews_p__c")
 set @X4BSms = field(@row,"X4BSms_p__c")
 set @WWNews = field(@row,"WWNews_p__c")
-set @WWJobsalerts = field(@row,"WWJobsalerts_p__c")
+set @WWJobsalerts = field(@row,"WWJobsalerts_p__c"),
 set @WWSms = field(@row,"WWSms_p__c")
 
 ]%%
 
-<br>Pref values, PBNews: %%=v(@PBNews)=%%, PBWebshop: %%=v(@PBWebshop)=%%, PbSms: %%=v(@PbSms)=%%
-, X4BNews: %%=v(@X4BNews)=%%, X4BSms: %%=v(@X4BSms)=%%, WWNews: %%=v(@WWNews)=%%, WWJobsalerts: %%=v(@WWJobsalerts)=%%
-, WWSms: %%=v(@WWSms)=%%
-<form action="https://cloud.info.poetsbureau.be/preference-handler" method="post">
+<form action="https://cloud.info.poetsbureau.be/preference-handler" method="post" class="preferences-form">
+    <input type="hidden" id="refId" name="refId" value="%%=v(@prefid)=%%">
+    <input type="hidden" id="subId" name="subId" value="%%=v(@subId)=%%">
+    <input type="hidden" id="job" name="job" value="%%=v(@job)=%%">
+    <input type="hidden" id="listId" name="listId" value="%%=v(@listId)=%%">
     <table>
         <tbody>
         <tr>
@@ -92,6 +109,9 @@ set @WWSms = field(@row,"WWSms_p__c")
                 <h1 style="margin-right:-13%;">
                     Laat ons weten hoe je graag op de hoogte wordt gehouden.<br>
                     Geef hier je communicatievoorkeur aan.
+                </h1>
+                <h1 class="hidden error" style="margin-right:-13%;color:red;">
+                    Er heeft zich een fout voorgedaan, je voorkeuren zijn niet opgeslagen.
                 </h1>
             </td>
             <td></td>
@@ -112,11 +132,11 @@ set @WWSms = field(@row,"WWSms_p__c")
                         <tbody>
                         <tr>
                             <td>
-                                <input type="radio" checked="checked" name="PBNews_p__c" id="PBNews_p__c_yes" value="Yes">
+                                <input type="radio" %%=v(Iif(@PBNews == 'Yes', 'checked', ''))=%% name="PBNews_p__c" id="PBNews_p__c_yes" value="Yes">
                                 <label for="PBNews_p__c_yes"></label>
                             </td>
                             <td>
-                                <input type="radio" name="PBNews_p__c" id="PBNews_p__c_no" value="No">
+                                <input type="radio" %%=v(Iif(@PBNews == 'No', 'checked', ''))=%% name="PBNews_p__c" id="PBNews_p__c_no" value="No">
                                 <label for="PBNews_p__c_no"></label>
                             </td>
                         </tr>
@@ -133,10 +153,10 @@ set @WWSms = field(@row,"WWSms_p__c")
                         <tbody>
                         <tr>
                             <td>
-                                <input type="radio" checked="checked" name="PBWebshop_p__c" id="PBWebshop_p__c_yes" value="Yes">
+                                <input type="radio" %%=v(Iif(@PBWebshop == 'Yes', 'checked', ''))=%% name="PBWebshop_p__c" id="PBWebshop_p__c_yes" value="Yes">
                                 <label for="PBWebshop_p__c_yes"></label></td>
                             <td>
-                                <input type="radio" name="PBWebshop_p__c" id="PBWebshop_p__c_no" value="No">
+                                <input type="radio" %%=v(Iif(@PBWebshop == 'No', 'checked', ''))=%% name="PBWebshop_p__c" id="PBWebshop_p__c_no" value="No">
                                 <label for="PBWebshop_p__c_no"></label></td>
                         </tr>
                         </tbody>
@@ -158,10 +178,10 @@ set @WWSms = field(@row,"WWSms_p__c")
                         <tbody>
                         <tr>
                             <td>
-                                <input type="radio" checked="checked" name="PbSms_p__c" id="PbSms_p__c_yes" value="Yes">
+                                <input type="radio" %%=v(Iif(@PbSms == 'Yes', 'checked', ''))=%% name="PbSms_p__c" id="PbSms_p__c_yes" value="Yes">
                                 <label for="PbSms_p__c_yes"></label></td>
                             <td>
-                                <input type="radio" name="PbSms_p__c" id="PbSms_p__c_no" value="No">
+                                <input type="radio" %%=v(Iif(@PbSms == 'No', 'checked', ''))=%% name="PbSms_p__c" id="PbSms_p__c_no" value="No">
                                 <label for="PbSms_p__c_no"></label></td>
                         </tr>
                         </tbody>
@@ -185,11 +205,11 @@ set @WWSms = field(@row,"WWSms_p__c")
                         <tbody>
                         <tr>
                             <td>
-                                <input type="radio" checked="checked" name="X4BNews_p__c" id="X4BNews_p__c_yes" value="Yes">
+                                <input type="radio" %%=v(Iif(@X4BNews == 'Yes', 'checked', ''))=%% name="X4BNews_p__c" id="X4BNews_p__c_yes" value="Yes">
                                 <label for="X4BNews_p__c_yes"></label>
                             </td>
                             <td>
-                                <input type="radio" name="X4BNews_p__c" id="X4BNews_p__c_no" value="No">
+                                <input type="radio" %%=v(Iif(@X4BNews == 'No', 'checked', ''))=%% name="X4BNews_p__c" id="X4BNews_p__c_no" value="No">
                                 <label for="X4BNews_p__c_no"></label></td>
                         </tr>
                         </tbody>
@@ -209,11 +229,11 @@ set @WWSms = field(@row,"WWSms_p__c")
                         <tbody>
                         <tr>
                             <td>
-                                <input type="radio" checked="checked" name="X4BSms_p__c" id="X4BSms_p__c_yes" value="Yes">
+                                <input type="radio" %%=v(Iif(@X4BSms == 'Yes', 'checked', ''))=%% name="X4BSms_p__c" id="X4BSms_p__c_yes" value="Yes">
                                 <label for="X4BSms_p__c_yes"></label>
                             </td>
                             <td>
-                                <input type="radio" name="X4BSms_p__c" id="X4BSms_p__c_no" value="No">
+                                <input type="radio" %%=v(Iif(@X4BSms == 'No', 'checked', ''))=%% name="X4BSms_p__c" id="X4BSms_p__c_no" value="No">
                                 <label for="X4BSms_p__c_no"></label></td>
                         </tr>
                         </tbody>
@@ -237,11 +257,11 @@ set @WWSms = field(@row,"WWSms_p__c")
                         <tbody>
                         <tr>
                             <td>
-                                <input type="radio" checked="checked" name="WWNews_p__c" id="WWNews_p__c_yes" value="Yes">
+                                <input type="radio" %%=v(Iif(@WWNews == 'Yes', 'checked', ''))=%% name="WWNews_p__c" id="WWNews_p__c_yes" value="Yes">
                                 <label for="WWNews_p__c_yes"></label>
                             </td>
                             <td>
-                                <input type="radio" name="WWNews_p__c" id="WWNews_p__c_no" value="No">
+                                <input type="radio" %%=v(Iif(@WWNews == 'No', 'checked', ''))=%% name="WWNews_p__c" id="WWNews_p__c_no" value="No">
                                 <label for="WWNews_p__c_no"></label></td>
                         </tr>
                         </tbody>
@@ -257,10 +277,10 @@ set @WWSms = field(@row,"WWSms_p__c")
                         <tbody>
                         <tr>
                             <td>
-                                <input type="radio" checked="checked" name="WWJobsalerts_p__c" id="WWJobsalerts_p__c_yes" value="Yes">
+                                <input type="radio" %%=v(Iif(@WWJobsalerts == 'Yes', 'checked', ''))=%% name="WWJobsalerts_p__c" id="WWJobsalerts_p__c_yes" value="Yes">
                                 <label for="WWJobsalerts_p__c_yes"></label></td>
                             <td>
-                                <input type="radio" name="WWJobsalerts_p__c" id="WWJobsalerts_p__c_no" value="No">
+                                <input type="radio" %%=v(Iif(@WWJobsalerts == 'No', 'checked', ''))=%% name="WWJobsalerts_p__c" id="WWJobsalerts_p__c_no" value="No">
                                 <label for="WWJobsalerts_p__c_no"></label></td>
                         </tr>
                         </tbody>
@@ -280,10 +300,10 @@ set @WWSms = field(@row,"WWSms_p__c")
                         <tbody>
                         <tr>
                             <td>
-                                <input type="radio" checked="checked" name="WWSms_p__c" id="WWSms_p__c_yes" value="Yes">
+                                <input type="radio" %%=v(Iif(@WWSms == 'Yes', 'checked', ''))=%% name="WWSms_p__c" id="WWSms_p__c_yes" value="Yes">
                                 <label for="WWSms_p__c_yes"></label></td>
                             <td>
-                                <input type="radio" name="WWSms_p__c" id="WWSms_p__c_no" value="No">
+                                <input type="radio" %%=v(Iif(@WWSms == 'No', 'checked', ''))=%% name="WWSms_p__c" id="WWSms_p__c_no" value="No">
                                 <label for="WWSms_p__c_no"></label></td>
                         </tr>
                         </tbody>
@@ -293,18 +313,35 @@ set @WWSms = field(@row,"WWSms_p__c")
         </tr>
         </tbody>
     </table>
-    <input type="submit" value="Opslaan" style="background-color:#ed9d1c; float:right; margin-right:2%; font-size:23px; padding:10px 20px 10px 20px; color:white; border:none;">
+    <input id="submitBtn" class="submit-btn" type="submit" value="Opslaan" style="float:right; margin-right:2%; font-size:23px; padding:10px 20px 10px 20px; color:white; border:none;">
 </form>
 
 %%[ else ]%%
-
-No account found
-
+Gegevens niet gevonden.
 %%[ endif ]%%
+<div class="success hidden">
+    <table>
+        <tbody>
+        <tr>
+            <td>
+                <img src="https://image.info.poetsbureau.be/lib/fe3c11717564047d711174/m/1/dbf224f3-5175-436b-a520-5ad823ca22ca.png" alt="banner" title="banner" width="100%">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h1 style="margin: 4% 0;">
+                    Je voorkeuren zijn succesvol opgeslagen. Je mag deze pagina sluiten.
+                </h1>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 <script runat="server">
     }
     catch (err) {
         Variable.SetValue("@errorMessage", Stringify(err.message) + Stringify(err.description));
+        Write("Gegevens niet gevonden.");
     }
 </script>
 <script runat="client">
@@ -312,10 +349,18 @@ No account found
 </script>
 <script type="application/javascript">
     var form = document.querySelector('form');
-    form.addEventListener("submit", postFormData);
+    var submitBtn = document.querySelector('#submitBtn');
+
+    if (form) {
+        form.addEventListener("submit", postFormData);
+    }
 
     function postFormData(e) {
         e.preventDefault();
+        submitBtn.setAttribute("disabled", true);
+        submitBtn.setAttribute("value", "Laden...");
+        submitBtn.classList.add('submit-btn__loading');
+
         var payload = {};
         var formData = new FormData(form);
         for (var pair of formData.entries()) {
@@ -328,33 +373,31 @@ No account found
             body: JSON.stringify(payload)
         })
             .then(function (result) {
-                return result.json();
-            })
-            .then(function (data) {
-                if(data.Status != 'OK') {
-                    console.error(data.Message);
-                } else {
-                    console.info(data.Message);
-                }
-                toggleMessage(data.Status);
-            })
-            .catch(function (error) {
-                console.error(error);
-                toggleMessage('Error');
+                return result.text().then(function(text) {
+                    text = text.substr(text.indexOf('{'), text.indexOf('<') - text.indexOf('{'));
+                    return JSON.parse(text);
+                })
+                    .then(function (data) {
+                        toggleMessage(data.Status);
+                    })
+                    .catch(function (error) {
+                        toggleMessage('Error');
+                    });
             });
-
     }
 
     function toggleMessage(status) {
-        var fieldsets = form.querySelectorAll('fieldset');
-
-        fieldsets.forEach(function(fieldset) {
-            if(fieldset.classList.contains(status.toLowerCase())) {
-                fieldset.classList.remove("hidden");
-            } else {
-                fieldset.classList.add("hidden");
-            }
-        });
+        if(status == 'OK') {
+            form.classList.add("hidden");
+            var successMessage = document.querySelector('.success');
+            successMessage.classList.remove("hidden");
+        } else {
+            var errorMessage = form.querySelector('.error');
+            errorMessage.classList.remove("hidden");
+        }
+        submitBtn.removeAttribute("disabled");
+        submitBtn.setAttribute("value", "Opslaan")
+        submitBtn.classList.remove('submit-btn__loading');
     }
 </script>
 </body>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Template Created By: Jenna Molby | www.jennamolby.com | Support: pardot@jennamolby.com -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <link href="//fonts.googleapis.com/css?family=Poppins:400,400i,700,700i|Sintony:400,700" rel="stylesheet"><!-- Bootstrap CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <title>%%title%%</title>
+    <style>
+        /* --------------------------
+
+        EDIT THESE COLORS BELOW TO CUSTOMIZE
+        THE TEMPLATE TO MEET YOUR BRAND GUIDELINES
+
+        --------------------------*/
+        @font-face {
+            font-family: 'AcuminPro';
+            font-style: normal;
+            font-weight: 700;
+            src: url('https://fonts.gstatic.com/s/raleway/v17/1Ptug8zYS_SKggPNyCMIT4ttDfCmxA.woff2') format('woff2');
+        }
+
+        @font-face {
+            font-family: 'AcuminPro';
+            font-style: normal;
+            font-weight: 400;
+            src: url('https://fonts.gstatic.com/s/raleway/v17/1Ptug8zYS_SKggPNyC0IT4ttDfA.woff2') format('woff2');
+        }
+
+        /* Font for headlines */
+        h1, h2, h3 {
+            font-family: 'AcuminPro', sans-serif;
+        }
+        /* Font colors and size for headlines */
+        h1 {
+            color: #FFF;
+            font-size: 35px;
+            line-height: 45px;
+            margin: 0;
+            font-weight: bold;
+        }
+        h2 {
+            color: #008fbe;
+            font-size: 25px;
+            line-height: 35px;
+            font-weight: normal;
+            margin: 0;
+        }
+        h3 {
+            font-size: 20px;
+            line-height: 28px;
+            color: #FFF;
+            margin: 0;
+        }
+        /* Font colors, size and type for body copy */
+        body {
+            font-family: 'AcuminPro', sans-serif;
+            color: #1a355b;
+            font-size: 15px;
+            line-height: 25px;
+            background-color: #FFF;
+        }
+        /* Form background color */
+        form.form {
+            background-color: #FFF;
+        }
+        /* Hero background color */
+        .highlight {
+            background-color: #1a355b;
+        }
+        /* Header background color */
+        .header {
+            background-color: #FFF;
+        }
+        /* Body Sub Header Color and font size */
+        .page-body h3 {
+            color: #008fbe;
+            font-size: 20px;
+        }
+        /* Form Header background color */
+        .form-header {
+            background: #008fbe;
+        }
+
+        /* --------------------------
+
+        WARNING: EDITING THE BELOW CSS MIGHT
+        BREAK THE TEMPLATE.
+
+        --------------------------*/
+        .highlight {
+            padding: 50px 0;
+        }
+        .logo {
+            padding: 0 0 50px 0;
+        }
+        .header {
+            padding: 20px 10px;
+        }
+        .headline {
+            padding: 0 0 15px 0;
+        }
+        .description {
+            color: #FFF;
+            font-size: 15px;
+        }
+        .page-body {
+            padding: 35px 0;
+        }
+        .page-body h3 {
+            padding-bottom: 10px;
+        }
+        .form-container {
+            position: relative;
+        }
+        .form-container-inner {
+            position: absolute;
+            top: 50px;
+        }
+        .form-header {
+            padding: 20px;
+            text-align: center;
+        }
+        .footer {
+            padding: 35px 0 30px 0;
+            font-size: 11px;
+            color: #9E9E9E;
+            line-height: 18px;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #FFF;
+        }
+        .footer .border-top {
+            border-top: solid 1px #E0E0E0;
+            padding-top: 20px;
+        }
+        ul.social {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        ul.social li {
+            display: inline-block;
+            padding: 5px;
+        }
+        ul.social i {
+            color: #9E9E9E;
+            font-size: 30px;
+        }
+        .asset-image img {
+            width: 100%;
+        }
+        .desktop-hide {
+            display: none;
+        }
+        @media only screen and (max-width: 480px) {
+            ul.social {
+                text-align: center !important;
+            }
+            .copyright {
+                text-align: center;
+                padding-bottom: 10px;
+            }
+            form.form input[type=submit] {
+                width: 100%;
+                padding-top: 12px;
+                padding-bottom: 12px;
+            }
+            h1 {
+                font-size: 30px;
+                line-height: 35px;
+            }
+            h2 {
+                font-size: 22px;
+                line-height: 28px;
+            }
+            .headline {
+                padding-bottom: 15px;
+            }
+        }
+        @media only screen and (max-width: 668px) {
+            .asset-image {
+                width: 100%;
+                text-align: center;
+                padding-bottom: 25px;
+            }
+            .asset-image img {
+                max-width: 300px;
+            }
+            .headline-container {
+                width: 90%;
+                margin: 0 auto;
+                float: none;
+                text-align: center;
+            }
+            .logo {
+                text-align: center;
+            }
+        }
+        @media only screen and (max-width: 992px) {
+            .form-container, .form-container-inner {
+                position: static;
+            }
+            .form-container {
+                padding-top: 25px;
+            }
+        }
+        /* Pardot Form Styles */
+
+        form.form {
+            padding: 20px !important;
+            margin:0 !important;
+        }
+        form.form p label {
+            color: #757575 !important;
+            display: block;
+            margin-bottom: 2px !important;
+            font-size: 15px;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: normal;
+            width:100% !important;
+            text-align:left !important;
+        }
+        form.form p.form-field {
+            margin-bottom: 10px;
+        }
+        form.form input[type=text], form.form textarea {
+            width: 100%;
+            border: solid 1px #E0E0E0;
+            background-color: #FFF;
+            padding: 5px !important;
+            font-size: 15px;
+            width:100% !important;
+            font-family: 'Open Sans', sans-serif;
+        }
+        form.form input[type=text]:focus, form.form textarea:focus, form.form select:focus {
+            outline: none;
+        }
+        form.form input[type=submit] {
+            background-color: #2C3E50;
+            border: 0;
+            color: #FFF;
+            font-size: 15px;
+            font-family: 'Open Sans', sans-serif;
+            padding: 10px 30px !important;
+        }
+        form.form p.submit {
+            text-align: center;
+            margin-left:0 !important;
+        }
+        form.form label.inline {
+            display: inline-block !important;
+            padding-left: 8px;
+            font-size: 13px;
+        }
+        form.form textarea {
+            height: 75px;
+        }
+        form.form select {
+            width: 100%;
+            border: solid 1px #E0E0E0;
+            background-color: #FFF;
+            padding: 5px !important;
+            font-size: 15px;
+            border-radius: 0;
+            -moz-border-radius: 0;
+            -webkit-border-radius: 0;
+            font-family: 'Merriweather', serif;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            appearancce: none;
+            background-position: right center;
+            background-repeat: no-repeat;
+            background-size: 1ex;
+            background-origin: content-box;
+            background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcKICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIgogICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIgogICB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgdmVyc2lvbj0iMS4xIgogICBpZD0ic3ZnMiIKICAgdmlld0JveD0iMCAwIDM1Ljk3MDk4MyAyMy4wOTE1MTgiCiAgIGhlaWdodD0iNi41MTY5Mzk2bW0iCiAgIHdpZHRoPSIxMC4xNTE4MTFtbSI+CiAgPGRlZnMKICAgICBpZD0iZGVmczQiIC8+CiAgPG1ldGFkYXRhCiAgICAgaWQ9Im1ldGFkYXRhNyI+CiAgICA8cmRmOlJERj4KICAgICAgPGNjOldvcmsKICAgICAgICAgcmRmOmFib3V0PSIiPgogICAgICAgIDxkYzpmb3JtYXQ+aW1hZ2Uvc3ZnK3htbDwvZGM6Zm9ybWF0PgogICAgICAgIDxkYzp0eXBlCiAgICAgICAgICAgcmRmOnJlc291cmNlPSJodHRwOi8vcHVybC5vcmcvZGMvZGNtaXR5cGUvU3RpbGxJbWFnZSIgLz4KICAgICAgICA8ZGM6dGl0bGU+PC9kYzp0aXRsZT4KICAgICAgPC9jYzpXb3JrPgogICAgPC9yZGY6UkRGPgogIDwvbWV0YWRhdGE+CiAgPGcKICAgICB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjAyLjAxNDUxLC00MDcuMTIyMjUpIgogICAgIGlkPSJsYXllcjEiPgogICAgPHRleHQKICAgICAgIGlkPSJ0ZXh0MzMzNiIKICAgICAgIHk9IjYyOS41MDUwNyIKICAgICAgIHg9IjI5MS40Mjg1NiIKICAgICAgIHN0eWxlPSJmb250LXN0eWxlOm5vcm1hbDtmb250LXdlaWdodDpub3JtYWw7Zm9udC1zaXplOjQwcHg7bGluZS1oZWlnaHQ6MTI1JTtmb250LWZhbWlseTpzYW5zLXNlcmlmO2xldHRlci1zcGFjaW5nOjBweDt3b3JkLXNwYWNpbmc6MHB4O2ZpbGw6IzAwMDAwMDtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZTtzdHJva2Utd2lkdGg6MXB4O3N0cm9rZS1saW5lY2FwOmJ1dHQ7c3Ryb2tlLWxpbmVqb2luOm1pdGVyO3N0cm9rZS1vcGFjaXR5OjEiCiAgICAgICB4bWw6c3BhY2U9InByZXNlcnZlIj48dHNwYW4KICAgICAgICAgeT0iNjI5LjUwNTA3IgogICAgICAgICB4PSIyOTEuNDI4NTYiCiAgICAgICAgIGlkPSJ0c3BhbjMzMzgiPjwvdHNwYW4+PC90ZXh0PgogICAgPGcKICAgICAgIGlkPSJ0ZXh0MzM0MCIKICAgICAgIHN0eWxlPSJmb250LXN0eWxlOm5vcm1hbDtmb250LXZhcmlhbnQ6bm9ybWFsO2ZvbnQtd2VpZ2h0Om5vcm1hbDtmb250LXN0cmV0Y2g6bm9ybWFsO2ZvbnQtc2l6ZTo0MHB4O2xpbmUtaGVpZ2h0OjEyNSU7Zm9udC1mYW1pbHk6Rm9udEF3ZXNvbWU7LWlua3NjYXBlLWZvbnQtc3BlY2lmaWNhdGlvbjpGb250QXdlc29tZTtsZXR0ZXItc3BhY2luZzowcHg7d29yZC1zcGFjaW5nOjBweDtmaWxsOiMwMDAwMDA7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjFweDtzdHJva2UtbGluZWNhcDpidXR0O3N0cm9rZS1saW5lam9pbjptaXRlcjtzdHJva2Utb3BhY2l0eToxIj4KICAgICAgPHBhdGgKICAgICAgICAgaWQ9InBhdGgzMzQ1IgogICAgICAgICBzdHlsZT0iZmlsbDojMzMzMzMzO2ZpbGwtb3BhY2l0eToxIgogICAgICAgICBkPSJtIDIzNy41NjY5Niw0MTMuMjU1MDcgYyAwLjU1ODA0LC0wLjU1ODA0IDAuNTU4MDQsLTEuNDczMjIgMCwtMi4wMzEyNSBsIC0zLjcwNTM1LC0zLjY4MzA0IGMgLTAuNTU4MDQsLTAuNTU4MDQgLTEuNDUwOSwtMC41NTgwNCAtMi4wMDg5MywwIEwgMjIwLDQxOS4zOTM0NiAyMDguMTQ3MzIsNDA3LjU0MDc4IGMgLTAuNTU4MDMsLTAuNTU4MDQgLTEuNDUwODksLTAuNTU4MDQgLTIuMDA4OTMsMCBsIC0zLjcwNTM1LDMuNjgzMDQgYyAtMC41NTgwNCwwLjU1ODAzIC0wLjU1ODA0LDEuNDczMjEgMCwyLjAzMTI1IGwgMTYuNTYyNSwxNi41NDAxNyBjIDAuNTU4MDMsMC41NTgwNCAxLjQ1MDg5LDAuNTU4MDQgMi4wMDg5MiwwIGwgMTYuNTYyNSwtMTYuNTQwMTcgeiIgLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=");
+        }
+    </style>
+</head>
+<body>
+<div class="container form-position">
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-8 form-container">
+            <div class="form-container-inner">
+                <div class="form-header" pardot-region="form-header">
+                    <h3>Fill in the form.</h3>
+                </div>
+                %%content%%
+            </div>
+        </div>
+    </div>
+</div>
+<div class="highlight">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="logo">
+                            <a href="#"><img src="http://go.pardot.com/l/851593/2020-09-17/2wm35/851593/29714/Desotec_Logo_white_220x65.png"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4 asset-image" pardot-region="asset-image">
+                        <img src="https://dummyimage.com/220x220/ccc/000">
+                    </div>
+                    <div class="col-xs-8 headline-container">
+                        <div class="headline" pardot-region="headline-section">
+                            <h1>Insert your headline here</h1>
+                            <h2>Insert your sub headline here</h2>
+                        </div>
+                        <div class="description" pardot-region="headline-description">
+                            <p>Insert a short description of the asset here. Insert a short descripton of the asset here. Nunc erat est, ultrices ornare lorem ut, efficitur scelerisque ex. Aenean congue nisl ut tellus facilisis bibendum. Cras mollis efficitur mi, at maximus elit tempus ac. Mauris hendrerit sollicitudin urna, id posuere purus.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="page-body">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8"  pardot-region="body-copy">
+                <p>Aenean egestas placerat sapien, eu tincidunt ligula blandit ut. Aenean tincidunt lacus et felis ultricies porta. Quisque sit amet purus ut orci elementum semper vitae in nunc. Sed ullamcorper consequat tellus. Sed vitae pulvinar arcu. Aenean vitae mi ante. Ut ultricies, turpis ac luctus fermentum, tellus erat consectetur mi, eu ultricies arcu magna in erat. Vestibulum porta massa eu euismod maximus.</p>
+                <p>Aenean euismod erat sed lectus bibendum iaculis. Aliquam aliquet, sem sed egestas rutrum, libero erat dignissim sapien, nec consectetur mauris neque id tortor. Curabitur a libero aliquam, elementum erat sed, pretium enim. Nunc erat est, ultrices ornare lorem ut, efficitur scelerisque ex. Aenean congue nisl ut tellus facilisis bibendum. Cras mollis efficitur mi, at maximus elit tempus ac. Mauris hendrerit sollicitudin urna, id posuere purus.</p>
+                <h3>Key learning objectives:</h3>
+                <ul>
+                    <li>Maecenas feugiat felis erat.</li>
+                    <li>Phasellus vel auctor massa. Fusce semper elit vel mi pharetra, rutrum dictum purus sodales.</li>
+                    <li>In volutpat molestie urna, eu hendrerit risus congue eu. Maecenas condimentum vehicula pretium.</li>
+                    <li>Praesent odio sapien, gravida a molestie a, dignissim a libero.</li>
+                    <li>Ut tempor consequat tortor, ac dapibus erat mollis quis.</li>
+                    <li>Nam a consectetur arcu.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 copyright"  pardot-region="footer-address-and-copyright">
+                &copy; 2020 DESOTEC
+            </div>
+            <div class="col-sm-6 text-right">
+                <ul class="social" pardot-region="social-icons">
+                    <li>
+                        <a href="#" target="_blank"><i aria-hidden="true" class="fa fa-facebook-square"></i></a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank"><i aria-hidden="true" class="fa fa-twitter-square"></i></a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank"><i aria-hidden="true" class="fa fa-youtube-square"></i></a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank"><i aria-hidden="true" class="fa fa-google-plus-square"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+    function formPosition() {
+        if ($(window).width() < 960) {
+            $('.form-position').insertAfter('.highlight');
+        }
+        else {
+            $('.form-position').insertBefore('.highlight');
+        }
+    }
+    $( document ).ready(function() {
+        formPosition();
+    });
+    window.addEventListener('resize', function () {
+        formPosition();
+    })
+</script>
+</body>
+</html>

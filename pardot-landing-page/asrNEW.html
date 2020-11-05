@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>%%title%%</title>
+    <meta name="description" content="%%description%%">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <style>
+        body {
+            font-family: "Source Sans Pro", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: #5a5d60;
+            font-size: 24px;
+            font-style: normal !important;
+        }
+
+        .img-bckg {
+            position: relative;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .blue {
+            background-color: #0099CC;
+        }
+
+        .text-white {
+            color: #fff
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .content-section {
+            padding: 90px 0;
+        }
+
+        .flex-center {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .visually-hidden {
+            position: absolute;
+            clip: rect(1px 1px 1px 1px);
+            clip: rect(1px, 1px, 1px, 1px);
+            padding: 0;
+            border: 0;
+            height: 1px;
+            width: 1px;
+            overflow: hidden;
+        }
+
+        .pb60 {
+            padding-bottom: 60px;
+        }
+
+        .pt60 {
+            padding-top: 60px;
+        }
+
+        .mb0 {
+            margin-bottom: 0;
+        }
+
+        h1,
+        h2,
+        h3 {
+            margin-top: 0;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 35px;
+            line-height: 1.0;
+            letter-spacing: -.1rem;
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            font-size: 30px;
+            line-height: 1.25;
+            letter-spacing: -.1rem;
+            color: #373d41;
+        }
+
+        h3 {
+            font-size: 30px;
+            line-height: 1.3;
+            letter-spacing: -.1rem;
+            font-weight: 400;
+            color: #0078a1;
+            margin-bottom: 30px;
+        }
+
+        img {
+            max-width: 100% !important;
+            height: auto !important;
+        }
+
+        p {
+            margin-top: 0;
+        }
+
+        .maintitle {
+            margin-top: 25px;
+            text-align: center;
+            background-color: #0099cc;
+            color: white;
+        }
+
+        .maintitle p {
+            text-align: center;
+            font-size: 3rem;
+            color: #FFFFFF;
+            font-weight: 400;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .imgcontainer {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        .texttopbanner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ffffff;
+            display: block;
+            font-family: 'Source Sans Pro', Arial;
+            font-size: 38px;
+            line-height: 40px;
+            font-weight: 400;
+            margin-top: 0;
+            margin-right: 0;
+            margin-bottom: 20px;
+            margin-left: 0;
+        }
+
+        .cta {
+            margin: 0 auto;
+            background-color: #ffcd00;
+            color: #373d41;
+            border: 1px solid #ffcd00;
+            cursor: pointer;
+            padding: 15px 40px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .cta:hover {
+            color: #fff;
+            background-color: #ffcd00;
+            border-color: #fff;
+        }
+
+        .card-wrap {
+            margin-bottom: 85px;
+        }
+
+        @media (min-width: 1024px) {
+            .card-wrap {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+
+        .card-img {
+            margin-right: 15px;
+        }
+
+        @media (min-width: 1024px) {
+            .card-img {
+                min-width: 100px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .card-img {
+                min-width: 150px;
+            }
+        }
+
+        @media (min-width: 1440px) {
+            .card-img {
+                min-width: 250px;
+                margin-right: 35px;
+            }
+        }
+
+        .banner img {
+            width: 100%;
+            height: auto;
+        }
+
+        @media (min-width: 550px) {
+            h1 {
+                font-size: 42px;
+            }
+            h2 {
+                font-size: 35px;
+            }
+            h3 {
+                font-size: 33px;
+            }
+
+            .mw-500 {
+                max-width: 500px;
+            }
+
+            .cta-column {
+                text-align: right;
+                padding-top: 30px;
+            }
+        }
+
+        .logotop {
+            padding: 65px 0;
+            display: block;
+        }
+
+        .column__img {
+            margin: 40px 0;
+        }
+
+        footer {
+            background-color: #ffffff;
+            padding: 20px 0;
+        }
+
+        footer p, footer .p-fix {
+            display: inline-block;
+        }
+
+        footer a, footer p, footer h5, footer .p-fix {
+            color: #0099CC;
+            font-size: 20px;
+            font-size: 14px;
+            text-decoration: none;
+            margin: 0;
+        }
+
+        footer h5 {
+            font-weight: bold;
+        }
+
+        footer .social-box p {
+            border-right: 1px solid #0099CC;
+            padding-right: 10px;
+        }
+
+        footer p:last-of-type, footer .p-fix:last-of-type {
+            border: none;
+            padding: 0;
+        }
+
+        footer .getInTouch {
+            display:flex;
+            align-items:center;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .social-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .social-box .social {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 18%;
+        }
+
+        /*form*/
+
+        .form {
+            font-family: "Source Sans Pro", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif!important;
+            background-color: #fff;
+            box-sizing: border-box;
+            padding: 50px!important;
+            max-width: 500px;
+            -webkit-box-shadow: 2px 2px 21px 0px rgba(0, 0, 0, 0.3);
+            -moz-box-shadow: 2px 2px 21px 0px rgba(0, 0, 0, 0.3);
+            box-shadow: 2px 2px 21px 0px rgba(0, 0, 0, 0.3);
+        }
+
+        .form h3 {
+            color: #0078a1;
+            margin-bottom: 35px;
+        }
+
+        form.form p span,
+        form.form p label {
+            color: #0078a1!important;
+            text-align: left!important;
+            margin: 0;
+            font-size: 16px;
+            width: auto!important;
+        }
+
+        form.form p {
+            margin-bottom: 10px;
+        }
+
+        .form input[type=text],
+        .form select {
+            width: 100%!important;
+            border-radius: 0;
+            margin-bottom: 0;
+            border-top: 0;
+            border-left: 0;
+            border-right: 0;
+        }
+
+        .submit {
+            margin: 0!important;
+            text-align: right;
+        }
+
+        .submit input {
+            font-family: "Source Sans Pro", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif!important;
+            font-size: 14px;
+            color: #fff!important;
+            background-color: #0078a1!important;
+            border-color: #0078a1!important;
+            border-radius: 0!important;
+            padding: 5px 30px!important;
+            height: auto!important;
+            margin: 20px 0!important;
+            font-weight: 700;
+            white-space: normal;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .content-white a {
+            color: white;
+        }
+
+        @media (min-width: 1440px) {
+            .container {
+                max-width: 1260px;
+            }
+        }
+
+        .hero {
+            padding: 40px 0 80px 0;
+        }
+
+        .hero-text {
+            margin-bottom: 40px;
+        }
+
+        .hero-text p {
+            margin-bottom: 0;
+        }
+
+        @media (min-width: 1024px) {
+            .hero .container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .hero-text {
+                max-width: 500px;
+                margin-bottom: 0;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .hero-text {
+                max-width: 520px;
+            }
+        }
+
+        @media (min-width: 1440px) {
+            .hero-text {
+                max-width: 590px;
+            }
+        }
+
+        .margin-bottom-p {
+            margin-bottom: 2.5rem;
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <img alt="Atlas Copco" class="logotop" src="https://storage.pardot.com/710483/54958/ac_hor_blue_logo.png" width="125">
+</div>
+<section class="hero img-bckg">
+    <img pardot-region="bckg" class="bckg visually-hidden" src="https://storage.pardot.com/710483/54964/hero_img.jpg" alt="banner"
+         style="width:100%;">
+    <div class="container">
+        <div class="hero-text">
+            <h1 class="text-white" pardot-region="form-section-title" pardot-region-type="pardot">H1 rae eatum et que porem invent ut enis nullo. Equis sinust anihilicabo ipsum</h1>
+            <div class="text-white margin-bottom-p" pardot-region="form-section-text" pardot-region-type="pardot">Body level 1 At volorum facea cone ommoluptatis aliqui ut apelessit vel et ipis
+                et pe vendemp orupici lluptae velest,
+                ea sit, utaquidebis dit vel id ut eatectas dolore volupis et aut verum si corrupt aturept atquae sitatquatet,
+                cusdam as vit dolora veliass untiis quassit quunti vel inis as rest, inum quas sit aspiciderum rerum et enissusae
+                sinum atur.</div>
+        </div>
+        <div class="hero-form">
+            %%content%%
+        </div>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+
+
+
+        <div class="row">
+            <div class="one-half column">
+                <div class="card-wrap">
+                    <div>
+                        <div class="card-img">
+                            <img class="u-max-full-width" src="http://i.anpwidget.com/img/250/250" width="250" height="250" pardot-region="card1-img">
+                        </div>
+                        <h3 pardot-region="card1-title" pardot-region-type="pardot">H3 Rae eatum et que und porem ipsuma invent ut </h3>
+                        <div class="margin-bottom-p" pardot-region="card1-text" pardot-region-type="pardot">Body level 1 Con peribus. Equis sinust anihilicabo. Nemquunt re, nem
+                            doluptas eserio. Hent officid etur aut qui sus. Neque sim volest, sam faccatus nonsequos sandundi odis vellore pel et veliciatur senimag natur.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="one-half column">
+                <div class="card-wrap">
+                    <div>
+                        <div class="card-img">
+                            <img class="u-max-full-width" src="http://i.anpwidget.com/img/250/250" width="250" height="250" pardot-region="card2-img">
+                        </div>
+                        <h3 pardot-region="card2-title" pardot-region-type="pardot">H3 Rae eatum et que und porem ipsuma invent ut </h3>
+                        <div class="margin-bottom-p" pardot-region="card2-text" pardot-region-type="pardot">Body level 1 Con peribus. Equis sinust anihilicabo. Nemquunt re, nem
+                            doluptas eserio. Hent officid etur aut qui sus. Neque sim volest, sam faccatus nonsequos sandundi odis vellore pel et veliciatur senimag natur.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="one-half column">
+                <div class="card-wrap">
+                    <div>
+                        <div class="card-img">
+                            <img class="u-max-full-width" src="http://i.anpwidget.com/img/250/250" width="250" height="250" pardot-region="card3-img">
+                        </div>
+                        <h3 pardot-region="card3-title" pardot-region-type="pardot">H3 Rae eatum et que und porem ipsuma invent ut </h3>
+                        <div class="margin-bottom-p" pardot-region="card3-text" pardot-region-type="pardot">Body level 1 Con peribus. Equis sinust anihilicabo. Nemquunt re, nem doluptas eserio. Hent
+                            officid etur aut qui sus. Neque sim volest, sam faccatus nonsequos sandundi odis vellore pel et veliciatur senimag natur.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="one-half column">
+                <div class="card-wrap">
+                    <div>
+                        <div class="card-img">
+                            <img class="u-max-full-width" src="http://i.anpwidget.com/img/250/250" width="250" height="250" pardot-region="card4-img">
+                        </div>
+                        <h3 pardot-region="card4-title" pardot-region-type="pardot">H3 Rae eatum et que und porem ipsuma invent ut </h3>
+                        <div class="margin-bottom-p" pardot-region="card4-text" pardot-region-type="pardot">Body level 1 Con peribus. Equis sinust anihilicabo. Nemquunt re, nem doluptas eserio. Hent
+                            officid etur aut qui sus. Neque sim volest, sam faccatus nonsequos sandundi odis vellore pel et veliciatur senimag natur.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content-section blue text-white content-white">
+    <div class="container">
+        <h2 class="text-white pb60" pardot-region="3col-title" pardot-region-type="pardot"><span style="background-color: #0099CC;">H2 nullupt atquas enduciendi officientur
+            sunt quodigenis as ant et omnimus mil molupiet dolorae volenia volorro et, cupiciatqui optaturio.</span></h2>
+        <div class="row">
+            <div class="one-third column">
+                <h3 class="text-white pb60 mb0" pardot-region="3col-item1-title" pardot-region-type="pardot"><span style="background-color: #0099CC;">H3 Rae eatum et que und
+                    porem ipsuma invent ut </span></h3>
+                <div class="text-white margin-bottom-p" pardot-region="3col-item1-text" pardot-region-type="pardot"><span style="background-color: #0099CC;">Duis aute irure
+                    dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                    nulla pariatur. Excepteur sint occaecat cupidatat non proident</span></div>
+            </div>
+            <div class="one-third column">
+                <h3 class="text-white pb60 mb0" pardot-region="3col-item2-title" pardot-region-type="pardot"><span style="background-color: #0099CC;">H3 Rae eatum et que und porem
+                    ipsuma invent ut </span></h3>
+                <div class="text-white margin-bottom-p" pardot-region="3col-item2-text" pardot-region-type="pardot"><span style="background-color: #0099CC;">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                    dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                    pariatur. Excepteur sint occaecat cupidatat non proident</span></div>
+            </div>
+            <div class="one-third column">
+                <h3 class="text-white pb60 mb0" pardot-region="3col-item3-title" pardot-region-type="pardot"><span style="background-color: #0099CC;">H3 Rae eatum et que und porem
+                    ipsuma invent ut </span></h3>
+                <div class="text-white margin-bottom-p" pardot-region="3col-item3-text" pardot-region-type="pardot"><span style="background-color: #0099CC;">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                    dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                    pariatur. Excepteur sint occaecat cupidatat non proident</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="cta-section content-section img-bckg">
+    <div class="container">
+        <h2 class="pb60" pardot-region="cta-title" pardot-region-type="pardot">H2 nullupt atquas enduciendi officientur sunt quodigenis as ant et omnimus mil molupiet dolorae volenia volorro et,
+            cupiciatqui optaturio.</h2>
+        <div pardot-region="cta-box">
+            <a class="cta text-center" href="#">
+                <span>CTA</span>c
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="three columns">
+                <div class="row">
+                    <h5 pardot-region="footer-title1" pardot-region-type="pardot">Get in touch</h5>
+                </div>
+                <div class="row getInTouch">
+                    <div class="p-fix" pardot-region="footer-firstcolumn-text1" pardot-region-type="pardot">Test</div>
+                    <div class="p-fix" pardot-region="footer-firstcolumn-text2" pardot-region-type="pardot">Test</div>
+                    <div class="p-fix" pardot-region="footer-firstcolumn-text3" pardot-region-type="pardot">Test</div>
+                    <div class="p-fix" pardot-region="footer-firstcolumn-text4" pardot-region-type="pardot">Test</div>
+                </div>
+            </div>
+            <div class="six columns">
+                <div class="row">
+                    <h5 pardot-region="footer-title2" pardot-region-type="pardot">Follow us</h5>
+                </div>
+                <div class="row social-box">
+                    <p class="social"><img alt="Facebook" src="https://storage.pardot.com/710483/73704/facebook__sprite.svg"><a href="https://www.facebook.com/atlascopco">Facebook</a></p>
+                    <p class="social"><img alt="Facebook" src="https://storage.pardot.com/710483/73706/twitter__sprite.svg"><a href="https://twitter.com/atlascopcogroup">Twitter</a></p>
+                    <p class="social"><img alt="Facebook" src="https://storage.pardot.com/710483/73708/linkedin__sprite.svg"><a href="https://www.linkedin.com/company/atlas-copco/">LinkedIn</a></p>
+                    <p class="social"><img alt="Facebook" src="https://storage.pardot.com/710483/73710/youtube__sprite.svg"><a href="https://www.youtube.com/user/AtlasCopcoRental">YouTube</a></p>
+                    <p class="social"><img alt="Facebook" src="https://storage.pardot.com/710483/73712/instagram__sprite.svg"><a href="https://www.instagram.com/atlascopcogroup/">Instagram</a></p>
+                </div>
+            </div>
+            <div class="three columns">
+                <div class="row">
+                    <h5 pardot-region="footer-title3" pardot-region-type="pardot"><a href="https://www.atlascopco.com/privacyportal/en">Legal notice and cookie policy</a></h5>
+                    <h5 pardot-region="Basic" pardot-region-type="basic"><a href="https://www.atlascopco.com/privacyportal/en">Basic</a></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+  setImageOnBackground = function (backgroundClass, sectionClass) {
+    const bckg = document.querySelector(backgroundClass).src;
+    document.querySelector(sectionClass).style.backgroundImage = `url('${bckg}')`;
+  }
+  setImageOnBackground('.bckg', '.hero');
+</script>
+</body>
+
+</html>

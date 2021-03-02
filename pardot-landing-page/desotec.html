@@ -420,11 +420,15 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript">
 </script>
 <script type="text/javascript">
+  var currentMode = "";
+
   function formPosition() {
-    if ($(window).width() < 960) {
-      $('.form-position').insertAfter('.highlight');
-    } else {
-      $('.form-position').insertBefore('.highlight');
+    if (currentMode !== "mobile" && $(window).width() < 960) {
+        currentMode = "mobile";
+        $('.form-position').insertAfter('.highlight');
+    } else if (currentMode !== "desktop" && $(window).width() >= 960) {
+        currentMode = "desktop";
+        $('.form-position').insertBefore('.highlight');
     }
   }
 

@@ -3,7 +3,7 @@
 
     try {
         var referer = Platform.Request.ReferrerURL;
-        var regex = /^(https:\/\/(.*\.)?((poetsbureau)\.be))($|\/)/g;
+        var regex = /^(https?:\/\/(.*\.)?((dutchdesignfoundation)\.com))($|\/)/g;
         var match = referer.match(regex);
         var origin = (match.length > 0) ? match[1] : null;
 
@@ -30,14 +30,11 @@
             var data = Platform.Request.GetPostData();
             var parsedData = Platform.Function.ParseJSON(data);
             var listIdDict = {
-                3272: 'PBNews_p__c',
-                3273: 'PBWebshop_p__c',
-                3274: 'PbSms_p__c',
-                3276: 'X4BNews_p__c',
-                3277: 'X4BSms_p__c',
-                3279: 'WWNews_p__c',
-                3280: 'WWJobsalerts_p__c',
-                3281: 'WWSms_p__c'
+                120: 'Dutch_Design_Awards__c',
+                121: 'Dutch_Design_Foundation__c',
+                122: 'Dutch_Design_Week__c',
+                123: 'What_if_Lab__c',
+                124: 'World_Design_Embassies__c'
             };
 
             if (parsedData.refId && parsedData.refId.length > 0) {
@@ -73,10 +70,10 @@
 
     function formatProps(data) {
         var arr = [];
-        for (k in data) {
-            if (k != 'refId' && k != 'job' && k != 'subId' && k != 'listId') {
-                arr.push(k);
-                arr.push(data[k]);
+        for (key in data) {
+            if (key != 'refId' && key != 'job' && key != 'subId' && key != 'listId') {
+                arr.push(key);
+                arr.push(data[key]);
             }
         }
         return arr;

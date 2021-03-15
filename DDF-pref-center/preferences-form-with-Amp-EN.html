@@ -190,8 +190,8 @@ set @Language = field(@infoRow,"Language__c")
 </script>
 <div class="main--wrapper">
     <div style="float: right">
-        <span style="color: #d9d9d9">NL / </span><a style="color: black;text-decoration: none; cursor: pointer"
-                                                    onclick="window.location='http://cloud.updates.dutchdesignfoundation.com/contact-preferences-en'+window.location.search;">EN</a>
+        <span style="color: #d9d9d9">EN / </span><a style="color: black;text-decoration: none; cursor: pointer"
+                                                    onclick="window.location='http://cloud.updates.dutchdesignfoundation.com/contact-preferences'+window.location.search;">NL</a>
     </div>
 <table style="margin:40px auto 20px; line-height: 1">
     <tbody>
@@ -206,38 +206,38 @@ set @Language = field(@infoRow,"Language__c")
     </tbody>
 </table>
 <p>
-    Welkom bij het preference centre van Dutch Design Foundation (DDF). Hieronder kun je je
-    voorkeuren doorgeven m.b.t. nieuwsbrieven van DDF en alle onderliggende labels. We zijn
-    benieuwd naar jouw interesses. Hoe specifieker je onderstaand formulier invult, hoe
-    relevanter wij onze content voor jou kunnen maken.
+    Welcome to the Preference centre of Dutch Design Foundation (DDF). Here you can
+    specify your preferences for newsletters from DDF and all underlying labels. We
+    would like to learn more about your interests. The more specific you fill in the form
+    below, the better we can tailor our content to your needs.
 </p>
 <div>
     <table>
     <tr>
-        <td>Voornaam:</td>
+        <td>First name:</td>
         <td><input type="text" value="%%=v(@FirstName)=%%" readonly></td>
     </tr>
     <tr>
-        <td>Achternaam:</td>
+        <td>Last name:</td>
         <td><input type="text" value="%%=v(@LastName)=%%" readonly></td>
     </tr>
     <tr>
-        <td>E-mailadres:</td>
+        <td>E-mail address:</td>
         <td><input type="text" value="%%=v(@Email)=%%" readonly></td>
     </tr>
     <tr>
-        <td>Voorkeurstaal:</td>
+        <td>Preferred language:</td>
         <td><fieldset style="border: none; font-size:16px;">
             <table role="presentation">
                 <tbody>
                 <tr>
                     <td>
                         <input type="radio" %%=v(Iif(@Language == 'Nederlands', 'checked', ''))=%% name="Language__c" id="Language_nederlands" value="Nederlands" disabled>
-                        <label for="Language_nederlands" style="margin-right: 10px;">Nederlands</label>
+                        <label for="Language_nederlands" style="margin-right: 10px;">Dutch</label>
                     </td>
                     <td>
                         <input type="radio" %%=v(Iif(@Language == 'English', 'checked', ''))=%% name="Language__c" id="Language_english" value="English" disabled>
-                        <label for="Language_english" style="margin-right: 10px;">Engels</label>
+                        <label for="Language_english" style="margin-right: 10px;">English</label>
                     </td>
                 </tr>
                 </tbody>
@@ -248,16 +248,16 @@ set @Language = field(@infoRow,"Language__c")
     </table>
 </div>
 <p>
-    Dutch Design Foundation (DDF) biedt een podium aan ontwerpers die de wereld een betere
-    plek willen maken. Met dat als uitgangspunt realiseren we kansen, ondersteuning, publiciteit
-    en een platform vanuit onze verschillende labels: Dutch Design Week, Dutch Design
-    Awards, World Design Embassies en What if Lab. We stellen onszelf daarbij altijd een
-    dubbele opgave: We versterken de positie en betekenis van Nederlandse ontwerpers en we
-    laten zien hoe ontwerpers wereldwijd vormgeven aan een positieve toekomst.
+    Dutch Design Foundation (DDF) offers a platform to designers who want to make the
+    world a better place. Based on this principle, we create opportunities, support,
+    publicity and a platform through our various labels: Dutch Design Week, Dutch
+    Design Awards, World Design Embassies and What if Lab. DDF always has a double
+    objective: to strengthen the position and meaning of Dutch designers and to show
+    how designers around the world are shaping a positive future.
 </p>
-<h3 class="hidden error">Er heeft zich een fout voorgedaan, je voorkeuren zijn niet opgeslagen.</h3>
+<h3 class="hidden error">An error occurred, Your preferences have not been saved.</h3>
 <p>
-    Ik wil graag op de hoogte blijven van:
+    I would like to stay up-to-date on:
 </p>
 <form action="http://cloud.updates.dutchdesignfoundation.com/preference-handler" method="post" class="preferences-form">
     <input type="hidden" id="refId" name="refId" value="%%=v(@prefid)=%%">
@@ -274,12 +274,12 @@ set @Language = field(@infoRow,"Language__c")
                     <td>
                         <input type="radio" %%=v(Iif(@DutchDesignFoundation == 'Yes', 'checked', ''))=%% name="Dutch_Design_Foundation__c" id="Dutch_Design_Foundation__c_yes"
                         value="Yes" onchange="isFormFilled()">
-                        <label for="Dutch_Design_Foundation__c_yes" style="margin-right: 10px;">Ja</label>
+                        <label for="Dutch_Design_Foundation__c_yes" style="margin-right: 10px;">Yes</label>
                     </td>
                     <td>
                         <input type="radio" %%=v(Iif(@DutchDesignFoundation == 'No', 'checked', ''))=%% name="Dutch_Design_Foundation__c" id="Dutch_Design_Foundation__c_no"
                         value="No" onchange="isFormFilled()">
-                        <label for="Dutch_Design_Foundation__c_no" style="margin-right: 10px;">Neen</label>
+                        <label for="Dutch_Design_Foundation__c_no" style="margin-right: 10px;">No</label>
                     </td>
                 </tr>
                 </tbody>
@@ -295,12 +295,12 @@ set @Language = field(@infoRow,"Language__c")
                     <td>
                         <input type="radio" %%=v(Iif(@DutchDesignWeek == 'Yes', 'checked', ''))=%% name="Dutch_Design_Week__c" id="Dutch_Design_Week__c_yes"
                         value="Yes" onchange="showHide([document.getElementById('designWeekExtra')], true);isFormFilled()">
-                        <label for="Dutch_Design_Week__c_yes" style="margin-right: 10px;">Ja</label>
+                        <label for="Dutch_Design_Week__c_yes" style="margin-right: 10px;">Yes</label>
                     </td>
                     <td>
                         <input type="radio" %%=v(Iif(@DutchDesignWeek == 'No', 'checked', ''))=%% name="Dutch_Design_Week__c" id="Dutch_Design_Week__c_no" value="No"
                         onchange="showHide([document.getElementById('designWeekExtra')], false);isFormFilled()">
-                        <label for="Dutch_Design_Week__c_no" style="margin-right: 10px;">Neen</label>
+                        <label for="Dutch_Design_Week__c_no" style="margin-right: 10px;">No</label>
                     </td>
                 </tr>
                 </tbody>
@@ -319,29 +319,29 @@ set @Language = field(@infoRow,"Language__c")
                      preserveAspectRatio="xMidYMid meet" viewBox="0 0 8 8">
                     <path d="M0 2l4 4l4-4H0z" fill="#000000"/>
                 </svg>
-                In welke onderwerpen ben je het meest geïnteresseerd?
+                What topics are you most interested in?
             </div>
             <div style="margin: 1rem 0 1rem 1rem;">
                 <div id="designWeekExtraContent" style="display: none;">
                     <div>
                         <input type="checkbox" %%=v(Iif(IndexOf(@DDWTopics,'Artistic')> 0, 'checked', ''))=%% name="DDW_Topics__c_art" value="Artistic exploration and training"
                         id="DDW_Topics__c_art">
-                        <label for="DDW_Topics__c_art">Artistieke verkenning en vorming</label>
+                        <label for="DDW_Topics__c_art">Artistic exploration and creation</label>
                     </div>
                     <div>
                         <input type="checkbox" %%=v(Iif(IndexOf(@DDWTopics,'Creative')> 0, 'checked', ''))=%% name="DDW_Topics__c_crea" value="Creative craftsmanship and product design"
                         id="DDW_Topics__c_crea">
-                        <label for="DDW_Topics__c_crea">Creatief vakmanschap en productontwerk</label>
+                        <label for="DDW_Topics__c_crea">Creative craftsmanship and product design</label>
                     </div>
                     <div>
                         <input type="checkbox" %%=v(Iif(IndexOf(@DDWTopics,'Innovative')> 0, 'checked', ''))=%% name="DDW_Topics__c_inno" value="Innovative solutions for todays world"
                         id="DDW_Topics__c_inno">
-                        <label for="DDW_Topics__c_inno">Innovatieve oplossingen voor de wereld van vandaag</label>
+                        <label for="DDW_Topics__c_inno">Innovative solutions for today’s world</label>
                     </div>
                     <div>
                         <input type="checkbox" %%=v(Iif(IndexOf(@DDWTopics,'Speculative')> 0, 'checked', ''))=%% name="DDW_Topics__c_specu" value="Speculative ideas for tomorrows world"
                         id="DDW_Topics__c_specu">
-                        <label for="DDW_Topics__c_specu">Speculatieve ideeën voor de wereld van morgen</label>
+                        <label for="DDW_Topics__c_specu">Speculative ideas for tomorrow’s world</label>
                     </div>
                 </div>
             </div>
@@ -356,12 +356,12 @@ set @Language = field(@infoRow,"Language__c")
                     <td>
                         <input type="radio" %%=v(Iif(@DutchDesignAwards == 'Yes', 'checked', ''))=%% name="Dutch_Design_Awards__c" id="Dutch_Design_Awards__c_yes"
                         value="Yes" onchange="showHide([document.getElementById('designAwardsExtra')], true);isFormFilled();">
-                        <label for="Dutch_Design_Awards__c_yes" style="margin-right: 10px;">Ja</label>
+                        <label for="Dutch_Design_Awards__c_yes" style="margin-right: 10px;">Yes</label>
                     </td>
                     <td>
                         <input type="radio" %%=v(Iif(@DutchDesignAwards == 'No', 'checked', ''))=%% name="Dutch_Design_Awards__c" id="Dutch_Design_Awards__c_no" value="No"
                         onchange="showHide([document.getElementById('designAwardsExtra')], false);isFormFilled();">
-                        <label for="Dutch_Design_Awards__c_no" style="margin-right: 10px;">Neen</label>
+                        <label for="Dutch_Design_Awards__c_no" style="margin-right: 10px;">No</label>
                     </td>
                 </tr>
                 </tbody>
@@ -380,7 +380,7 @@ set @Language = field(@infoRow,"Language__c")
                      preserveAspectRatio="xMidYMid meet" viewBox="0 0 8 8">
                     <path d="M0 2l4 4l4-4H0z" fill="#000000"/>
                 </svg>
-                In welke onderwerpen ben je het meest geïnteresseerd?
+                What topics are you most interested in?
             </div>
             <div style="margin: 1rem 0 1rem 1rem;">
                 <div id="designAwardsExtraContent" style="display: none;">
@@ -432,12 +432,12 @@ set @Language = field(@infoRow,"Language__c")
                     <td>
                         <input type="radio" %%=v(Iif(@WorldDesignEmbassies == 'Yes', 'checked', ''))=%% name="World_Design_Embassies__c" id="World_Design_Embassies__c_yes"
                         value="Yes" onchange="showHide([document.getElementById('designEmbassiesExtra')], true);isFormFilled()">
-                        <label for="World_Design_Embassies__c_yes" style="margin-right: 10px;">Ja</label>
+                        <label for="World_Design_Embassies__c_yes" style="margin-right: 10px;">Yes</label>
                     </td>
                     <td>
                         <input type="radio" %%=v(Iif(@WorldDesignEmbassies == 'No', 'checked', ''))=%% name="World_Design_Embassies__c" id="World_Design_Embassies__c_no" value="No"
                         onchange="showHide([document.getElementById('designEmbassiesExtra')], false);isFormFilled()">
-                        <label for="World_Design_Embassies__c_no" style="margin-right: 10px;">Neen</label>
+                        <label for="World_Design_Embassies__c_no" style="margin-right: 10px;">No</label>
                     </td>
                 </tr>
                 </tbody>
@@ -456,7 +456,7 @@ set @Language = field(@infoRow,"Language__c")
                      preserveAspectRatio="xMidYMid meet" viewBox="0 0 8 8">
                     <path d="M0 2l4 4l4-4H0z" fill="#000000"/>
                 </svg>
-                In welke onderwerpen ben je het meest geïnteresseerd?
+                What topics are you most interested in?
             </div>
             <div style="margin: 1rem 0 1rem 1rem;">
                 <div id="WorldDesignEmbassiesContent" style="display: none;">
@@ -508,12 +508,12 @@ set @Language = field(@infoRow,"Language__c")
                     <td>
                         <input type="radio" %%=v(Iif(@WhatIfLab == 'Yes', 'checked', ''))=%% name="What_if_Lab__c" id="What_if_Lab__c_yes"
                         value="Yes" onchange="isFormFilled()">
-                        <label for="What_if_Lab__c_yes" style="margin-right: 10px;">Ja</label>
+                        <label for="What_if_Lab__c_yes" style="margin-right: 10px;">Yes</label>
                     </td>
                     <td>
                         <input type="radio" %%=v(Iif(@WhatIfLab == 'No', 'checked', ''))=%% name="What_if_Lab__c" id="What_if_Lab__c_no"
                         value="No" onchange="isFormFilled()">
-                        <label for="What_if_Lab__c_no" style="margin-right: 10px;">Neen</label>
+                        <label for="What_if_Lab__c_no" style="margin-right: 10px;">No</label>
                     </td>
                 </tr>
                 </tbody>
@@ -521,15 +521,16 @@ set @Language = field(@infoRow,"Language__c")
         </fieldset>
     </div>
     <div>
-        <h4 style="margin-bottom: 5px;">Wil je niet langer nieuwsbrieven van ons ontvangen?</h4>
-        <input id="unsubBtn" class="submit-btn" type="button" value="Schrijf mij uit voor alles" style="font-size:23px; padding:10px 20px 10px 20px;
+        <h4 style="margin-bottom: 5px;">Would you no longer like to receive our emails?</h4>
+        <input id="unsubBtn" class="submit-btn" type="button" value="Unsubscribe to all" style="font-size:23px; padding:10px 20px 10px 20px;
         color:white;border:none;" onclick="unsub()">
     </div>
-    <input id="submitBtn" class="submit-btn" type="submit" value="Opslaan" disabled style="float:right; margin-right:2%; font-size:23px; padding:10px 20px 10px 20px; color:white; border:none;">
+    <input id="submitBtn" class="submit-btn" type="submit" value="Save" disabled style="float:right; margin-right:2%; font-size:23px; padding:10px 20px 10px 20px; color:white;
+    border:none;">
 </form>
 </div>
 %%[ else ]%%
-<h1>Gegevens niet gevonden.</h1>
+<h1>No Data found.</h1>
 %%[ endif ]%%
 <div class="success hidden">
     <table style="margin:40px auto 20px; line-height: 1">
@@ -545,13 +546,13 @@ set @Language = field(@infoRow,"Language__c")
         </tbody>
     </table>
     <h1 style="margin: auto">
-        Je voorkeuren zijn succesvol opgeslagen. Je mag deze pagina sluiten.
+        Your preferences have been saved. You can now close this page.
     </h1>
 </div>
 <script runat="server">
   } catch (err) {
     Variable.SetValue("@errorMessage", Stringify(err.message) + Stringify(err.description));
-    Write("Er heeft zich een fout voorgedaan.");
+    Write("An error has occurred.");
   }
 </script>
 <script runat="client">
@@ -570,7 +571,7 @@ set @Language = field(@infoRow,"Language__c")
     e.preventDefault();
     submitBtn.setAttribute("disabled", true);
     unsubBtn.setAttribute("disabled", true);
-    submitBtn.setAttribute("value", "Laden...");
+    submitBtn.setAttribute("value", "Loading...");
     submitBtn.classList.add('submit-btn__loading');
 
     var payload = {};
@@ -617,12 +618,11 @@ set @Language = field(@infoRow,"Language__c")
 
   function unsub() {
     submitBtn.setAttribute("disabled", true);
-    submitBtn.setAttribute("value", "Laden...");
+    submitBtn.setAttribute("value", "Loading...");
     submitBtn.classList.add('submit-btn__loading');
     unsubBtn.setAttribute("disabled", true);
 
     var payload = {};
-    var formData = new FormData(form);
     payload['DDW_Topics__c'] = '';
     payload['DDA_Topics__c'] = '';
     payload['WDE_Topics__c'] = '';
@@ -667,7 +667,7 @@ set @Language = field(@infoRow,"Language__c")
       errorMessage.classList.remove("hidden");
     }
     submitBtn.removeAttribute("disabled");
-    submitBtn.setAttribute("value", "Opslaan")
+    submitBtn.setAttribute("value", "Save")
     submitBtn.classList.remove('submit-btn__loading');
   }
 

@@ -674,10 +674,12 @@ set @Language = field(@infoRow,"Language__c")
   function isFormFilled() {
     var nbr_checked_radios = document.querySelectorAll('input[type=radio]:checked').length;
     var nbr_radios = document.querySelectorAll('input[type=radio]').length;
+    var button = document.querySelector('.submit-btn');
 
     if (nbr_checked_radios === (nbr_radios/2)) {
-      var button = document.querySelector('.submit-btn');
       button.disabled = false;
+    } else {
+      button.disabled = true;
     }
   }
 </script>

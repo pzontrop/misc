@@ -193,340 +193,346 @@ set @Language = field(@infoRow,"Language__c")
         <span style="color: #d9d9d9">NL / </span><a style="color: black;text-decoration: none; cursor: pointer"
                                                     onclick="window.location='http://cloud.updates.dutchdesignfoundation.com/contact-preferences-en'+window.location.search;">EN</a>
     </div>
-<table style="margin:40px auto 20px; line-height: 1">
-    <tbody>
-    <tr>
-        <td class="logo-icon">
-            <svg id="icon-logo" viewBox="0 0 35 25" width="75px">
-                <path fill="currentColor" fill-rule="evenodd" d="M0 0v5.358h14.006V25h5.369V5.358H29.63V25H35V0z"></path>
-            </svg>
-        </td>
-        <td class="logo-text">Dutch Design<br>Foundation</td>
-    </tr>
-    </tbody>
-</table>
-<p>
-    Welkom bij het preference centre van Dutch Design Foundation (DDF). Hieronder kun je je
-    voorkeuren doorgeven m.b.t. nieuwsbrieven van DDF en alle onderliggende labels. We zijn
-    benieuwd naar jouw interesses. Hoe specifieker je onderstaand formulier invult, hoe
-    relevanter wij onze content voor jou kunnen maken.
-</p>
-<div>
-    <table>
-    <tr>
-        <td>Voornaam:</td>
-        <td><input type="text" value="%%=v(@FirstName)=%%" readonly></td>
-    </tr>
-    <tr>
-        <td>Achternaam:</td>
-        <td><input type="text" value="%%=v(@LastName)=%%" readonly></td>
-    </tr>
-    <tr>
-        <td>E-mailadres:</td>
-        <td><input type="text" value="%%=v(@Email)=%%" readonly></td>
-    </tr>
-    <tr>
-        <td>Voorkeurstaal:</td>
-        <td><fieldset style="border: none; font-size:16px;">
-            <table role="presentation">
-                <tbody>
-                <tr>
-                    <td>
-                        <input type="radio" %%=v(Iif(@Language == 'Nederlands', 'checked', ''))=%% name="Language__c" id="Language_nederlands" value="Nederlands" disabled>
-                        <label for="Language_nederlands" style="margin-right: 10px;">Nederlands</label>
-                    </td>
-                    <td>
-                        <input type="radio" %%=v(Iif(@Language == 'English', 'checked', ''))=%% name="Language__c" id="Language_english" value="English" disabled>
-                        <label for="Language_english" style="margin-right: 10px;">Engels</label>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </fieldset>
-        </td>
-    </tr>
+    <table style="margin:40px auto 20px; line-height: 1">
+        <tbody>
+        <tr>
+            <td class="logo-icon">
+                <svg id="icon-logo" viewBox="0 0 35 25" width="75px">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 0v5.358h14.006V25h5.369V5.358H29.63V25H35V0z"></path>
+                </svg>
+            </td>
+            <td class="logo-text">Dutch Design<br>Foundation</td>
+        </tr>
+        </tbody>
     </table>
-</div>
-<p>
-    Dutch Design Foundation (DDF) biedt een podium aan ontwerpers die de wereld een betere
-    plek willen maken. Met dat als uitgangspunt realiseren we kansen, ondersteuning, publiciteit
-    en een platform vanuit onze verschillende labels: Dutch Design Week, Dutch Design
-    Awards, World Design Embassies en What if Lab. We stellen onszelf daarbij altijd een
-    dubbele opgave: We versterken de positie en betekenis van Nederlandse ontwerpers en we
-    laten zien hoe ontwerpers wereldwijd vormgeven aan een positieve toekomst.
-</p>
-<h3 class="hidden error">Er heeft zich een fout voorgedaan, je voorkeuren zijn niet opgeslagen.</h3>
-<p>
-    Ik wil graag op de hoogte blijven van:
-</p>
-<form action="http://cloud.updates.dutchdesignfoundation.com/preference-handler" method="post" class="preferences-form">
-    <input type="hidden" id="refId" name="refId" value="%%=v(@prefid)=%%">
-    <input type="hidden" id="subId" name="subId" value="%%=v(@subId)=%%">
-    <input type="hidden" id="job" name="job" value="%%=v(@job)=%%">
-    <input type="hidden" id="listId" name="listId" value="%%=v(@listId)=%%">
-
-    <div>
-        <h4 style="margin-bottom: 5px;">Dutch Design Foundation</h4>
-        <fieldset style="border: none;">
-            <table role="presentation" style="font-size:16px;">
-                <tbody>
+    <p>
+        Welkom bij het preference centre van Dutch Design Foundation (DDF). Hieronder kun je je
+        voorkeuren doorgeven m.b.t. nieuwsbrieven van DDF en alle onderliggende labels. We zijn
+        benieuwd naar jouw interesses. Hoe specifieker je onderstaand formulier invult, hoe
+        relevanter wij onze content voor jou kunnen maken.
+    </p>
+    <form action="http://cloud.updates.dutchdesignfoundation.com/preference-handler" method="post" class="preferences-form">
+        <input type="hidden" id="refId" name="refId" value="%%=v(@prefid)=%%">
+        <input type="hidden" id="subId" name="subId" value="%%=v(@subId)=%%">
+        <input type="hidden" id="job" name="job" value="%%=v(@job)=%%">
+        <input type="hidden" id="listId" name="listId" value="%%=v(@listId)=%%">
+        <div>
+            <table>
                 <tr>
+                    <td>Voornaam:</td>
+                    <td><input type="text" value="%%=v(@FirstName)=%%" readonly></td>
+                </tr>
+                <tr>
+                    <td>Achternaam:</td>
+                    <td><input type="text" value="%%=v(@LastName)=%%" readonly></td>
+                </tr>
+                <tr>
+                    <td>E-mailadres:</td>
+                    <td><input type="text" value="%%=v(@Email)=%%" readonly></td>
+                </tr>
+                <tr>
+                    <td>Voorkeurstaal:</td>
                     <td>
-                        <input type="radio" %%=v(Iif(@DutchDesignFoundation == 'Yes', 'checked', ''))=%% name="Dutch_Design_Foundation__c" id="Dutch_Design_Foundation__c_yes"
-                        value="Yes" onchange="isFormFilled()">
-                        <label for="Dutch_Design_Foundation__c_yes" style="margin-right: 10px;">Ja</label>
-                    </td>
-                    <td>
-                        <input type="radio" %%=v(Iif(@DutchDesignFoundation == 'No', 'checked', ''))=%% name="Dutch_Design_Foundation__c" id="Dutch_Design_Foundation__c_no"
-                        value="No" onchange="isFormFilled()">
-                        <label for="Dutch_Design_Foundation__c_no" style="margin-right: 10px;">Neen</label>
+                        <fieldset style="border: none; font-size:16px;">
+                            <table role="presentation">
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <input type="radio" %%=v(Iif(@Language == 'Nederlands', 'checked', ''))=%% name="Language__c" id="Language_nederlands" value="Nederlands">
+                                        <label for="Language_nederlands" style="margin-right: 10px;">Nederlands</label>
+                                    </td>
+                                    <td>
+                                        <input type="radio" %%=v(Iif(@Language == 'English', 'checked', ''))=%% name="Language__c" id="Language_english" value="English">
+                                        <label for="Language_english" style="margin-right: 10px;">Engels</label>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </fieldset>
                     </td>
                 </tr>
-                </tbody>
             </table>
-        </fieldset>
-    </div>
-    <div>
-        <h4 style="margin-bottom: 5px;">Dutch Design Week</h4>
-        <fieldset style="border: none;">
-            <table role="presentation" style="font-size:16px;">
-                <tbody>
-                <tr>
-                    <td>
-                        <input type="radio" %%=v(Iif(@DutchDesignWeek == 'Yes', 'checked', ''))=%% name="Dutch_Design_Week__c" id="Dutch_Design_Week__c_yes"
-                        value="Yes" onchange="showHide([document.getElementById('designWeekExtra')], true);isFormFilled()">
-                        <label for="Dutch_Design_Week__c_yes" style="margin-right: 10px;">Ja</label>
-                    </td>
-                    <td>
-                        <input type="radio" %%=v(Iif(@DutchDesignWeek == 'No', 'checked', ''))=%% name="Dutch_Design_Week__c" id="Dutch_Design_Week__c_no" value="No"
-                        onchange="showHide([document.getElementById('designWeekExtra')], false);isFormFilled()">
-                        <label for="Dutch_Design_Week__c_no" style="margin-right: 10px;">Neen</label>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </fieldset>
-        <div style="margin-left: 1rem; margin-top: 10px;%%=v(Iif(@DutchDesignWeek == 'yes', 'display:inline-block', 'display:none'))=%%" id="designWeekExtra">
-            <div onclick="showHide([document.getElementById('designWeekExtraContent'),
+        </div>
+        <p>
+            Dutch Design Foundation (DDF) biedt een podium aan ontwerpers die de wereld een betere
+            plek willen maken. Met dat als uitgangspunt realiseren we kansen, ondersteuning, publiciteit
+            en een platform vanuit onze verschillende labels: Dutch Design Week, Dutch Design
+            Awards, World Design Embassies en What if Lab. We stellen onszelf daarbij altijd een
+            dubbele opgave: We versterken de positie en betekenis van Nederlandse ontwerpers en we
+            laten zien hoe ontwerpers wereldwijd vormgeven aan een positieve toekomst.
+        </p>
+        <h3 class="hidden error">Er heeft zich een fout voorgedaan, je voorkeuren zijn niet opgeslagen.</h3>
+        <p>
+            Ik wil graag op de hoogte blijven van:
+        </p>
+        <div>
+            <h4 style="margin-bottom: 5px;">Dutch Design Foundation</h4>
+            <fieldset style="border: none;">
+                <table role="presentation" style="font-size:16px;">
+                    <tbody>
+                    <tr>
+                        <td>
+                            <input type="radio" %%=v(Iif(@DutchDesignFoundation == 'Yes', 'checked', ''))=%% name="Dutch_Design_Foundation__c" id="Dutch_Design_Foundation__c_yes"
+                            value="Yes" onchange="isFormFilled()">
+                            <label for="Dutch_Design_Foundation__c_yes" style="margin-right: 10px;">Ja</label>
+                        </td>
+                        <td>
+                            <input type="radio" %%=v(Iif(@DutchDesignFoundation == 'No', 'checked', ''))=%% name="Dutch_Design_Foundation__c" id="Dutch_Design_Foundation__c_no"
+                            value="No" onchange="isFormFilled()">
+                            <label for="Dutch_Design_Foundation__c_no" style="margin-right: 10px;">Neen</label>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+        </div>
+        <div>
+            <h4 style="margin-bottom: 5px;">Dutch Design Week</h4>
+            <fieldset style="border: none;">
+                <table role="presentation" style="font-size:16px;">
+                    <tbody>
+                    <tr>
+                        <td>
+                            <input type="radio" %%=v(Iif(@DutchDesignWeek == 'Yes', 'checked', ''))=%% name="Dutch_Design_Week__c" id="Dutch_Design_Week__c_yes"
+                            value="Yes" onchange="showHide([document.getElementById('designWeekExtra')], true);isFormFilled()">
+                            <label for="Dutch_Design_Week__c_yes" style="margin-right: 10px;">Ja</label>
+                        </td>
+                        <td>
+                            <input type="radio" %%=v(Iif(@DutchDesignWeek == 'No', 'checked', ''))=%% name="Dutch_Design_Week__c" id="Dutch_Design_Week__c_no" value="No"
+                            onchange="showHide([document.getElementById('designWeekExtra')], false);isFormFilled()">
+                            <label for="Dutch_Design_Week__c_no" style="margin-right: 10px;">Neen</label>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+            <div style="margin-left: 1rem; margin-top: 10px;%%=v(Iif(@DutchDesignWeek == 'yes', 'display:inline-block', 'display:none'))=%%" id="designWeekExtra">
+                <div onclick="showHide([document.getElementById('designWeekExtraContent'),
             document.getElementById('weekCarretRight'), document.getElementById('weekCarretDown')])">
-                <svg id="weekCarretRight" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em"
-                     height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet"
-                     viewBox="0 0 8 8">
-                    <path d="M2 0v8l4-4l-4-4z" fill="#000000"/>
-                </svg>
-                <svg id="weekCarretDown" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em"
-                     height="1em" style="display:none; -ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);"
-                     preserveAspectRatio="xMidYMid meet" viewBox="0 0 8 8">
-                    <path d="M0 2l4 4l4-4H0z" fill="#000000"/>
-                </svg>
-                In welke onderwerpen ben je het meest geïnteresseerd?
-            </div>
-            <div style="margin: 1rem 0 1rem 1rem;">
-                <div id="designWeekExtraContent" style="display: none;">
-                    <div>
-                        <input type="checkbox" %%=v(Iif(IndexOf(@DDWTopics,'Artistic')> 0, 'checked', ''))=%% name="DDW_Topics__c_art" value="Artistic exploration and training"
-                        id="DDW_Topics__c_art">
-                        <label for="DDW_Topics__c_art">Artistieke verkenning en vorming</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" %%=v(Iif(IndexOf(@DDWTopics,'Creative')> 0, 'checked', ''))=%% name="DDW_Topics__c_crea" value="Creative craftsmanship and product design"
-                        id="DDW_Topics__c_crea">
-                        <label for="DDW_Topics__c_crea">Creatief vakmanschap en productontwerk</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" %%=v(Iif(IndexOf(@DDWTopics,'Innovative')> 0, 'checked', ''))=%% name="DDW_Topics__c_inno" value="Innovative solutions for todays world"
-                        id="DDW_Topics__c_inno">
-                        <label for="DDW_Topics__c_inno">Innovatieve oplossingen voor de wereld van vandaag</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" %%=v(Iif(IndexOf(@DDWTopics,'Speculative')> 0, 'checked', ''))=%% name="DDW_Topics__c_specu" value="Speculative ideas for tomorrows world"
-                        id="DDW_Topics__c_specu">
-                        <label for="DDW_Topics__c_specu">Speculatieve ideeën voor de wereld van morgen</label>
+                    <svg id="weekCarretRight" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em"
+                         height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet"
+                         viewBox="0 0 8 8">
+                        <path d="M2 0v8l4-4l-4-4z" fill="#000000"/>
+                    </svg>
+                    <svg id="weekCarretDown" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em"
+                         height="1em" style="display:none; -ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);"
+                         preserveAspectRatio="xMidYMid meet" viewBox="0 0 8 8">
+                        <path d="M0 2l4 4l4-4H0z" fill="#000000"/>
+                    </svg>
+                    In welke onderwerpen ben je het meest geïnteresseerd?
+                </div>
+                <div style="margin: 1rem 0 1rem 1rem;">
+                    <div id="designWeekExtraContent" style="display: none;">
+                        <div>
+                            <input type="checkbox" %%=v(Iif(IndexOf(@DDWTopics,'Artistic')> 0, 'checked', ''))=%% name="DDW_Topics__c_art" value="Artistic exploration and training"
+                            id="DDW_Topics__c_art">
+                            <label for="DDW_Topics__c_art">Artistieke verkenning en vorming</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" %%=v(Iif(IndexOf(@DDWTopics,'Creative')> 0, 'checked', ''))=%% name="DDW_Topics__c_crea" value="Creative craftsmanship and
+                            product design"
+                            id="DDW_Topics__c_crea">
+                            <label for="DDW_Topics__c_crea">Creatief vakmanschap en productontwerk</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" %%=v(Iif(IndexOf(@DDWTopics,'Innovative')> 0, 'checked', ''))=%% name="DDW_Topics__c_inno" value="Innovative solutions for todays
+                            world"
+                            id="DDW_Topics__c_inno">
+                            <label for="DDW_Topics__c_inno">Innovatieve oplossingen voor de wereld van vandaag</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" %%=v(Iif(IndexOf(@DDWTopics,'Speculative')> 0, 'checked', ''))=%% name="DDW_Topics__c_specu" value="Speculative ideas for
+                            tomorrows world"
+                            id="DDW_Topics__c_specu">
+                            <label for="DDW_Topics__c_specu">Speculatieve ideeën voor de wereld van morgen</label>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div>
-        <h4 style="margin-bottom: 5px;">Dutch Design Awards</h4>
-        <fieldset style="border: none;">
-            <table role="presentation" style="font-size:16px;">
-                <tbody>
-                <tr>
-                    <td>
-                        <input type="radio" %%=v(Iif(@DutchDesignAwards == 'Yes', 'checked', ''))=%% name="Dutch_Design_Awards__c" id="Dutch_Design_Awards__c_yes"
-                        value="Yes" onchange="showHide([document.getElementById('designAwardsExtra')], true);isFormFilled();">
-                        <label for="Dutch_Design_Awards__c_yes" style="margin-right: 10px;">Ja</label>
-                    </td>
-                    <td>
-                        <input type="radio" %%=v(Iif(@DutchDesignAwards == 'No', 'checked', ''))=%% name="Dutch_Design_Awards__c" id="Dutch_Design_Awards__c_no" value="No"
-                        onchange="showHide([document.getElementById('designAwardsExtra')], false);isFormFilled();">
-                        <label for="Dutch_Design_Awards__c_no" style="margin-right: 10px;">Neen</label>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </fieldset>
-        <div style="margin-left: 1rem; margin-top: 10px;%%=v(Iif(@DutchDesignAwards == 'yes', 'display:inline-block', 'display:none'))=%%" id="designAwardsExtra">
-            <div onclick="showHide([document.getElementById('designAwardsExtraContent'),
+        <div>
+            <h4 style="margin-bottom: 5px;">Dutch Design Awards</h4>
+            <fieldset style="border: none;">
+                <table role="presentation" style="font-size:16px;">
+                    <tbody>
+                    <tr>
+                        <td>
+                            <input type="radio" %%=v(Iif(@DutchDesignAwards == 'Yes', 'checked', ''))=%% name="Dutch_Design_Awards__c" id="Dutch_Design_Awards__c_yes"
+                            value="Yes" onchange="showHide([document.getElementById('designAwardsExtra')], true);isFormFilled();">
+                            <label for="Dutch_Design_Awards__c_yes" style="margin-right: 10px;">Ja</label>
+                        </td>
+                        <td>
+                            <input type="radio" %%=v(Iif(@DutchDesignAwards == 'No', 'checked', ''))=%% name="Dutch_Design_Awards__c" id="Dutch_Design_Awards__c_no" value="No"
+                            onchange="showHide([document.getElementById('designAwardsExtra')], false);isFormFilled();">
+                            <label for="Dutch_Design_Awards__c_no" style="margin-right: 10px;">Neen</label>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+            <div style="margin-left: 1rem; margin-top: 10px;%%=v(Iif(@DutchDesignAwards == 'yes', 'display:inline-block', 'display:none'))=%%" id="designAwardsExtra">
+                <div onclick="showHide([document.getElementById('designAwardsExtraContent'),
             document.getElementById('awardCarretRight'), document.getElementById('awardCarretDown')])">
-                <svg id="awardCarretRight" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em"
-                     height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet"
-                     viewBox="0 0 8 8">
-                    <path d="M2 0v8l4-4l-4-4z" fill="#000000"/>
-                </svg>
-                <svg id="awardCarretDown" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em"
-                     height="1em" style="display:none; -ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);"
-                     preserveAspectRatio="xMidYMid meet" viewBox="0 0 8 8">
-                    <path d="M0 2l4 4l4-4H0z" fill="#000000"/>
-                </svg>
-                In welke onderwerpen ben je het meest geïnteresseerd?
-            </div>
-            <div style="margin: 1rem 0 1rem 1rem;">
-                <div id="designAwardsExtraContent" style="display: none;">
-                    <div>
-                        <input type="checkbox" %%=v(Iif(IndexOf(@DDATopics,'Product')> 0, 'checked', ''))=%% name="DDA_Topics__c_prod" value="Product"
-                        id="DDA_Topics__c_prod">
-                        <label for="DDA_Topics__c_prod">Product</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" %%=v(Iif(IndexOf(@DDATopics,'Habitat')> 0, 'checked', ''))=%% name="DDA_Topics__c_hab" value="Habitat"
-                        id="DDA_Topics__c_hab">
-                        <label for="DDA_Topics__c_hab">Habitat</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" %%=v(Iif(IndexOf(@DDATopics,'Communication')> 0, 'checked', ''))=%% name="DDA_Topics__c_comm" value="Communication"
-                        id="DDA_Topics__c_comm">
-                        <label for="DDA_Topics__c_comm">Communication</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" %%=v(Iif(IndexOf(@DDATopics,'Fashion')> 0, 'checked', ''))=%% name="DDA_Topics__c_fash" value="Fashion"
-                        id="DDA_Topics__c_fash">
-                        <label for="DDA_Topics__c_fash">Fashion</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" %%=v(Iif(IndexOf(@DDATopics,'Design Research')> 0, 'checked', ''))=%% name="DDA_Topics__c_desr" value="Design Research"
-                        id="DDA_Topics__c_desr">
-                        <label for="DDA_Topics__c_desr">Design Research</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" %%=v(Iif(IndexOf(@DDATopics,'Data & Interaction')> 0, 'checked', ''))=%% name="DDA_Topics__c_di" value="Data & Interaction"
-                        id="DDA_Topics__c_di">
-                        <label for="DDA_Topics__c_di">Data & Interaction</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" %%=v(Iif(IndexOf(@DDATopics,'Best Commissioning')> 0, 'checked', ''))=%% name="DDA_Topics__c_bcm" value="Best Commissioning"
-                        id="DDA_Topics__c_bcm">
-                        <label for="DDA_Topics__c_bcm">Best Commissioning</label>
+                    <svg id="awardCarretRight" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em"
+                         height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet"
+                         viewBox="0 0 8 8">
+                        <path d="M2 0v8l4-4l-4-4z" fill="#000000"/>
+                    </svg>
+                    <svg id="awardCarretDown" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em"
+                         height="1em" style="display:none; -ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);"
+                         preserveAspectRatio="xMidYMid meet" viewBox="0 0 8 8">
+                        <path d="M0 2l4 4l4-4H0z" fill="#000000"/>
+                    </svg>
+                    In welke onderwerpen ben je het meest geïnteresseerd?
+                </div>
+                <div style="margin: 1rem 0 1rem 1rem;">
+                    <div id="designAwardsExtraContent" style="display: none;">
+                        <div>
+                            <input type="checkbox" %%=v(Iif(IndexOf(@DDATopics,'Product')> 0, 'checked', ''))=%% name="DDA_Topics__c_prod" value="Product"
+                            id="DDA_Topics__c_prod">
+                            <label for="DDA_Topics__c_prod">Product</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" %%=v(Iif(IndexOf(@DDATopics,'Habitat')> 0, 'checked', ''))=%% name="DDA_Topics__c_hab" value="Habitat"
+                            id="DDA_Topics__c_hab">
+                            <label for="DDA_Topics__c_hab">Habitat</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" %%=v(Iif(IndexOf(@DDATopics,'Communication')> 0, 'checked', ''))=%% name="DDA_Topics__c_comm" value="Communication"
+                            id="DDA_Topics__c_comm">
+                            <label for="DDA_Topics__c_comm">Communication</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" %%=v(Iif(IndexOf(@DDATopics,'Fashion')> 0, 'checked', ''))=%% name="DDA_Topics__c_fash" value="Fashion"
+                            id="DDA_Topics__c_fash">
+                            <label for="DDA_Topics__c_fash">Fashion</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" %%=v(Iif(IndexOf(@DDATopics,'Design Research')> 0, 'checked', ''))=%% name="DDA_Topics__c_desr" value="Design Research"
+                            id="DDA_Topics__c_desr">
+                            <label for="DDA_Topics__c_desr">Design Research</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" %%=v(Iif(IndexOf(@DDATopics,'Data & Interaction')> 0, 'checked', ''))=%% name="DDA_Topics__c_di" value="Data & Interaction"
+                            id="DDA_Topics__c_di">
+                            <label for="DDA_Topics__c_di">Data & Interaction</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" %%=v(Iif(IndexOf(@DDATopics,'Best Commissioning')> 0, 'checked', ''))=%% name="DDA_Topics__c_bcm" value="Best Commissioning"
+                            id="DDA_Topics__c_bcm">
+                            <label for="DDA_Topics__c_bcm">Best Commissioning</label>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div>
-        <h4 style="margin-bottom: 5px;">World Design Embassies</h4>
-        <fieldset style="border: none;">
-            <table role="presentation" style="font-size:16px;">
-                <tbody>
-                <tr>
-                    <td>
-                        <input type="radio" %%=v(Iif(@WorldDesignEmbassies == 'Yes', 'checked', ''))=%% name="World_Design_Embassies__c" id="World_Design_Embassies__c_yes"
-                        value="Yes" onchange="showHide([document.getElementById('designEmbassiesExtra')], true);isFormFilled()">
-                        <label for="World_Design_Embassies__c_yes" style="margin-right: 10px;">Ja</label>
-                    </td>
-                    <td>
-                        <input type="radio" %%=v(Iif(@WorldDesignEmbassies == 'No', 'checked', ''))=%% name="World_Design_Embassies__c" id="World_Design_Embassies__c_no" value="No"
-                        onchange="showHide([document.getElementById('designEmbassiesExtra')], false);isFormFilled()">
-                        <label for="World_Design_Embassies__c_no" style="margin-right: 10px;">Neen</label>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </fieldset>
-        <div style="margin-left: 1rem; margin-top: 10px;%%=v(Iif(@WorldDesignEmbassies == 'yes', 'display:inline-block', 'display:none'))=%%" id="designEmbassiesExtra">
-            <div onclick="showHide([document.getElementById('WorldDesignEmbassiesContent'),
+        <div>
+            <h4 style="margin-bottom: 5px;">World Design Embassies</h4>
+            <fieldset style="border: none;">
+                <table role="presentation" style="font-size:16px;">
+                    <tbody>
+                    <tr>
+                        <td>
+                            <input type="radio" %%=v(Iif(@WorldDesignEmbassies == 'Yes', 'checked', ''))=%% name="World_Design_Embassies__c" id="World_Design_Embassies__c_yes"
+                            value="Yes" onchange="showHide([document.getElementById('designEmbassiesExtra')], true);isFormFilled()">
+                            <label for="World_Design_Embassies__c_yes" style="margin-right: 10px;">Ja</label>
+                        </td>
+                        <td>
+                            <input type="radio" %%=v(Iif(@WorldDesignEmbassies == 'No', 'checked', ''))=%% name="World_Design_Embassies__c" id="World_Design_Embassies__c_no"
+                            value="No"
+                            onchange="showHide([document.getElementById('designEmbassiesExtra')], false);isFormFilled()">
+                            <label for="World_Design_Embassies__c_no" style="margin-right: 10px;">Neen</label>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+            <div style="margin-left: 1rem; margin-top: 10px;%%=v(Iif(@WorldDesignEmbassies == 'yes', 'display:inline-block', 'display:none'))=%%" id="designEmbassiesExtra">
+                <div onclick="showHide([document.getElementById('WorldDesignEmbassiesContent'),
             document.getElementById('embassiesCarretRight'), document.getElementById('embassiesCarretDown')])">
-                <svg id="embassiesCarretRight" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em"
-                     height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet"
-                     viewBox="0 0 8 8">
-                    <path d="M2 0v8l4-4l-4-4z" fill="#000000"/>
-                </svg>
-                <svg id="embassiesCarretDown" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em"
-                     height="1em" style="display:none; -ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);"
-                     preserveAspectRatio="xMidYMid meet" viewBox="0 0 8 8">
-                    <path d="M0 2l4 4l4-4H0z" fill="#000000"/>
-                </svg>
-                In welke onderwerpen ben je het meest geïnteresseerd?
-            </div>
-            <div style="margin: 1rem 0 1rem 1rem;">
-                <div id="WorldDesignEmbassiesContent" style="display: none;">
-                    <div>
-                        <input type="checkbox" %%=v(Iif(IndexOf(@WDETopics,'Safety')> 0, 'checked', ''))=%% name="WDE_Topics__c_saf" value="Safety"
-                        id="WDE_Topics__c_saf">
-                        <label for="WDE_Topics__c_saf">Safety</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" %%=v(Iif(IndexOf(@WDETopics,'Mobility')> 0, 'checked', ''))=%% name="WDE_Topics__c_mob" value="Mobility"
-                        id="WDE_Topics__c_mob">
-                        <label for="WDE_Topics__c_mob">Mobility</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" %%=v(Iif(IndexOf(@WDETopics,'Water')> 0, 'checked', ''))=%% name="WDE_Topics__c_wat" value="Water"
-                        id="WDE_Topics__c_wat">
-                        <label for="WDE_Topics__c_wat">Water</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" %%=v(Iif(IndexOf(@WDETopics,'Rethinking Plastic')> 0, 'checked', ''))=%% name="WDE_Topics__c_plas" value="Rethinking Plastic"
-                        id="WDE_Topics__c_plas">
-                        <label for="WDE_Topics__c_plas">Rethinking Plastic</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" %%=v(Iif(IndexOf(@WDETopics,'Health')> 0, 'checked', ''))=%% name="WDE_Topics__c_heal" value="Health"
-                        id="WDE_Topics__c_heal">
-                        <label for="WDE_Topics__c_heal">Health</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" %%=v(Iif(IndexOf(@WDETopics,'Biobased Building')> 0, 'checked', ''))=%% name="WDE_Topics__c_circ" value="Circular & Biobased Building"
-                        id="WDE_Topics__c_circ">
-                        <label for="WDE_Topics__c_circ">Circular & Biobased Building</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" %%=v(Iif(IndexOf(@WDETopics,'Food')> 0, 'checked', ''))=%% name="WDE_Topics__c_food" value="Food"
-                        id="WDE_Topics__c_food">
-                        <label for="WDE_Topics__c_food">Food</label>
+                    <svg id="embassiesCarretRight" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em"
+                         height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet"
+                         viewBox="0 0 8 8">
+                        <path d="M2 0v8l4-4l-4-4z" fill="#000000"/>
+                    </svg>
+                    <svg id="embassiesCarretDown" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em"
+                         height="1em" style="display:none; -ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);"
+                         preserveAspectRatio="xMidYMid meet" viewBox="0 0 8 8">
+                        <path d="M0 2l4 4l4-4H0z" fill="#000000"/>
+                    </svg>
+                    In welke onderwerpen ben je het meest geïnteresseerd?
+                </div>
+                <div style="margin: 1rem 0 1rem 1rem;">
+                    <div id="WorldDesignEmbassiesContent" style="display: none;">
+                        <div>
+                            <input type="checkbox" %%=v(Iif(IndexOf(@WDETopics,'Safety')> 0, 'checked', ''))=%% name="WDE_Topics__c_saf" value="Safety"
+                            id="WDE_Topics__c_saf">
+                            <label for="WDE_Topics__c_saf">Safety</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" %%=v(Iif(IndexOf(@WDETopics,'Mobility')> 0, 'checked', ''))=%% name="WDE_Topics__c_mob" value="Mobility"
+                            id="WDE_Topics__c_mob">
+                            <label for="WDE_Topics__c_mob">Mobility</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" %%=v(Iif(IndexOf(@WDETopics,'Water')> 0, 'checked', ''))=%% name="WDE_Topics__c_wat" value="Water"
+                            id="WDE_Topics__c_wat">
+                            <label for="WDE_Topics__c_wat">Water</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" %%=v(Iif(IndexOf(@WDETopics,'Rethinking Plastic')> 0, 'checked', ''))=%% name="WDE_Topics__c_plas" value="Rethinking Plastic"
+                            id="WDE_Topics__c_plas">
+                            <label for="WDE_Topics__c_plas">Rethinking Plastic</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" %%=v(Iif(IndexOf(@WDETopics,'Health')> 0, 'checked', ''))=%% name="WDE_Topics__c_heal" value="Health"
+                            id="WDE_Topics__c_heal">
+                            <label for="WDE_Topics__c_heal">Health</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" %%=v(Iif(IndexOf(@WDETopics,'Biobased Building')> 0, 'checked', ''))=%% name="WDE_Topics__c_circ" value="Circular & Biobased
+                            Building"
+                            id="WDE_Topics__c_circ">
+                            <label for="WDE_Topics__c_circ">Circular & Biobased Building</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" %%=v(Iif(IndexOf(@WDETopics,'Food')> 0, 'checked', ''))=%% name="WDE_Topics__c_food" value="Food"
+                            id="WDE_Topics__c_food">
+                            <label for="WDE_Topics__c_food">Food</label>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div>
-        <h4 style="margin-bottom: 5px;">What if Lab</h4>
-        <fieldset style="border: none;">
-            <table role="presentation" style="font-size:16px;">
-                <tbody>
-                <tr>
-                    <td>
-                        <input type="radio" %%=v(Iif(@WhatIfLab == 'Yes', 'checked', ''))=%% name="What_if_Lab__c" id="What_if_Lab__c_yes"
-                        value="Yes" onchange="isFormFilled()">
-                        <label for="What_if_Lab__c_yes" style="margin-right: 10px;">Ja</label>
-                    </td>
-                    <td>
-                        <input type="radio" %%=v(Iif(@WhatIfLab == 'No', 'checked', ''))=%% name="What_if_Lab__c" id="What_if_Lab__c_no"
-                        value="No" onchange="isFormFilled()">
-                        <label for="What_if_Lab__c_no" style="margin-right: 10px;">Neen</label>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </fieldset>
-    </div>
-    <div>
-        <h4 style="margin-bottom: 5px;">Wil je niet langer nieuwsbrieven van ons ontvangen?</h4>
-        <input id="unsubBtn" class="submit-btn" type="button" value="Schrijf mij uit voor alles" style="font-size:23px; padding:10px 20px 10px 20px;
+        <div>
+            <h4 style="margin-bottom: 5px;">What if Lab</h4>
+            <fieldset style="border: none;">
+                <table role="presentation" style="font-size:16px;">
+                    <tbody>
+                    <tr>
+                        <td>
+                            <input type="radio" %%=v(Iif(@WhatIfLab == 'Yes', 'checked', ''))=%% name="What_if_Lab__c" id="What_if_Lab__c_yes"
+                            value="Yes" onchange="isFormFilled()">
+                            <label for="What_if_Lab__c_yes" style="margin-right: 10px;">Ja</label>
+                        </td>
+                        <td>
+                            <input type="radio" %%=v(Iif(@WhatIfLab == 'No', 'checked', ''))=%% name="What_if_Lab__c" id="What_if_Lab__c_no"
+                            value="No" onchange="isFormFilled()">
+                            <label for="What_if_Lab__c_no" style="margin-right: 10px;">Neen</label>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+        </div>
+        <div>
+            <h4 style="margin-bottom: 5px;">Wil je niet langer nieuwsbrieven van ons ontvangen?</h4>
+            <input id="unsubBtn" class="submit-btn" type="button" value="Schrijf mij uit voor alles" style="font-size:23px; padding:10px 20px 10px 20px;
         color:white;border:none;" onclick="unsub()">
-    </div>
-    <input id="submitBtn" class="submit-btn" type="submit" value="Opslaan" disabled style="float:right; margin-right:2%; font-size:23px; padding:10px 20px 10px 20px; color:white; border:none;">
-</form>
+        </div>
+        <input id="submitBtn" class="submit-btn" type="submit" value="Opslaan" disabled
+               style="float:right; margin-right:2%; font-size:23px; padding:10px 20px 10px 20px; color:white; border:none;">
+    </form>
 </div>
 %%[ else ]%%
 <h1>Gegevens niet gevonden.</h1>
@@ -549,7 +555,9 @@ set @Language = field(@infoRow,"Language__c")
     </h1>
 </div>
 <script runat="server">
-  } catch (err) {
+  } catch
+  (err)
+  {
     Variable.SetValue("@errorMessage", Stringify(err.message) + Stringify(err.description));
     Write("Er heeft zich een fout voorgedaan.");
   }
@@ -632,7 +640,7 @@ set @Language = field(@infoRow,"Language__c")
     payload['What_if_Lab__c'] = 'No';
     payload['World_Design_Embassies__c'] = 'No';
     for (var pair of formData.entries()) {
-      if (pair[0].startsWith('refId') ||pair[0].startsWith('subId') ||pair[0].startsWith('job') ||pair[0].startsWith('listId')) {
+      if (pair[0].startsWith('refId') || pair[0].startsWith('subId') || pair[0].startsWith('job') || pair[0].startsWith('listId')) {
         payload[pair[0]] = pair[1];
       }
     }
@@ -676,7 +684,7 @@ set @Language = field(@infoRow,"Language__c")
     var nbr_radios = document.querySelectorAll('input[type=radio]').length;
     var button = document.querySelector('.submit-btn');
 
-    if (nbr_checked_radios === (nbr_radios/2)) {
+    if (nbr_checked_radios === (nbr_radios / 2)) {
       button.disabled = false;
     } else {
       button.disabled = true;

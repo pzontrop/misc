@@ -138,7 +138,7 @@
   try {
 </script>
 %%[
-var @rows, @row, @rowCount, @prefid, @subId, @job, @listId, @infoRows, @infoRow, @infoRowCount
+var @rows, @row, @rowCount, @prefid, @subId, @job, @listId, @infoRows, @infoRow, @infoRowCount, @subType
 
 set @prefid = Base64Decode(RequestParameter('prefid'),'UTF-8');
 set @subId = Base64Decode(RequestParameter('subid'),'UTF-8');
@@ -151,10 +151,12 @@ set @rowCount = rowcount(@rows)
 
 set @infoRows = RetrieveSalesforceObjects("Lead", "FirstName,LastName,Email,Language__c","Id","=",@subId)
 set @infoRowCount = rowcount(@infoRows)
+set @subType = "Lead"
 
 if @infoRowCount < 1 then
 set @infoRows = RetrieveSalesforceObjects("Contact", "FirstName,LastName,Email,Language__c","Id","=",@subId)
 set @infoRowCount = rowcount(@infoRows)
+set @subType = "Contact"
 endif
 
 if @rowCount > 0 and @infoRowCount > 0 then
@@ -216,19 +218,20 @@ set @Language = field(@infoRow,"Language__c")
         <input type="hidden" id="subId" name="subId" value="%%=v(@subId)=%%">
         <input type="hidden" id="job" name="job" value="%%=v(@job)=%%">
         <input type="hidden" id="listId" name="listId" value="%%=v(@listId)=%%">
+        <input type="hidden" id="subType" name="subType" value="%%=v(@subType)=%%">
         <div>
             <table>
                 <tr>
                     <td>Voornaam:</td>
-                    <td><input type="text" value="%%=v(@FirstName)=%%" readonly></td>
+                    <td>%%=v(@FirstName)=%%</td>
                 </tr>
                 <tr>
                     <td>Achternaam:</td>
-                    <td><input type="text" value="%%=v(@LastName)=%%" readonly></td>
+                    <td>%%=v(@LastName)=%%</td>
                 </tr>
                 <tr>
                     <td>E-mailadres:</td>
-                    <td><input type="text" value="%%=v(@Email)=%%" readonly></td>
+                    <td>%%=v(@Email)=%%</td>
                 </tr>
                 <tr>
                     <td>Voorkeurstaal:</td>
@@ -640,7 +643,8 @@ set @Language = field(@infoRow,"Language__c")
     payload['What_if_Lab__c'] = 'No';
     payload['World_Design_Embassies__c'] = 'No';
     for (var pair of formData.entries()) {
-      if (pair[0].startsWith('refId') || pair[0].startsWith('subId') || pair[0].startsWith('job') || pair[0].startsWith('listId')) {
+      if (pair[0].startsWith('refId') || pair[0].startsWith('subId') || pair[0].startsWith('job') || pair[0].startsWith('listId') || pair[0].startsWith('subType') ||
+        pair[0].startsWith('Language__c')) {
         payload[pair[0]] = pair[1];
       }
     }
@@ -682,7 +686,7 @@ set @Language = field(@infoRow,"Language__c")
   function isFormFilled() {
     var nbr_checked_radios = document.querySelectorAll('input[type=radio]:checked').length;
     var nbr_radios = document.querySelectorAll('input[type=radio]').length;
-    var button = document.querySelector('.submit-btn');
+    var button = document.querySelector('#submitBtn');
 
     if (nbr_checked_radios === (nbr_radios / 2)) {
       button.disabled = false;
@@ -690,6 +694,7 @@ set @Language = field(@infoRow,"Language__c")
       button.disabled = true;
     }
   }
+  isFormFilled();
 </script>
 </body>
 </html>

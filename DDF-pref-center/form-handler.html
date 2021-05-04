@@ -38,9 +38,10 @@
       };
 
       if (parsedData.refId && parsedData.refId.length > 0) {
-        var dataArray = formatProps(parsedData);
-        var updateSFResults = updateSF(parsedData.refId, dataArray);
-        updateLanguage(parsedData.subId, parsedData); //fail silently
+        var propArrays = formatProps(parsedData);
+        var updateSFResults = updateSF(parsedData.refId, propArrays.toUpdate);
+        updateLanguage(parsedData.subId, propArrays.toUpdate); //fail silently
+        updateSFToRemove(parsedData.refId, propArrays.toRemove); //fail silently
 
         if (updateSFResults != 1) {
           Write(Stringify({Status: 'Error', Message: 'Update failed'}));
@@ -50,7 +51,7 @@
 
         if (parsedData.listId && parsedData.listId.length > 0) {
           var field = listIdDict[parsedData.listId];
-          if (parsedData[field] == 'No') {
+          if (parsedData[field] === 'No') {
             var prox = new Script.Util.WSProxy();
             var props = [
               {Name: "SubscriberKey", Value: parsedData.subId},
@@ -59,7 +60,7 @@
               {Name: "BatchID", Value: ''}
             ];
 
-            var data = prox.execute(props, "LogUnsubEvent");
+            prox.execute(props, "LogUnsubEvent");
           }
         }
       }
@@ -70,25 +71,32 @@
   }
 
   function formatProps(data) {
-    var arr = [];
+    var props = {
+      toUpdate: [],
+      toRemove: []
+    };
 
-    if (data.Dutch_Design_Week__c == 'No') {
+    if (data.Dutch_Design_Week__c === 'No') {
       data.DDW_Topics__c = '';
     }
-    if (data.Dutch_Design_Awards__c == 'No') {
+    if (data.Dutch_Design_Awards__c === 'No') {
       data.DDA_Topics__c = '';
     }
-    if (data.World_Design_Embassies__c == 'No') {
+    if (data.World_Design_Embassies__c === 'No') {
       data.WDE_Topics__c = '';
     }
 
     for (key in data) {
-      if (key != 'refId' && key != 'job' && key != 'subId' && key != 'listId' && key != 'Language__c' && key != 'subType') {
-        arr.push(key);
-        arr.push(data[key]);
+      if (key !== 'refId' && key !== 'job' && key !== 'subId' && key !== 'listId' && key !== 'Language__c' && key !== 'subType') {
+        if ((key === 'DDW_Topics__c' || key === 'DDA_Topics__c' || key === 'WDE_Topics__c') && (!data[key] || !data[key].length)) {
+          props.toRemove.push(key);
+        } else {
+          props.toUpdate.push(key);
+          props.toUpdate.push(data[key]);
+        }
       }
     }
-    return arr;
+    return props;
   }
 
   function updateSF(subscriberKey, fieldArr) {
@@ -105,7 +113,6 @@
       updateSFObject += "]\%\%";
 
       try {
-        Write("TRYING: " + updateSFObject);
         results = Platform.Function.TreatAsContent(updateSFObject);
       } catch (e2) {
         Write("<br>e2: " + Stringify(e2));
@@ -123,10 +130,27 @@
       try {
         Platform.Function.TreatAsContent(updateLeadObject);
       } catch (e3) {
-        Write("<br>e3: " + Stringify(e2));
+        Write("<br>e3: " + Stringify(e3));
       }
     } else {
       Write("Language not saved");
+    }
+  }
+
+  function updateSFToRemove(subscriberKey, fieldArr) {
+    if (fieldArr.length()) {
+      var updateSFObject = "";
+      updateSFObject += "\%\%[ ";
+      updateSFObject += "set @SFUpdateResults = UpdateSingleSalesforceObject('Individual',";
+      updateSFObject += "'" + subscriberKey + "','fieldsToNull','" + fieldArr.join("','") + "'";
+      updateSFObject += ") ";
+      updateSFObject += "output(concat(@SFUpdateResults)) ";
+      updateSFObject += "]\%\%";
+      try {
+        Platform.Function.TreatAsContent(updateSFObject);
+      } catch (e4) {
+        Write("<br>e4: " + Stringify(e4));
+      }
     }
   }
 </script>

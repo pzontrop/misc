@@ -71,6 +71,17 @@
 
   function formatProps(data) {
     var arr = [];
+
+    if (data.Dutch_Design_Week__c == 'No') {
+      data.DDW_Topics__c = '';
+    }
+    if (data.Dutch_Design_Awards__c == 'No') {
+      data.DDA_Topics__c = '';
+    }
+    if (data.World_Design_Embassies__c == 'No') {
+      data.WDE_Topics__c = '';
+    }
+
     for (key in data) {
       if (key != 'refId' && key != 'job' && key != 'subId' && key != 'listId' && key != 'Language__c' && key != 'subType') {
         arr.push(key);
@@ -94,6 +105,7 @@
       updateSFObject += "]\%\%";
 
       try {
+        Write("TRYING: " + updateSFObject);
         results = Platform.Function.TreatAsContent(updateSFObject);
       } catch (e2) {
         Write("<br>e2: " + Stringify(e2));
@@ -110,8 +122,8 @@
       var updateLeadObject = "\%\%[ set @SFUpdateResults = UpdateSingleSalesforceObject('" + fieldArr.subType + "','" + subscriberId + "','Language__c','" + fieldArr.Language__c + "') output(concat(@SFUpdateResults)) ]\%\%";
       try {
         Platform.Function.TreatAsContent(updateLeadObject);
-      } catch (e2) {
-        Write("<br>e2: " + Stringify(e2));
+      } catch (e3) {
+        Write("<br>e3: " + Stringify(e2));
       }
     } else {
       Write("Language not saved");

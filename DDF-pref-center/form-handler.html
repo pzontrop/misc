@@ -138,19 +138,19 @@
   }
 
   function updateSFToRemove(subscriberKey, fieldArr) {
-    if (fieldArr.length()) {
-      var updateSFObject = "";
-      updateSFObject += "\%\%[ ";
-      updateSFObject += "set @SFUpdateResults = UpdateSingleSalesforceObject('Individual',";
-      updateSFObject += "'" + subscriberKey + "','fieldsToNull','" + fieldArr.join("','") + "'";
-      updateSFObject += ") ";
-      updateSFObject += "output(concat(@SFUpdateResults)) ";
-      updateSFObject += "]\%\%";
-      try {
-        Platform.Function.TreatAsContent(updateSFObject);
-      } catch (e4) {
-        Write("<br>e4: " + Stringify(e4));
+        for(var i = 0; i < fieldArr.length; ++i){
+          var updateSFObject = "";
+          updateSFObject += "\%\%[ ";
+          updateSFObject += "set @SFUpdateResults = UpdateSingleSalesforceObject('Individual',";
+          updateSFObject += "'" + subscriberKey + "','fieldsToNull','" + fieldArr[i] + "'";
+          updateSFObject += ") ";
+          updateSFObject += "output(concat(@SFUpdateResults)) ";
+          updateSFObject += "]\%\%";
+          try {
+            Platform.Function.TreatAsContent(updateSFObject);
+          } catch (e4) {
+            Write("<br>e4: " + Stringify(e4));
+          }
       }
-    }
   }
 </script>

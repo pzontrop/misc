@@ -3,7 +3,9 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title>Contact Preferences - Dutch Design Foundation</title>
+    <title>Contact Preferences - Maxi-Cosi</title>
+    <script type="text/javascript" src="html10n.js"></script>
+    <link rel="localizations" href="html10n.json" type="application/l10n+json"/>
     <style type="text/css">
         @font-face {
             font-family: 'Neo Sans Pro';
@@ -144,6 +146,59 @@
     </style>
 </head>
 <body>
+<script>
+    function changeLanguage() {
+        let lang = document.getElementById("languageSelect").value;
+        if (html10n) {
+            html10n.localize(lang);
+        }
+    }
+</script>
+<div class="main--wrapper">
+    <div style="float: right">
+        <select onchange="changeLanguage()" id="languageSelect">
+            <option value="nl">Nederlands</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="it">Italiano</option>
+            <option value="de">Deutsche</option>
+        </select>
+    </div>
+    <div style="text-align: center">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" width="425px" height="93px" x="0px" y="0px"
+             viewBox="0 0 425.2 91.7" style="enable-background:new 0 0 425.2 91.7;" xml:space="preserve">
+<style type="text/css">
+	.st0 {
+        fill: #0092BC;
+    }
+</style>
+            <path class="st0"
+                  d="M150.6,31.2c-0.4-2.2-0.9-3.4-2-4.4c-1.2-1.1-2.8-1.7-4.5-1.8c-2.4,0-4.6,1.3-5.7,3.5l-7.6,16.1l-6.7-15.1  c-1.1-2.6-3.7-4.4-6.6-4.4c-3.3,0-5.7,2.3-6.4,6.1l-4.8,27.2c-0.1,0.5-0.2,1.1-0.2,1.6c0,4.2,2.7,7.1,6.6,7.1c3.4,0,5.8-2.3,6.4-6.1  l1.6-8.6l3.5,9.4c1.3,3.7,3.4,5.4,6.6,5.4s5.4-1.8,6.7-5.5l3.4-9.3l1.9,9.8c0.6,3,3.4,5.1,6.4,4.9c3.5,0,6.3-2.7,6.4-6.2  c0,0,0-0.1,0-0.1c0-0.8-0.1-1.5-0.2-2.3L150.6,31.2z"/>
+            <path class="st0"
+                  d="M227.1,45.5l6.7-8.9c1.2-1.4,2-3.1,2.1-5c-0.1-3.5-3-6.4-6.6-6.4c-2.2,0-3.8,1-5.8,3.6l-4.7,5.9l-4.9-6.6  c-1.2-1.8-3.3-2.9-5.4-3c-3.6,0-6.6,2.9-6.7,6.5c0,1.6,0.6,3,2.7,5.7l6.2,8.2l-8.2,10.8c-1,1.3-1.6,2.8-1.6,4.5c0,3.6,3,6.5,6.6,6.4  c2.1,0,3.6-0.8,5.3-2.9l6.1-8l6.1,8.1c1.2,1.8,3.2,2.8,5.4,2.8c3.5-0.1,6.4-3,6.3-6.5c0-1.5-0.5-3-1.4-4.3L227.1,45.5z"/>
+            <path class="st0"
+                  d="M335.3,55.1c-4.9,0-8.9-4-8.9-8.9s4-8.9,8.9-8.9c4.9,0,8.9,4,8.9,8.9v0C344.2,51.2,340.2,55.1,335.3,55.1   M335.3,24.4c-12,0.1-21.7,9.9-21.7,21.9s9.9,21.7,21.9,21.7c12-0.1,21.7-9.8,21.7-21.9c0-12-9.7-21.7-21.7-21.7  C335.4,24.4,335.3,24.4,335.3,24.4"/>
+            <path class="st0"
+                  d="M246.8,25.1c-1.8,0-3.6,0.7-4.8,2.1c-1.4,1.6-1.7,2.6-1.7,6.1v26.3c0,2.9,0.4,4.2,1.6,5.5c1.3,1.3,3,2,4.9,2.1  c3.9,0,6.5-3,6.5-7.6V33.3c0-3.5-0.3-4.6-1.7-6.1C250.4,25.9,248.6,25.1,246.8,25.1"/>
+            <path class="st0"
+                  d="M307.1,51.6c-2.9-0.3-5.7,1.4-6.4,2c-1.6,0.9-3.4,1.4-5.2,1.5c-4.9-0.2-8.7-4.3-8.5-9.2  c0.2-4.6,3.9-8.4,8.6-8.5c1.7,0,3.4,0.4,4.9,1.1c0.3,0.1,0.6,0.3,1,0.5c1.5,0.8,3.7,2,5.8,1.8c1.6-0.2,3-1,4-2.3  c1-1.5,1.4-3.3,1-5.1c-0.5-2.6-2.7-4.8-6.5-6.8c-3-1.4-6.3-2.2-9.7-2.2h-0.3c-12.4,0.2-22,9.8-22,21.9c0.1,12.1,9.9,21.8,22,21.7  l0,0c2.6,0,9.3-0.5,14.3-5c1.1-1,1.9-2.4,2.2-3.8c0.3-1.8-0.1-3.7-1.2-5.2C310.1,52.6,308.7,51.8,307.1,51.6"/>
+            <path class="st0"
+                  d="M263.4,40.2c-3.4,0-6.1,2.8-6.1,6.1c0,3.4,2.7,6.1,6.1,6.1c3.4,0,6.1-2.7,6.1-6.1  C269.6,42.9,266.8,40.2,263.4,40.2C263.4,40.2,263.4,40.2,263.4,40.2"/>
+            <path class="st0"
+                  d="M385.7,44.7c-2.7-2-5.7-3.4-8.9-4.4c-3.4-1.1-4.6-2-4.6-3.7c0-1.2,0.9-2.2,2.1-2.2c0,0,0.1,0,0.1,0  c1-0.1,1.9,0,3.5,1.3c2.2,1.7,3.6,2.2,5.4,2.1c2.8-0.1,4.8-1.9,4.8-4.8c0-4.9-5.8-8.8-13.1-8.8c-9,0-15.1,5.4-15.1,13.4  c0,5.7,3,9.3,9,11.4c2.9,1,4.9,1.8,5.6,2.1c0.6,0.2,1.2,0.7,1.6,1.2c0.2,0.5,0.4,1.1,0.4,1.6c0,1.3-1,2.4-2.4,2.6  c-1.1,0.1-2,0.2-5.1-2.2c-1.7-1.4-3.1-2-4.6-1.9c-2.9,0-5.3,2.2-5.4,5.1c0,5.9,6.6,10.3,15.4,10.3c9.4,0,15.4-5.5,15.4-13.9  C389.9,50.5,388.4,47.1,385.7,44.7"/>
+            <path class="st0"
+                  d="M399.5,25.1c-1.8,0-3.6,0.7-4.8,2.1c-1.4,1.6-1.7,2.6-1.7,6.1v26.3c0,2.9,0.4,4.2,1.6,5.5c1.3,1.3,3,2,4.9,2.1  c4,0,6.5-3,6.5-7.6V33.3c0-3.5-0.3-4.6-1.7-6.1C403.1,25.9,401.3,25.1,399.5,25.1"/>
+            <path class="st0"
+                  d="M173.3,52.5l4.9-11.5l4.9,11.5H173.3z M184.2,29.1c-1-2.4-3.4-4-6.1-4c-2.6,0-5,1.5-6,3.9l-13.3,28.3  c-0.5,1.1-0.8,2.3-0.8,3.5c-0.1,3.5,2.8,6.4,6.3,6.5c0,0,0.1,0,0.1,0c3.1,0,5-1.6,6.7-5.5l0.1-0.3H185l0.1,0.3  c1.3,2.7,1.9,3.6,3.1,4.4c3,2,7,1.2,9-1.7c0.7-1.1,1.1-2.3,1.1-3.6c0-1.1-0.2-2.2-0.7-3.2L184.2,29.1z"/>
+            <path class="st0"
+                  d="M45.8,0C20.5,0,0,20.5,0,45.8s20.5,45.8,45.8,45.8s45.8-20.5,45.8-45.8c0,0,0,0,0,0C91.7,20.5,71.2,0,45.8,0  C45.8,0,45.8,0,45.8,0z M53.2,15.5c7.2-1,13.9,4.1,14.9,11.3c1,7.2-4.1,13.9-11.3,14.9c-7.2,1-13.9-4.1-14.9-11.3c0,0,0,0,0,0  C41,23.1,46,16.5,53.2,15.5z M37.6,38.5c5.4,0,9.8,4.4,9.8,9.8s-4.4,9.8-9.8,9.8c-5.4,0-9.8-4.4-9.8-9.8c0,0,0,0,0,0  C27.9,42.9,32.2,38.5,37.6,38.5z M73.6,53.7c-1.2,1.2-28.9,21.8-28.9,21.8c-3.8,2.7-9,2.2-12.3-1.1L18,58.6  c-1.5-1.5-2.4-3.6-2.4-5.8c0-2.2,0.8-4.3,2.4-5.8c3.2-3,5.7-2.5,6.7-2.3c1,0.1,1.7,0.9,1.6,1.9c0,0.1,0,0.1,0,0.2  c-0.4,2.5,0.1,5,1.4,7.2c1,2,2.6,3.5,4.6,4.5c4.1,2.1,9.1,1.6,12.7-1.4l0,0l18-15.8c3-2.7,8.1-1.9,10.7,0.8  C76.8,45.3,76.8,50.4,73.6,53.7L73.6,53.7z"/>
+            <path class="st0"
+                  d="M424.7,28.2c-0.3-0.7-0.8-1.4-1.4-2c-1.2-1.1-2.8-1.8-4.4-1.8c-0.8,0-1.7,0.2-2.5,0.5c-0.7,0.3-1.4,0.7-2,1.3  c-0.6,0.6-1,1.3-1.4,2c-0.3,0.8-0.5,1.6-0.5,2.5c0,0.9,0.2,1.7,0.5,2.5c0.3,0.7,0.8,1.4,1.4,2c1.8,1.8,4.5,2.3,6.9,1.3  c1.5-0.6,2.7-1.8,3.4-3.3c0.3-0.8,0.5-1.6,0.5-2.5C425.2,29.8,425,29,424.7,28.2z M423.5,32.7c-0.5,1.2-1.4,2.2-2.7,2.8  c-0.6,0.3-1.3,0.4-2,0.4c-0.7,0-1.4-0.1-2-0.4c-0.6-0.3-1.1-0.6-1.6-1.1c-0.5-0.5-0.8-1-1.1-1.7c-0.5-1.3-0.5-2.8,0-4.1  c0.3-0.6,0.6-1.1,1.1-1.6c0.5-0.5,1-0.8,1.6-1.1c0.6-0.3,1.3-0.4,2-0.4c1.3,0,2.6,0.5,3.6,1.5c0.5,0.5,0.8,1,1.1,1.6  C424,30,424,31.4,423.5,32.7L423.5,32.7z"/>
+            <path class="st0"
+                  d="M420.1,31.1c0.4-0.1,0.9-0.2,1.2-0.5c0.4-0.4,0.6-0.9,0.5-1.5c0-0.6-0.2-1.2-0.6-1.6c-0.6-0.4-1.3-0.6-1.9-0.5  h-2.5c-0.2,0-0.3,0.2-0.3,0.3V34c0,0.2,0.2,0.3,0.3,0.3h0.5c0.2,0,0.3-0.2,0.3-0.3v-2.7c0-0.1,0.1-0.1,0.1-0.1h1  c0.1,0,0.1,0,0.1,0.1l1.8,2.9c0.1,0.1,0.2,0.1,0.3,0.2h0.4c0.2,0,0.3-0.2,0.3-0.3c0-0.1,0-0.1-0.1-0.2l-1.7-2.6  C420,31.2,420,31.1,420.1,31.1C420.1,31.1,420.1,31.1,420.1,31.1z M419.5,30.2h-0.7h-1.1c-0.1,0-0.1,0-0.1-0.1V28  c0-0.1,0.1-0.1,0.1-0.1h1.4c0.2,0,0.4,0,0.6,0c0.2,0,0.4,0.1,0.5,0.2c0.1,0.1,0.3,0.2,0.4,0.3c0.1,0.2,0.1,0.4,0.1,0.6  c0,0.2,0,0.5-0.2,0.7c-0.1,0.2-0.3,0.3-0.4,0.4C419.9,30.2,419.7,30.2,419.5,30.2z"/>
+</svg>
+    </div>
+
 <script runat="server">
   Platform.Load("core", "1");
   try {
@@ -181,153 +236,70 @@ set @Opt_in_topics_Maxi_Cosi__c = field(@row,"Opt_in_topics_Maxi_Cosi__c")
 set @Opt_out_reason_Maxi_Cosi__c = field(@row,"Opt_out_reason_Maxi_Cosi__c")
 ]%%
 
-<script>
-  function showHide(elements, show) {
-    for (x of elements) {
-      if (show || (show === undefined && x.style.display === "none")) {
-        x.style.display = "inline-block";
-      } else {
-        x.style.display = "none";
-      }
-    }
-  }
-</script>
-<div class="main--wrapper">
-    <div style="float: right">
-        <span style="color: #d9d9d9">NL / </span><a style="color: black;text-decoration: none; cursor: pointer"
-                                                    onclick="window.location='http://cloud.updates.dorel.com/contact-preferences-en'+window.location.search;">EN</a>
+    <div class="form--wrapper">
+        <h1 data-l10n-id="title">E-mail instellingen</h1>
+        <p><span data-l10n-id="email">Jouw e-mailadres: </span>%%=v(@Email)=%%</p>
+        <form action="https://pub.s7.exacttarget.com/wiam1gkcb11" method="post" class="preferences-form">
+            <input type="hidden" id="subId" name="subId" value="%%=v(@subId)=%%">
+            <input type="hidden" id="job" name="job" value="%%=v(@job)=%%">
+            <input type="hidden" id="listId" name="listId" value="%%=v(@listId)=%%">
+            <input type="hidden" id="subType" name="subType" value="%%=v(@subType)=%%">
+            <input type="hidden" id="topics" name="topics" value="%%=v(@Opt_in_topics_Maxi_Cosi__c)=%%">
+            <h3 data-l10n-id="subtitle">Werk je voorkeuren bij</h3>
+            <h3 class="hidden error" data-l10n-id="error">Er heeft zich een fout voorgedaan, je voorkeuren zijn niet opgeslagen.</h3>
+            <div style="margin-bottom: 2rem;">
+                <input type="checkbox" %%=v(Iif(IndexOf(@Opt_in_topics_Maxi_Cosi__c,'Newsletter')> 0, 'checked', ''))=%%
+                    name="Opt_in_Topics_Maxi_Cosi__c_news" value="Newsletter" id="Opt_in_Topics_Maxi_Cosi__c_news">
+                <label style="vertical-align: top" for="Opt_in_Topics_Maxi_Cosi__c_news"><b data-l10n-id="newsletters">Nieuwsbrieven</b></label>
+                <p style="margin-left: 2rem; margin-top:0;"><i data-l10n-id="newslettersSub">Ontvang de meest relevante artikelen en informatie die je met het ouderschap helpen.</i></p>
+            </div>
+            <div style="margin-bottom: 2rem;">
+                <input type="checkbox" %%=v(Iif(IndexOf(@Opt_in_topics_Maxi_Cosi__c,'Promotions')> 0, 'checked', ''))=%%
+                name="Opt_in_Topics_Maxi_Cosi__c_promo" value="Promotions" id="Opt_in_Topics_Maxi_Cosi__c_promo">
+                <label style="vertical-align: top" for="Opt_in_Topics_Maxi_Cosi__c_promo"><b data-l10n-id="ads">Reclame e-mails</b></label>
+                <p style="margin-left: 2rem; margin-top:0;"><i data-l10n-id="adsSub">Wees als eerste op de hoogte van acties en de uitverkoop.</i></p>
+            </div>
+            <div style="margin-bottom: 2rem;">
+                <input type="checkbox" %%=v(Iif(IndexOf(@Opt_in_topics_Maxi_Cosi__c,'Product')> 0, 'checked', ''))=%%
+                name="Opt_in_Topics_Maxi_Cosi__c_prod" value="Product" id="Opt_in_Topics_Maxi_Cosi__c_prod">
+                <label style="vertical-align: top" for="Opt_in_Topics_Maxi_Cosi__c_prod"><b data-l10n-id="products">Productnieuws</b></label>
+                <p style="margin-left: 2rem; margin-top:0;"><i data-l10n-id="productsSub">Handige accessoires, nieuwe functies en de nieuwste productlanceringen.</i></p>
+            </div>
+            <div>
+                <input data-l10n-id="unsubBtn.value" id="unsubBtn" class="submit-btn" type="button" value="Afmelden voor alle mailings" onclick="unsub()">
+            </div>
+            <h4 data-l10n-id="reasonTitle">Als je even tijd hebt, laat ons dan weten waarom je je hebt uitgeschreven:</h4>
+            <div>
+                <input type="radio" id="doNotWant" name="Opt_out_reason_Maxi_Cosi__c" value="Don&#39;t want to receive these emails anymore" %%=v(Iif(IndexOf(@Opt_out_reason_Maxi_Cosi__c,'Don&#39;t want to receive these emails anymore')> 0, 'checked', ''))=%%>
+                <label for="doNotWant" data-l10n-id="doNotWant">Ik wil deze e-mails niet meer ontvangen.</label><br>
+                <input type="radio" id="neverSubscribed" name="Opt_out_reason_Maxi_Cosi__c" value="Never subscribed" %%=v(Iif(IndexOf(@Opt_out_reason_Maxi_Cosi__c,'Never subscribed')> 0, 'checked', ''))=%%>
+                <label for="neverSubscribed" data-l10n-id="neverSubscribed">Ik heb me nooit ingeschreven voor deze mailinglijst.</label><br>
+                <input type="radio" id="notInteresting" name="Opt_out_reason_Maxi_Cosi__c" value="Content not interesting" %%=v(Iif(IndexOf(@Opt_out_reason_Maxi_Cosi__c,'Content not interesting')> 0, 'checked', ''))=%%>
+                <label for="notInteresting" data-l10n-id="notInteresting">Jullie e-mails zijn niet relevant.</label><br>
+                <input type="radio" id="manyEmails" name="Opt_out_reason_Maxi_Cosi__c" value="Too many e-mails" %%=v(Iif(IndexOf(@Opt_out_reason_Maxi_Cosi__c,'Too many e-mails')> 0, 'checked', ''))=%%>
+                <label for="manyEmails" data-l10n-id="manyEmails">Jullie e-mails verschijnen te vaak.</label><br>
+                <input type="radio" id="childOld" name="Opt_out_reason_Maxi_Cosi__c" value="Child too old" %%=v(Iif(IndexOf(@Opt_out_reason_Maxi_Cosi__c,'Child too old')> 0, 'checked', ''))=%%>
+                <label for="childOld" data-l10n-id="childOld">Ik ben niet langer geïnteresseerd in producten voor kinderen.</label>
+            </div>
+            <div style="margin-top:2rem;">
+                <input data-l10n-id="submitBtn.value" id="submitBtn" class="submit-btn" type="submit" value="Uitschrijven" disabled>
+            </div>
+        </form>
     </div>
-    <div style="text-align: center">
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" width="425px" height="93px" x="0px" y="0px"
-             viewBox="0 0 425.2 91.7" style="enable-background:new 0 0 425.2 91.7;" xml:space="preserve">
-<style type="text/css">
-	.st0 {
-        fill: #0092BC;
-    }
-</style>
-            <path class="st0"
-                  d="M150.6,31.2c-0.4-2.2-0.9-3.4-2-4.4c-1.2-1.1-2.8-1.7-4.5-1.8c-2.4,0-4.6,1.3-5.7,3.5l-7.6,16.1l-6.7-15.1  c-1.1-2.6-3.7-4.4-6.6-4.4c-3.3,0-5.7,2.3-6.4,6.1l-4.8,27.2c-0.1,0.5-0.2,1.1-0.2,1.6c0,4.2,2.7,7.1,6.6,7.1c3.4,0,5.8-2.3,6.4-6.1  l1.6-8.6l3.5,9.4c1.3,3.7,3.4,5.4,6.6,5.4s5.4-1.8,6.7-5.5l3.4-9.3l1.9,9.8c0.6,3,3.4,5.1,6.4,4.9c3.5,0,6.3-2.7,6.4-6.2  c0,0,0-0.1,0-0.1c0-0.8-0.1-1.5-0.2-2.3L150.6,31.2z"/>
-            <path class="st0"
-                  d="M227.1,45.5l6.7-8.9c1.2-1.4,2-3.1,2.1-5c-0.1-3.5-3-6.4-6.6-6.4c-2.2,0-3.8,1-5.8,3.6l-4.7,5.9l-4.9-6.6  c-1.2-1.8-3.3-2.9-5.4-3c-3.6,0-6.6,2.9-6.7,6.5c0,1.6,0.6,3,2.7,5.7l6.2,8.2l-8.2,10.8c-1,1.3-1.6,2.8-1.6,4.5c0,3.6,3,6.5,6.6,6.4  c2.1,0,3.6-0.8,5.3-2.9l6.1-8l6.1,8.1c1.2,1.8,3.2,2.8,5.4,2.8c3.5-0.1,6.4-3,6.3-6.5c0-1.5-0.5-3-1.4-4.3L227.1,45.5z"/>
-            <path class="st0"
-                  d="M335.3,55.1c-4.9,0-8.9-4-8.9-8.9s4-8.9,8.9-8.9c4.9,0,8.9,4,8.9,8.9v0C344.2,51.2,340.2,55.1,335.3,55.1   M335.3,24.4c-12,0.1-21.7,9.9-21.7,21.9s9.9,21.7,21.9,21.7c12-0.1,21.7-9.8,21.7-21.9c0-12-9.7-21.7-21.7-21.7  C335.4,24.4,335.3,24.4,335.3,24.4"/>
-            <path class="st0"
-                  d="M246.8,25.1c-1.8,0-3.6,0.7-4.8,2.1c-1.4,1.6-1.7,2.6-1.7,6.1v26.3c0,2.9,0.4,4.2,1.6,5.5c1.3,1.3,3,2,4.9,2.1  c3.9,0,6.5-3,6.5-7.6V33.3c0-3.5-0.3-4.6-1.7-6.1C250.4,25.9,248.6,25.1,246.8,25.1"/>
-            <path class="st0"
-                  d="M307.1,51.6c-2.9-0.3-5.7,1.4-6.4,2c-1.6,0.9-3.4,1.4-5.2,1.5c-4.9-0.2-8.7-4.3-8.5-9.2  c0.2-4.6,3.9-8.4,8.6-8.5c1.7,0,3.4,0.4,4.9,1.1c0.3,0.1,0.6,0.3,1,0.5c1.5,0.8,3.7,2,5.8,1.8c1.6-0.2,3-1,4-2.3  c1-1.5,1.4-3.3,1-5.1c-0.5-2.6-2.7-4.8-6.5-6.8c-3-1.4-6.3-2.2-9.7-2.2h-0.3c-12.4,0.2-22,9.8-22,21.9c0.1,12.1,9.9,21.8,22,21.7  l0,0c2.6,0,9.3-0.5,14.3-5c1.1-1,1.9-2.4,2.2-3.8c0.3-1.8-0.1-3.7-1.2-5.2C310.1,52.6,308.7,51.8,307.1,51.6"/>
-            <path class="st0"
-                  d="M263.4,40.2c-3.4,0-6.1,2.8-6.1,6.1c0,3.4,2.7,6.1,6.1,6.1c3.4,0,6.1-2.7,6.1-6.1  C269.6,42.9,266.8,40.2,263.4,40.2C263.4,40.2,263.4,40.2,263.4,40.2"/>
-            <path class="st0"
-                  d="M385.7,44.7c-2.7-2-5.7-3.4-8.9-4.4c-3.4-1.1-4.6-2-4.6-3.7c0-1.2,0.9-2.2,2.1-2.2c0,0,0.1,0,0.1,0  c1-0.1,1.9,0,3.5,1.3c2.2,1.7,3.6,2.2,5.4,2.1c2.8-0.1,4.8-1.9,4.8-4.8c0-4.9-5.8-8.8-13.1-8.8c-9,0-15.1,5.4-15.1,13.4  c0,5.7,3,9.3,9,11.4c2.9,1,4.9,1.8,5.6,2.1c0.6,0.2,1.2,0.7,1.6,1.2c0.2,0.5,0.4,1.1,0.4,1.6c0,1.3-1,2.4-2.4,2.6  c-1.1,0.1-2,0.2-5.1-2.2c-1.7-1.4-3.1-2-4.6-1.9c-2.9,0-5.3,2.2-5.4,5.1c0,5.9,6.6,10.3,15.4,10.3c9.4,0,15.4-5.5,15.4-13.9  C389.9,50.5,388.4,47.1,385.7,44.7"/>
-            <path class="st0"
-                  d="M399.5,25.1c-1.8,0-3.6,0.7-4.8,2.1c-1.4,1.6-1.7,2.6-1.7,6.1v26.3c0,2.9,0.4,4.2,1.6,5.5c1.3,1.3,3,2,4.9,2.1  c4,0,6.5-3,6.5-7.6V33.3c0-3.5-0.3-4.6-1.7-6.1C403.1,25.9,401.3,25.1,399.5,25.1"/>
-            <path class="st0"
-                  d="M173.3,52.5l4.9-11.5l4.9,11.5H173.3z M184.2,29.1c-1-2.4-3.4-4-6.1-4c-2.6,0-5,1.5-6,3.9l-13.3,28.3  c-0.5,1.1-0.8,2.3-0.8,3.5c-0.1,3.5,2.8,6.4,6.3,6.5c0,0,0.1,0,0.1,0c3.1,0,5-1.6,6.7-5.5l0.1-0.3H185l0.1,0.3  c1.3,2.7,1.9,3.6,3.1,4.4c3,2,7,1.2,9-1.7c0.7-1.1,1.1-2.3,1.1-3.6c0-1.1-0.2-2.2-0.7-3.2L184.2,29.1z"/>
-            <path class="st0"
-                  d="M45.8,0C20.5,0,0,20.5,0,45.8s20.5,45.8,45.8,45.8s45.8-20.5,45.8-45.8c0,0,0,0,0,0C91.7,20.5,71.2,0,45.8,0  C45.8,0,45.8,0,45.8,0z M53.2,15.5c7.2-1,13.9,4.1,14.9,11.3c1,7.2-4.1,13.9-11.3,14.9c-7.2,1-13.9-4.1-14.9-11.3c0,0,0,0,0,0  C41,23.1,46,16.5,53.2,15.5z M37.6,38.5c5.4,0,9.8,4.4,9.8,9.8s-4.4,9.8-9.8,9.8c-5.4,0-9.8-4.4-9.8-9.8c0,0,0,0,0,0  C27.9,42.9,32.2,38.5,37.6,38.5z M73.6,53.7c-1.2,1.2-28.9,21.8-28.9,21.8c-3.8,2.7-9,2.2-12.3-1.1L18,58.6  c-1.5-1.5-2.4-3.6-2.4-5.8c0-2.2,0.8-4.3,2.4-5.8c3.2-3,5.7-2.5,6.7-2.3c1,0.1,1.7,0.9,1.6,1.9c0,0.1,0,0.1,0,0.2  c-0.4,2.5,0.1,5,1.4,7.2c1,2,2.6,3.5,4.6,4.5c4.1,2.1,9.1,1.6,12.7-1.4l0,0l18-15.8c3-2.7,8.1-1.9,10.7,0.8  C76.8,45.3,76.8,50.4,73.6,53.7L73.6,53.7z"/>
-            <path class="st0"
-                  d="M424.7,28.2c-0.3-0.7-0.8-1.4-1.4-2c-1.2-1.1-2.8-1.8-4.4-1.8c-0.8,0-1.7,0.2-2.5,0.5c-0.7,0.3-1.4,0.7-2,1.3  c-0.6,0.6-1,1.3-1.4,2c-0.3,0.8-0.5,1.6-0.5,2.5c0,0.9,0.2,1.7,0.5,2.5c0.3,0.7,0.8,1.4,1.4,2c1.8,1.8,4.5,2.3,6.9,1.3  c1.5-0.6,2.7-1.8,3.4-3.3c0.3-0.8,0.5-1.6,0.5-2.5C425.2,29.8,425,29,424.7,28.2z M423.5,32.7c-0.5,1.2-1.4,2.2-2.7,2.8  c-0.6,0.3-1.3,0.4-2,0.4c-0.7,0-1.4-0.1-2-0.4c-0.6-0.3-1.1-0.6-1.6-1.1c-0.5-0.5-0.8-1-1.1-1.7c-0.5-1.3-0.5-2.8,0-4.1  c0.3-0.6,0.6-1.1,1.1-1.6c0.5-0.5,1-0.8,1.6-1.1c0.6-0.3,1.3-0.4,2-0.4c1.3,0,2.6,0.5,3.6,1.5c0.5,0.5,0.8,1,1.1,1.6  C424,30,424,31.4,423.5,32.7L423.5,32.7z"/>
-            <path class="st0"
-                  d="M420.1,31.1c0.4-0.1,0.9-0.2,1.2-0.5c0.4-0.4,0.6-0.9,0.5-1.5c0-0.6-0.2-1.2-0.6-1.6c-0.6-0.4-1.3-0.6-1.9-0.5  h-2.5c-0.2,0-0.3,0.2-0.3,0.3V34c0,0.2,0.2,0.3,0.3,0.3h0.5c0.2,0,0.3-0.2,0.3-0.3v-2.7c0-0.1,0.1-0.1,0.1-0.1h1  c0.1,0,0.1,0,0.1,0.1l1.8,2.9c0.1,0.1,0.2,0.1,0.3,0.2h0.4c0.2,0,0.3-0.2,0.3-0.3c0-0.1,0-0.1-0.1-0.2l-1.7-2.6  C420,31.2,420,31.1,420.1,31.1C420.1,31.1,420.1,31.1,420.1,31.1z M419.5,30.2h-0.7h-1.1c-0.1,0-0.1,0-0.1-0.1V28  c0-0.1,0.1-0.1,0.1-0.1h1.4c0.2,0,0.4,0,0.6,0c0.2,0,0.4,0.1,0.5,0.2c0.1,0.1,0.3,0.2,0.4,0.3c0.1,0.2,0.1,0.4,0.1,0.6  c0,0.2,0,0.5-0.2,0.7c-0.1,0.2-0.3,0.3-0.4,0.4C419.9,30.2,419.7,30.2,419.5,30.2z"/>
-</svg>
-    </div>
-    <h1>E-mail instellingen</h1>
-    <p>Jouw e-mailadres: %%=v(@Email)=%%</p>
-    <form action="http://cloud.updates.dutchdesignfoundation.com/preference-handler" method="post" class="preferences-form">
-        <input type="hidden" id="subId" name="subId" value="%%=v(@subId)=%%">
-        <input type="hidden" id="job" name="job" value="%%=v(@job)=%%">
-        <input type="hidden" id="listId" name="listId" value="%%=v(@listId)=%%">
-        <input type="hidden" id="subType" name="subType" value="%%=v(@subType)=%%">
-        <input type="hidden" id="topics" name="topics" value="%%=v(@Opt_in_topics_Maxi_Cosi__c)=%%">
-        <h3>Werk je voorkeuren bij</h3>
-        <h3 class="hidden error">Er heeft zich een fout voorgedaan, je voorkeuren zijn niet opgeslagen.</h3>
-        <div style="margin-bottom: 2rem;">
-            <input type="checkbox" %%=v(Iif(IndexOf(@Opt_in_topics_Maxi_Cosi__c,'Newsletter')> 0, 'checked', ''))=%%
-                name="Opt_in_Topics_Maxi_Cosi__c_news" value="Newsletter" id="Opt_in_Topics_Maxi_Cosi__c_news">
-            <label style="vertical-align: top" for="Opt_in_Topics_Maxi_Cosi__c_news"><b>Nieuwsbrieven</b></label>
-            <p style="margin-left: 2rem; margin-top:0;"><i>Ontvang de meest relevante artikelen en informatie die je met het ouderschap helpen.</i></p>
-        </div>
-        <div style="margin-bottom: 2rem;">
-            <input type="checkbox" %%=v(Iif(IndexOf(@Opt_in_topics_Maxi_Cosi__c,'Promotions')> 0, 'checked', ''))=%%
-            name="Opt_in_Topics_Maxi_Cosi__c_promo" value="Promotions" id="Opt_in_Topics_Maxi_Cosi__c_promo">
-            <label style="vertical-align: top" for="Opt_in_Topics_Maxi_Cosi__c_promo"><b>Reclame e-mails</b></label>
-            <p style="margin-left: 2rem; margin-top:0;"><i>Wees als eerste op de hoogte van acties en de uitverkoop.</i></p>
-        </div>
-        <div style="margin-bottom: 2rem;">
-            <input type="checkbox" %%=v(Iif(IndexOf(@Opt_in_topics_Maxi_Cosi__c,'Product')> 0, 'checked', ''))=%%
-            name="Opt_in_Topics_Maxi_Cosi__c_prod" value="Product" id="Opt_in_Topics_Maxi_Cosi__c_prod">
-            <label style="vertical-align: top" for="Opt_in_Topics_Maxi_Cosi__c_prod"><b>Productnieuws</b></label>
-            <p style="margin-left: 2rem; margin-top:0;"><i>Handige accessoires, nieuwe functies en de nieuwste productlanceringen.</i></p>
-        </div>
-        <div>
-            <input id="unsubBtn" class="submit-btn" type="button" value="Afmelden voor alle mailings" onclick="unsub()">
-        </div>
-        <h4>Als je even tijd hebt, laat ons dan weten waarom je je hebt uitgeschreven:</h4>
-        <div>
-            <input type="radio" id="doNotWant" name="Opt_out_reason_Maxi_Cosi__c" value="Don&#39;t want to receive these emails anymore" %%=v(Iif(IndexOf(@Opt_out_reason_Maxi_Cosi__c,'Don&#39;t want to receive these emails anymore')> 0, 'checked', ''))=%%>
-            <label for="doNotWant">Ik wil deze e-mails niet meer ontvangen</label><br>
-            <input type="radio" id="neverSubscribed" name="Opt_out_reason_Maxi_Cosi__c" value="Never subscribed" %%=v(Iif(IndexOf(@Opt_out_reason_Maxi_Cosi__c,'Never subscribed')> 0, 'checked', ''))=%%>
-            <label for="neverSubscribed">Ik heb me nooit ingeschreven voor deze mailinglijst</label><br>
-            <input type="radio" id="notInteresting" name="Opt_out_reason_Maxi_Cosi__c" value="Content not interesting" %%=v(Iif(IndexOf(@Opt_out_reason_Maxi_Cosi__c,'Content not interesting')> 0, 'checked', ''))=%%>
-            <label for="notInteresting">Jullie e-mails zijn niet relevant</label><br>
-            <input type="radio" id="manyEmails" name="Opt_out_reason_Maxi_Cosi__c" value="Too many e-mails" %%=v(Iif(IndexOf(@Opt_out_reason_Maxi_Cosi__c,'Too many e-mails')> 0, 'checked', ''))=%%>
-            <label for="manyEmails">Jullie e-mails verschijnen te vaak</label><br>
-            <input type="radio" id="childOld" name="Opt_out_reason_Maxi_Cosi__c" value="Child too old" %%=v(Iif(IndexOf(@Opt_out_reason_Maxi_Cosi__c,'Child too old')> 0, 'checked', ''))=%%>
-            <label for="childOld">Ik ben niet langer geïnteresseerd in producten voor kinderen</label>
-        </div>
-        <div style="margin-top:2rem;">
-            <input id="submitBtn" class="submit-btn" type="submit" value="Uitschrijven" disabled>
-        </div>
-    </form>
 </div>
 %%[ else ]%%
-<h1>Gegevens niet gevonden.</h1>
+<h1 data-l10n-id="notFound" style="text-align: center">Gegevens niet gevonden.</h1>
+</div>
 %%[ endif ]%%
 <div class="success hidden">
-    <div style="text-align: center">
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" width="425px" height="93px" x="0px" y="0px"
-             viewBox="0 0 425.2 91.7" style="enable-background:new 0 0 425.2 91.7;" xml:space="preserve">
-<style type="text/css">
-	.st0 {
-        fill: #0092BC;
-    }
-</style>
-            <path class="st0"
-                  d="M150.6,31.2c-0.4-2.2-0.9-3.4-2-4.4c-1.2-1.1-2.8-1.7-4.5-1.8c-2.4,0-4.6,1.3-5.7,3.5l-7.6,16.1l-6.7-15.1  c-1.1-2.6-3.7-4.4-6.6-4.4c-3.3,0-5.7,2.3-6.4,6.1l-4.8,27.2c-0.1,0.5-0.2,1.1-0.2,1.6c0,4.2,2.7,7.1,6.6,7.1c3.4,0,5.8-2.3,6.4-6.1  l1.6-8.6l3.5,9.4c1.3,3.7,3.4,5.4,6.6,5.4s5.4-1.8,6.7-5.5l3.4-9.3l1.9,9.8c0.6,3,3.4,5.1,6.4,4.9c3.5,0,6.3-2.7,6.4-6.2  c0,0,0-0.1,0-0.1c0-0.8-0.1-1.5-0.2-2.3L150.6,31.2z"/>
-            <path class="st0"
-                  d="M227.1,45.5l6.7-8.9c1.2-1.4,2-3.1,2.1-5c-0.1-3.5-3-6.4-6.6-6.4c-2.2,0-3.8,1-5.8,3.6l-4.7,5.9l-4.9-6.6  c-1.2-1.8-3.3-2.9-5.4-3c-3.6,0-6.6,2.9-6.7,6.5c0,1.6,0.6,3,2.7,5.7l6.2,8.2l-8.2,10.8c-1,1.3-1.6,2.8-1.6,4.5c0,3.6,3,6.5,6.6,6.4  c2.1,0,3.6-0.8,5.3-2.9l6.1-8l6.1,8.1c1.2,1.8,3.2,2.8,5.4,2.8c3.5-0.1,6.4-3,6.3-6.5c0-1.5-0.5-3-1.4-4.3L227.1,45.5z"/>
-            <path class="st0"
-                  d="M335.3,55.1c-4.9,0-8.9-4-8.9-8.9s4-8.9,8.9-8.9c4.9,0,8.9,4,8.9,8.9v0C344.2,51.2,340.2,55.1,335.3,55.1   M335.3,24.4c-12,0.1-21.7,9.9-21.7,21.9s9.9,21.7,21.9,21.7c12-0.1,21.7-9.8,21.7-21.9c0-12-9.7-21.7-21.7-21.7  C335.4,24.4,335.3,24.4,335.3,24.4"/>
-            <path class="st0"
-                  d="M246.8,25.1c-1.8,0-3.6,0.7-4.8,2.1c-1.4,1.6-1.7,2.6-1.7,6.1v26.3c0,2.9,0.4,4.2,1.6,5.5c1.3,1.3,3,2,4.9,2.1  c3.9,0,6.5-3,6.5-7.6V33.3c0-3.5-0.3-4.6-1.7-6.1C250.4,25.9,248.6,25.1,246.8,25.1"/>
-            <path class="st0"
-                  d="M307.1,51.6c-2.9-0.3-5.7,1.4-6.4,2c-1.6,0.9-3.4,1.4-5.2,1.5c-4.9-0.2-8.7-4.3-8.5-9.2  c0.2-4.6,3.9-8.4,8.6-8.5c1.7,0,3.4,0.4,4.9,1.1c0.3,0.1,0.6,0.3,1,0.5c1.5,0.8,3.7,2,5.8,1.8c1.6-0.2,3-1,4-2.3  c1-1.5,1.4-3.3,1-5.1c-0.5-2.6-2.7-4.8-6.5-6.8c-3-1.4-6.3-2.2-9.7-2.2h-0.3c-12.4,0.2-22,9.8-22,21.9c0.1,12.1,9.9,21.8,22,21.7  l0,0c2.6,0,9.3-0.5,14.3-5c1.1-1,1.9-2.4,2.2-3.8c0.3-1.8-0.1-3.7-1.2-5.2C310.1,52.6,308.7,51.8,307.1,51.6"/>
-            <path class="st0"
-                  d="M263.4,40.2c-3.4,0-6.1,2.8-6.1,6.1c0,3.4,2.7,6.1,6.1,6.1c3.4,0,6.1-2.7,6.1-6.1  C269.6,42.9,266.8,40.2,263.4,40.2C263.4,40.2,263.4,40.2,263.4,40.2"/>
-            <path class="st0"
-                  d="M385.7,44.7c-2.7-2-5.7-3.4-8.9-4.4c-3.4-1.1-4.6-2-4.6-3.7c0-1.2,0.9-2.2,2.1-2.2c0,0,0.1,0,0.1,0  c1-0.1,1.9,0,3.5,1.3c2.2,1.7,3.6,2.2,5.4,2.1c2.8-0.1,4.8-1.9,4.8-4.8c0-4.9-5.8-8.8-13.1-8.8c-9,0-15.1,5.4-15.1,13.4  c0,5.7,3,9.3,9,11.4c2.9,1,4.9,1.8,5.6,2.1c0.6,0.2,1.2,0.7,1.6,1.2c0.2,0.5,0.4,1.1,0.4,1.6c0,1.3-1,2.4-2.4,2.6  c-1.1,0.1-2,0.2-5.1-2.2c-1.7-1.4-3.1-2-4.6-1.9c-2.9,0-5.3,2.2-5.4,5.1c0,5.9,6.6,10.3,15.4,10.3c9.4,0,15.4-5.5,15.4-13.9  C389.9,50.5,388.4,47.1,385.7,44.7"/>
-            <path class="st0"
-                  d="M399.5,25.1c-1.8,0-3.6,0.7-4.8,2.1c-1.4,1.6-1.7,2.6-1.7,6.1v26.3c0,2.9,0.4,4.2,1.6,5.5c1.3,1.3,3,2,4.9,2.1  c4,0,6.5-3,6.5-7.6V33.3c0-3.5-0.3-4.6-1.7-6.1C403.1,25.9,401.3,25.1,399.5,25.1"/>
-            <path class="st0"
-                  d="M173.3,52.5l4.9-11.5l4.9,11.5H173.3z M184.2,29.1c-1-2.4-3.4-4-6.1-4c-2.6,0-5,1.5-6,3.9l-13.3,28.3  c-0.5,1.1-0.8,2.3-0.8,3.5c-0.1,3.5,2.8,6.4,6.3,6.5c0,0,0.1,0,0.1,0c3.1,0,5-1.6,6.7-5.5l0.1-0.3H185l0.1,0.3  c1.3,2.7,1.9,3.6,3.1,4.4c3,2,7,1.2,9-1.7c0.7-1.1,1.1-2.3,1.1-3.6c0-1.1-0.2-2.2-0.7-3.2L184.2,29.1z"/>
-            <path class="st0"
-                  d="M45.8,0C20.5,0,0,20.5,0,45.8s20.5,45.8,45.8,45.8s45.8-20.5,45.8-45.8c0,0,0,0,0,0C91.7,20.5,71.2,0,45.8,0  C45.8,0,45.8,0,45.8,0z M53.2,15.5c7.2-1,13.9,4.1,14.9,11.3c1,7.2-4.1,13.9-11.3,14.9c-7.2,1-13.9-4.1-14.9-11.3c0,0,0,0,0,0  C41,23.1,46,16.5,53.2,15.5z M37.6,38.5c5.4,0,9.8,4.4,9.8,9.8s-4.4,9.8-9.8,9.8c-5.4,0-9.8-4.4-9.8-9.8c0,0,0,0,0,0  C27.9,42.9,32.2,38.5,37.6,38.5z M73.6,53.7c-1.2,1.2-28.9,21.8-28.9,21.8c-3.8,2.7-9,2.2-12.3-1.1L18,58.6  c-1.5-1.5-2.4-3.6-2.4-5.8c0-2.2,0.8-4.3,2.4-5.8c3.2-3,5.7-2.5,6.7-2.3c1,0.1,1.7,0.9,1.6,1.9c0,0.1,0,0.1,0,0.2  c-0.4,2.5,0.1,5,1.4,7.2c1,2,2.6,3.5,4.6,4.5c4.1,2.1,9.1,1.6,12.7-1.4l0,0l18-15.8c3-2.7,8.1-1.9,10.7,0.8  C76.8,45.3,76.8,50.4,73.6,53.7L73.6,53.7z"/>
-            <path class="st0"
-                  d="M424.7,28.2c-0.3-0.7-0.8-1.4-1.4-2c-1.2-1.1-2.8-1.8-4.4-1.8c-0.8,0-1.7,0.2-2.5,0.5c-0.7,0.3-1.4,0.7-2,1.3  c-0.6,0.6-1,1.3-1.4,2c-0.3,0.8-0.5,1.6-0.5,2.5c0,0.9,0.2,1.7,0.5,2.5c0.3,0.7,0.8,1.4,1.4,2c1.8,1.8,4.5,2.3,6.9,1.3  c1.5-0.6,2.7-1.8,3.4-3.3c0.3-0.8,0.5-1.6,0.5-2.5C425.2,29.8,425,29,424.7,28.2z M423.5,32.7c-0.5,1.2-1.4,2.2-2.7,2.8  c-0.6,0.3-1.3,0.4-2,0.4c-0.7,0-1.4-0.1-2-0.4c-0.6-0.3-1.1-0.6-1.6-1.1c-0.5-0.5-0.8-1-1.1-1.7c-0.5-1.3-0.5-2.8,0-4.1  c0.3-0.6,0.6-1.1,1.1-1.6c0.5-0.5,1-0.8,1.6-1.1c0.6-0.3,1.3-0.4,2-0.4c1.3,0,2.6,0.5,3.6,1.5c0.5,0.5,0.8,1,1.1,1.6  C424,30,424,31.4,423.5,32.7L423.5,32.7z"/>
-            <path class="st0"
-                  d="M420.1,31.1c0.4-0.1,0.9-0.2,1.2-0.5c0.4-0.4,0.6-0.9,0.5-1.5c0-0.6-0.2-1.2-0.6-1.6c-0.6-0.4-1.3-0.6-1.9-0.5  h-2.5c-0.2,0-0.3,0.2-0.3,0.3V34c0,0.2,0.2,0.3,0.3,0.3h0.5c0.2,0,0.3-0.2,0.3-0.3v-2.7c0-0.1,0.1-0.1,0.1-0.1h1  c0.1,0,0.1,0,0.1,0.1l1.8,2.9c0.1,0.1,0.2,0.1,0.3,0.2h0.4c0.2,0,0.3-0.2,0.3-0.3c0-0.1,0-0.1-0.1-0.2l-1.7-2.6  C420,31.2,420,31.1,420.1,31.1C420.1,31.1,420.1,31.1,420.1,31.1z M419.5,30.2h-0.7h-1.1c-0.1,0-0.1,0-0.1-0.1V28  c0-0.1,0.1-0.1,0.1-0.1h1.4c0.2,0,0.4,0,0.6,0c0.2,0,0.4,0.1,0.5,0.2c0.1,0.1,0.3,0.2,0.4,0.3c0.1,0.2,0.1,0.4,0.1,0.6  c0,0.2,0,0.5-0.2,0.7c-0.1,0.2-0.3,0.3-0.4,0.4C419.9,30.2,419.7,30.2,419.5,30.2z"/>
-</svg>
-    </div>
-    <h1 style="margin: auto">
-        Je voorkeuren zijn succesvol opgeslagen. Je mag deze pagina sluiten.
-    </h1>
+    <h1 data-l10n-id="success">Je voorkeuren zijn succesvol opgeslagen. Je mag deze pagina sluiten.</h1>
 </div>
 <script runat="server">
   } catch
   (err)
   {
     Variable.SetValue("@errorMessage", Stringify(err.message) + Stringify(err.description));
-    Write("Er heeft zich een fout voorgedaan.");
+    Write("An error has occured.");
   }
 </script>
 <script runat="client">
@@ -346,7 +318,6 @@ set @Opt_out_reason_Maxi_Cosi__c = field(@row,"Opt_out_reason_Maxi_Cosi__c")
     e.preventDefault();
     submitBtn.setAttribute("disabled", true);
     unsubBtn.setAttribute("disabled", true);
-    submitBtn.setAttribute("value", "Laden...");
     submitBtn.classList.add('submit-btn__loading');
 
     var payload = {};
@@ -379,6 +350,20 @@ set @Opt_out_reason_Maxi_Cosi__c = field(@row,"Opt_out_reason_Maxi_Cosi__c")
             toggleMessage('Error');
           });
       });
+  }
+
+  function toggleMessage(status) {
+      if (status == 'OK') {
+          var mainForm = document.querySelector('.form--wrapper');
+          mainForm.classList.add("hidden");
+          var successMessage = document.querySelector('.success');
+          successMessage.classList.remove("hidden");
+      } else {
+          var errorMessage = document.querySelector('.error');
+          errorMessage.classList.remove("hidden");
+      }
+      submitBtn.removeAttribute("disabled");
+      submitBtn.classList.remove('submit-btn__loading');
   }
 
   function unsub() {

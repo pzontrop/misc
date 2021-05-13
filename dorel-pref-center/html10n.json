@@ -19,7 +19,8 @@
     "childOld": "Ik ben niet langer geïnteresseerd in producten voor kinderen",
     "submitBtn.value": "Uitschrijven",
     "notFound": "Gegevens niet gevonden.",
-    "success": "Je voorkeuren zijn succesvol opgeslagen. Je mag deze pagina sluiten."
+    "success": "Je voorkeuren zijn succesvol opgeslagen. Je mag deze pagina sluiten.",
+    "generalError": "Er heeft zich een fout voorgedaan."
   },
   "es": {
     "title": "Ajustes de correo electrónico",
@@ -41,7 +42,8 @@
     "childOld": "Ya no me interesan los productos infantiles.",
     "submitBtn.value": "Eliminar la suscripción",
     "notFound": "Datos no encontrados.",
-    "success": "Sus preferencias se han guardado correctamente. Puede cerrar esta página."
+    "success": "Sus preferencias se han guardado correctamente. Puede cerrar esta página.",
+    "generalError": "Ha habido un error."
   },
   "fr": {
     "title": "Paramètres d'e-mail",
@@ -63,7 +65,8 @@
     "childOld": "Je ne suis plus intéressé(e) par les produits pour enfants",
     "submitBtn.value": "Se désinscrire",
     "notFound": "Données non trouvées .",
-    "success": "Vos préférences ont été enregistrées avec succès . Vous pouvez fermer cette page ."
+    "success": "Vos préférences ont été enregistrées avec succès . Vous pouvez fermer cette page .",
+    "generalError": "Une erreur s'est produite ."
   },
   "it": {
     "title": "Impostazioni e-mail",
@@ -85,7 +88,8 @@
     "childOld": "Non mi interessano più i prodotti per l'infanzia",
     "submitBtn.value": "Annullare l'iscrizione",
     "notFound": "Dati non trovati.",
-    "success": "Le tue preferenze sono state salvate con successo. Puoi chiudere questa pagina."
+    "success": "Le tue preferenze sono state salvate con successo. Puoi chiudere questa pagina.",
+    "generalError": "C'è stato un errore."
   },
   "de": {
     "title": "E-Mail-Einstellungen",
@@ -107,6 +111,7 @@
     "childOld": "Ich interessiere mich nicht mehr für Kinderprodukte",
     "submitBtn.value": "Abmelden",
     "notFound": "Daten nicht gefunden.",
-    "success": "Ihre Einstellungen wurden erfolgreich gespeichert. Sie können diese Seite schließen."
+    "success": "Ihre Einstellungen wurden erfolgreich gespeichert. Sie können diese Seite schließen.",
+    "generalError": "Es ist ein Fehler aufgetreten."
   }
 }

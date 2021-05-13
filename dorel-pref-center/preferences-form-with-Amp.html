@@ -315,7 +315,7 @@ set @Opt_out_reason_Maxi_Cosi__c = field(@row,"Opt_out_reason_Maxi_Cosi__c")
   (err)
   {
     Variable.SetValue("@errorMessage", Stringify(err.message) + Stringify(err.description));
-    Write("An error has occured.");
+    Write("<h1 data-l10n-id='generalError'>Er heeft zich een fout voorgedaan.</h1>");
   }
 </script>
 <script runat="client">

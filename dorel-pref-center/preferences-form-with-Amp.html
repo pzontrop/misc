@@ -4,8 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Contact Preferences - Maxi-Cosi</title>
-    <script type="text/javascript" src="html10n.js"></script>
-    <link rel="localizations" href="html10n.json" type="application/l10n+json"/>
+    <script type="text/javascript" src="https://pub.s7.exacttarget.com/sev3dz0knvo"></script>
+    <link rel="localizations" href="https://pub.s7.exacttarget.com/0eepviuzvlo" type="application/l10n+json"/>
     <style type="text/css">
         @font-face {
             font-family: 'Neo Sans Pro';
@@ -62,10 +62,10 @@
 
         .submit-btn {
             background-color: #4090B8;
-            font-size:18px;
-            padding:10px 20px 10px 20px;
-            color:white;
-            border:none;
+            font-size: 18px;
+            padding: 10px 20px 10px 20px;
+            color: white;
+            border: none;
         }
 
         .submit-btn.submit-btn__loading {
@@ -159,17 +159,76 @@
             font-size: 16px;
             color: #323232;
         }
+
+        /* loading.io  spinner*/
+        .click-shield {
+            position: absolute;
+            height: 100vh;
+            width: 100vw;
+            background: rgba(0, 0, 0, 0.5);
+            left: 0;
+            top: 0;
+        }
+
+        .center {
+            position: absolute;
+            left: calc(50vw - 80px);
+            top: calc(50vh - 80px);
+        }
+
+        .lds-ring {
+            display: inline-block;
+            position: relative;
+            width: 160px;
+            height: 160px;
+        }
+
+        .lds-ring div {
+            box-sizing: border-box;
+            display: block;
+            position: absolute;
+            width: 128px;
+            height: 128px;
+            margin: 16px;
+            border: 16px solid #fff;
+            border-radius: 50%;
+            animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+            border-color: #fff transparent transparent transparent;
+        }
+
+        .lds-ring div:nth-child(1) {
+            animation-delay: -0.45s;
+        }
+
+        .lds-ring div:nth-child(2) {
+            animation-delay: -0.3s;
+        }
+
+        .lds-ring div:nth-child(3) {
+            animation-delay: -0.15s;
+        }
+
+        @keyframes lds-ring {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
     </style>
 </head>
 <body>
-<script>
-    function changeLanguage() {
-        let lang = document.getElementById("languageSelect").value;
-        if (html10n) {
-            html10n.localize(lang);
-        }
-    }
-</script>
+<div class="click-shield">
+    <div class="center">
+        <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
 <div class="main--wrapper">
     <div style="float: right">
         <select onchange="changeLanguage()" id="languageSelect">
@@ -181,7 +240,8 @@
         </select>
     </div>
     <div style="text-align: center">
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" width="425px" height="93px" x="0px" y="0px"
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1"
+             width="425px" height="93px" x="0px" y="0px"
              viewBox="0 0 425.2 91.7" style="enable-background:new 0 0 425.2 91.7;" xml:space="preserve">
 <style type="text/css">
 	.st0 {
@@ -215,42 +275,42 @@
 </svg>
     </div>
 
-<script runat="server">
-  Platform.Load("core", "1");
-  try {
-</script>
-%%[
-var @rows, @row, @rowCount, @subId, @job, @listId, @subType, @DuplicateContact
+    <script runat="server">
+        Platform.Load("core", "1");
+        try {
+    </script>
+    %%[
+    var @rows, @row, @rowCount, @subId, @job, @listId, @subType, @DuplicateContact
 
-set @subId = Base64Decode(RequestParameter('subid'),'UTF-8');
-set @job = Base64Decode(RequestParameter('job'),'UTF-8');
-set @listId = Base64Decode(RequestParameter('listid'),'UTF-8');
+    set @subId = Base64Decode(RequestParameter('subid'),'UTF-8');
+    set @job = Base64Decode(RequestParameter('job'),'UTF-8');
+    set @listId = Base64Decode(RequestParameter('listid'),'UTF-8');
 
-set @rows = RetrieveSalesforceObjects("Contact","Email,Opt_in_topics_Maxi_Cosi__c,Opt_out_reason_Maxi_Cosi__c","Id","=",@subId)
-set @rowCount = rowcount(@rows)
-set @subType = "Contact"
+    set @rows = RetrieveSalesforceObjects("Contact","Email,Opt_in_topics_Maxi_Cosi__c","Id","=",@subId)
+    set @rowCount = rowcount(@rows)
+    set @subType = "Contact"
 
-if @infoRowCount < 1 then
-set @rows =
-RetrieveSalesforceObjects("Lead","Email,DuplicateContact__c,Opt_in_topics_Maxi_Cosi__c,Opt_out_reason_Maxi_Cosi__c","Id","=",@subId)
-set @rowCount = rowcount(@rows)
-set @subType = "Lead"
-set @DuplicateContact = field(@row,"DuplicateContact__c")
+    if @infoRowCount < 1 then
+    set @rows = RetrieveSalesforceObjects("Lead","Email,DuplicateContact__c,Opt_in_topics_Maxi_Cosi__c","Id","=",@subId)
+    set @rowCount = rowcount(@rows)
+    set @subType = "Lead"
+    set @row = row(@rows, 1)
+    set @DuplicateContact = field(@row,"DuplicateContact__c")
 
-if not empty(@DuplicateContact) then
-set @rows = RetrieveSalesforceObjects("Contact","Email,Opt_in_topics_Maxi_Cosi__c,Opt_out_reason_Maxi_Cosi__c","Id","=",@DuplicateContact)
-set @rowCount = rowcount(@rows)
-set @subType = "Contact"
-endif
-endif
+    if not empty(@DuplicateContact) then
+    set @rows = RetrieveSalesforceObjects("Contact","Email,Opt_in_topics_Maxi_Cosi__c","Id","=",@DuplicateContact)
+    set @rowCount = rowcount(@rows)
+    set @subType = "Contact"
+    set @subId = @DuplicateContact;
+    endif
+    endif
 
-if @rowCount > 0 then
-var @Email, @Opt_in_topics_Maxi_Cosi__c, @Opt_out_reason_Maxi_Cosi__c
-set @row = row(@rows, 1) /* only use first row */
-set @Email = field(@row,"Email")
-set @Opt_in_topics_Maxi_Cosi__c = field(@row,"Opt_in_topics_Maxi_Cosi__c")
-set @Opt_out_reason_Maxi_Cosi__c = field(@row,"Opt_out_reason_Maxi_Cosi__c")
-]%%
+    if @rowCount > 0 then
+    var @Email, @Opt_in_topics_Maxi_Cosi__c
+    set @row = row(@rows, 1) /* only use first row */
+    set @Email = field(@row,"Email")
+    set @Opt_in_topics_Maxi_Cosi__c = field(@row,"Opt_in_topics_Maxi_Cosi__c")
+    ]%%
 
     <div class="form--wrapper">
         <h1 data-l10n-id="title">E-mail instellingen</h1>
@@ -262,43 +322,57 @@ set @Opt_out_reason_Maxi_Cosi__c = field(@row,"Opt_out_reason_Maxi_Cosi__c")
             <input type="hidden" id="subType" name="subType" value="%%=v(@subType)=%%">
             <input type="hidden" id="topics" name="topics" value="%%=v(@Opt_in_topics_Maxi_Cosi__c)=%%">
             <h3 data-l10n-id="subtitle">Werk je voorkeuren bij</h3>
-            <h3 class="hidden error" data-l10n-id="error">Er heeft zich een fout voorgedaan, je voorkeuren zijn niet opgeslagen.</h3>
+            <h3 class="hidden error" data-l10n-id="error">Er heeft zich een fout voorgedaan, je voorkeuren zijn niet
+                opgeslagen.</h3>
             <div style="margin-bottom: 2rem;">
-                <input type="checkbox" %%=v(Iif(IndexOf(@Opt_in_topics_Maxi_Cosi__c,'Newsletter')> 0, 'checked', ''))=%%
-                    name="Opt_in_Topics_Maxi_Cosi__c_news" value="Newsletter" id="Opt_in_Topics_Maxi_Cosi__c_news">
+                <input type="checkbox" %%=v(Iif(IndexOf(@Opt_in_topics_Maxi_Cosi__c,'Newsletter')>= 0, 'checked', ''))=%%
+                name="Opt_in_Topics_Maxi_Cosi__c_news" value="Newsletter" id="Opt_in_Topics_Maxi_Cosi__c_news" onchange="checkTopics()">
                 <label style="vertical-align: top" for="Opt_in_Topics_Maxi_Cosi__c_news"><b data-l10n-id="newsletters">Nieuwsbrieven</b></label>
-                <p style="margin-left: 2rem; margin-top:0;"><i data-l10n-id="newslettersSub">Ontvang de meest relevante artikelen en informatie die je met het ouderschap helpen.</i></p>
+                <p style="margin-left: 2rem; margin-top:0;"><i data-l10n-id="newslettersSub">Ontvang de meest relevante
+                    artikelen en informatie die je met het ouderschap helpen.</i></p>
             </div>
             <div style="margin-bottom: 2rem;">
-                <input type="checkbox" %%=v(Iif(IndexOf(@Opt_in_topics_Maxi_Cosi__c,'Promotions')> 0, 'checked', ''))=%%
-                name="Opt_in_Topics_Maxi_Cosi__c_promo" value="Promotions" id="Opt_in_Topics_Maxi_Cosi__c_promo">
-                <label style="vertical-align: top" for="Opt_in_Topics_Maxi_Cosi__c_promo"><b data-l10n-id="ads">Reclame e-mails</b></label>
-                <p style="margin-left: 2rem; margin-top:0;"><i data-l10n-id="adsSub">Wees als eerste op de hoogte van acties en de uitverkoop.</i></p>
+                <input type="checkbox" %%=v(Iif(IndexOf(@Opt_in_topics_Maxi_Cosi__c,'Promotions')>= 0, 'checked', ''))=%%
+                name="Opt_in_Topics_Maxi_Cosi__c_promo" value="Promotions" id="Opt_in_Topics_Maxi_Cosi__c_promo" onchange="checkTopics()">
+                <label style="vertical-align: top" for="Opt_in_Topics_Maxi_Cosi__c_promo"><b data-l10n-id="ads">Reclame
+                    e-mails</b></label>
+                <p style="margin-left: 2rem; margin-top:0;"><i data-l10n-id="adsSub">Wees als eerste op de hoogte van
+                    acties en de uitverkoop.</i></p>
             </div>
             <div style="margin-bottom: 2rem;">
-                <input type="checkbox" %%=v(Iif(IndexOf(@Opt_in_topics_Maxi_Cosi__c,'Product')> 0, 'checked', ''))=%%
-                name="Opt_in_Topics_Maxi_Cosi__c_prod" value="Product" id="Opt_in_Topics_Maxi_Cosi__c_prod">
+                <input type="checkbox" %%=v(Iif(IndexOf(@Opt_in_topics_Maxi_Cosi__c,'Product')>= 0, 'checked', ''))=%%
+                name="Opt_in_Topics_Maxi_Cosi__c_prod" value="Product" id="Opt_in_Topics_Maxi_Cosi__c_prod" onchange="checkTopics()">
                 <label style="vertical-align: top" for="Opt_in_Topics_Maxi_Cosi__c_prod"><b data-l10n-id="products">Productnieuws</b></label>
-                <p style="margin-left: 2rem; margin-top:0;"><i data-l10n-id="productsSub">Handige accessoires, nieuwe functies en de nieuwste productlanceringen.</i></p>
+                <p style="margin-left: 2rem; margin-top:0;"><i data-l10n-id="productsSub">Handige accessoires, nieuwe
+                    functies en de nieuwste productlanceringen.</i></p>
             </div>
             <div>
-                <input data-l10n-id="unsubBtn.value" id="unsubBtn" class="submit-btn" type="button" value="Afmelden voor alle mailings" onclick="unsub()">
+                <input data-l10n-id="unsubBtn.value" id="unsubBtn" class="submit-btn" type="button"
+                       value="Afmelden voor alle mailings" onclick="unsub()">
             </div>
-            <h4 data-l10n-id="reasonTitle">Als je even tijd hebt, laat ons dan weten waarom je je hebt uitgeschreven:</h4>
-            <div>
-                <input type="radio" id="doNotWant" name="Opt_out_reason_Maxi_Cosi__c" value="Don&#39;t want to receive these emails anymore" %%=v(Iif(IndexOf(@Opt_out_reason_Maxi_Cosi__c,'Don&#39;t want to receive these emails anymore')> 0, 'checked', ''))=%%>
-                <label for="doNotWant" data-l10n-id="doNotWant">Ik wil deze e-mails niet meer ontvangen.</label><br>
-                <input type="radio" id="neverSubscribed" name="Opt_out_reason_Maxi_Cosi__c" value="Never subscribed" %%=v(Iif(IndexOf(@Opt_out_reason_Maxi_Cosi__c,'Never subscribed')> 0, 'checked', ''))=%%>
-                <label for="neverSubscribed" data-l10n-id="neverSubscribed">Ik heb me nooit ingeschreven voor deze mailinglijst.</label><br>
-                <input type="radio" id="notInteresting" name="Opt_out_reason_Maxi_Cosi__c" value="Content not interesting" %%=v(Iif(IndexOf(@Opt_out_reason_Maxi_Cosi__c,'Content not interesting')> 0, 'checked', ''))=%%>
-                <label for="notInteresting" data-l10n-id="notInteresting">Jullie e-mails zijn niet relevant.</label><br>
-                <input type="radio" id="manyEmails" name="Opt_out_reason_Maxi_Cosi__c" value="Too many e-mails" %%=v(Iif(IndexOf(@Opt_out_reason_Maxi_Cosi__c,'Too many e-mails')> 0, 'checked', ''))=%%>
-                <label for="manyEmails" data-l10n-id="manyEmails">Jullie e-mails verschijnen te vaak.</label><br>
-                <input type="radio" id="childOld" name="Opt_out_reason_Maxi_Cosi__c" value="Child too old" %%=v(Iif(IndexOf(@Opt_out_reason_Maxi_Cosi__c,'Child too old')> 0, 'checked', ''))=%%>
-                <label for="childOld" data-l10n-id="childOld">Ik ben niet langer geïnteresseerd in producten voor kinderen.</label>
+            <div class="hidden" id="optOutReason">
+                <h4 data-l10n-id="reasonTitle">Als je even tijd hebt, laat ons dan weten waarom je je hebt
+                    uitgeschreven:</h4>
+                <div>
+                    <input type="radio" id="doNotWant" name="Opt_out_reason_Maxi_Cosi__c"
+                           value="Don&#39;t want to receive these emails anymore">
+                    <label for="doNotWant" data-l10n-id="doNotWant">Ik wil deze e-mails niet meer ontvangen.</label><br>
+                    <input type="radio" id="neverSubscribed" name="Opt_out_reason_Maxi_Cosi__c" value="Never subscribed">
+                    <label for="neverSubscribed" data-l10n-id="neverSubscribed">Ik heb me nooit ingeschreven voor deze
+                        mailinglijst.</label><br>
+                    <input type="radio" id="notInteresting" name="Opt_out_reason_Maxi_Cosi__c"
+                           value="Content not interesting">
+                    <label for="notInteresting" data-l10n-id="notInteresting">Jullie e-mails zijn niet relevant.</label><br>
+                    <input type="radio" id="manyEmails" name="Opt_out_reason_Maxi_Cosi__c" value="Too many e-mails">
+                    <label for="manyEmails" data-l10n-id="manyEmails">Jullie e-mails verschijnen te vaak.</label><br>
+                    <input type="radio" id="childOld" name="Opt_out_reason_Maxi_Cosi__c" value="Child too old">
+                    <label for="childOld" data-l10n-id="childOld">Ik ben niet langer geïnteresseerd in producten voor
+                        kinderen.</label>
+                </div>
             </div>
             <div style="margin-top:2rem;">
-                <input data-l10n-id="submitBtn.value" id="submitBtn" class="submit-btn" type="submit" value="Uitschrijven" disabled>
+                <input data-l10n-id="submitBtn.value" id="submitBtn" class="submit-btn" type="submit"
+                       value="Opslaan">
             </div>
         </form>
     </div>
@@ -311,80 +385,138 @@ set @Opt_out_reason_Maxi_Cosi__c = field(@row,"Opt_out_reason_Maxi_Cosi__c")
     <h1 data-l10n-id="success">Je voorkeuren zijn succesvol opgeslagen. Je mag deze pagina sluiten.</h1>
 </div>
 <script runat="server">
-  } catch
-  (err)
-  {
-    Variable.SetValue("@errorMessage", Stringify(err.message) + Stringify(err.description));
-    Write("<h1 data-l10n-id='generalError'>Er heeft zich een fout voorgedaan.</h1>");
-  }
+    } catch(err) {
+        Variable.SetValue("@errorMessage", Stringify(err.message) + Stringify(err.description));
+        Write("<h1 data-l10n-id='generalError' style='text-align: center'>Er heeft zich een fout voorgedaan.</h1>");
+    }
 </script>
 <script runat="client">
-  console.log(`%%=v(@errorMessage)=%%`);
+    console.log(`%%=v(@errorMessage)=%%`);
 </script>
 <script type="application/javascript">
-  var form = document.querySelector('form');
-  var submitBtn = document.querySelector('#submitBtn');
-  var unsubBtn = document.querySelector('#unsubBtn')
+    var form = document.querySelector('form');
+    var submitBtn = document.querySelector('#submitBtn');
+    var unsubBtn = document.querySelector('#unsubBtn');
+    var spinnerBound = false;
 
-  if (form) {
-    form.addEventListener("submit", postFormData);
-  }
+    function postFormData(e) {
+        e.preventDefault();
+        showSpinner(true);
+        submitBtn.setAttribute("disabled", true);
+        unsubBtn.setAttribute("disabled", true);
+        submitBtn.classList.add('submit-btn__loading');
 
-  function postFormData(e) {
-    e.preventDefault();
-    submitBtn.setAttribute("disabled", true);
-    unsubBtn.setAttribute("disabled", true);
-    submitBtn.classList.add('submit-btn__loading');
+        var payload = {};
+        var formData = new FormData(form);
+        var topics = '';
+        for (var pair of formData.entries()) {
+            if (pair[0].startsWith('Opt_in_Topics_Maxi_Cosi__c')) {
+                topics += pair[1] + ';';
+            } else {
+                payload[pair[0]] = pair[1];
+            }
+        }
+        topics = topics.length ? topics.slice(0, -1) : '';
+        payload['Opt_in_Topics_Maxi_Cosi__c'] = topics;
 
-    var payload = {};
-    var formData = new FormData(form);
-    var topics = '';
-    for (var pair of formData.entries()) {
-      if (pair[0].startsWith('Opt_in_Topics_Maxi_Cosi__c')) {
-        topics += pair[1] + ';';
-      } else {
-        payload[pair[0]] = pair[1];
-      }
-    }
-    topics = topics.length ? topics.slice(0, -1) : '';
-    payload['Opt_in_Topics_Maxi_Cosi__c'] = topics;
-
-    fetch(form.getAttribute("action"), {
-      method: "POST",
-      headers: {'Content-Type': 'application/json; charset=utf-8'},
-      body: JSON.stringify(payload)
-    })
-      .then(function (result) {
-        return result.text().then(function (text) {
-          text = text.substr(text.indexOf('{'), text.indexOf('<') - text.indexOf('{'));
-          return JSON.parse(text);
+        fetch(form.getAttribute("action"), {
+            method: "POST",
+            headers: {'Content-Type': 'application/json; charset=utf-8'},
+            body: JSON.stringify(payload)
         })
-          .then(function (data) {
-            toggleMessage(data.Status);
-          })
-          .catch(function (error) {
-            toggleMessage('Error');
-          });
-      });
-  }
+            .then(function (result) {
+                showSpinner(false);
+                return result.text().then(function (text) {
+                    text = text.substr(text.indexOf('{'), text.indexOf('<') - text.indexOf('{'));
+                    return JSON.parse(text);
+                })
+                    .then(function (data) {
+                        toggleMessage(data.Status);
+                    })
+                    .catch(function (error) {
+                        toggleMessage('Error');
+                    });
+            });
+    }
 
-  function toggleMessage(status) {
-      if (status == 'OK') {
-          var mainForm = document.querySelector('.form--wrapper');
-          mainForm.classList.add("hidden");
-          var successMessage = document.querySelector('.success');
-          successMessage.classList.remove("hidden");
-      } else {
-          var errorMessage = document.querySelector('.error');
-          errorMessage.classList.remove("hidden");
-      }
-      submitBtn.removeAttribute("disabled");
-      submitBtn.classList.remove('submit-btn__loading');
-  }
+    function toggleMessage(status) {
+        if (status == 'OK') {
+            var mainForm = document.querySelector('.form--wrapper');
+            mainForm.classList.add("hidden");
+            var successMessage = document.querySelector('.success');
+            successMessage.classList.remove("hidden");
+        } else {
+            var errorMessage = document.querySelector('.error');
+            errorMessage.classList.remove("hidden");
+        }
+        submitBtn.removeAttribute("disabled");
+        unsubBtn.removeAttribute("disabled");
+        submitBtn.classList.remove('submit-btn__loading');
+    }
 
-  function unsub() {
+    function changeLanguage(lang) {
+        showSpinner(true);
+        if (!lang) {
+            lang = document.getElementById("languageSelect").value;
+        }
+        if (html10n) {
+            if (!spinnerBound) {
+                html10n.bind("localized", function() {
+                    showSpinner(false);
+                });
+                spinnerBound = true;
+            }
+            html10n.localize(lang);
+        }
+    }
 
-  }
+    function unsub() {
+        document.querySelector('#Opt_in_Topics_Maxi_Cosi__c_news').checked = false;
+        document.querySelector('#Opt_in_Topics_Maxi_Cosi__c_promo').checked = false;
+        document.querySelector('#Opt_in_Topics_Maxi_Cosi__c_prod').checked = false;
+        checkTopics();
+    }
+
+    function checkTopics() {
+        var formData = new FormData(form);
+        var optIn = false;
+        for (var pair of formData.entries()) {
+            if (pair[0].startsWith('Opt_in_Topics_Maxi_Cosi__c')) {
+                optIn = true;
+            }
+        }
+        if (!optIn) {
+            document.querySelector('#optOutReason').classList.remove("hidden");
+        } else {
+            document.querySelector('#optOutReason').classList.add("hidden");
+        }
+    }
+
+    function showSpinner(show) {
+        const spinner = document.querySelector('.click-shield');
+        if (show) {
+            spinner.style.display = 'block';
+        } else {
+            spinner.style.display = 'none';
+        }
+    }
+
+    function init() {
+        checkTopics();
+        form.addEventListener("submit", postFormData);
+        const urlParams = new URLSearchParams(window.location.search);
+        const lang = urlParams.get('lang');
+        if (lang && lang !== 'nl') {
+            const languageSelect = document.querySelector('#languageSelect');
+            languageSelect.value = lang;
+            setTimeout(changeLanguage.bind(this, lang), 0);
+        } else {
+            showSpinner(false);
+        }
+    }
+    init();
+
+
 </script>
 </body>
 </html>

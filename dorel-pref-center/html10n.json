@@ -17,7 +17,7 @@
     "notInteresting": "Jullie e-mails zijn niet relevant",
     "manyEmails": "Jullie e-mails verschijnen te vaak",
     "childOld": "Ik ben niet langer geïnteresseerd in producten voor kinderen",
-    "submitBtn.value": "Uitschrijven",
+    "submitBtn.value": "Opslaan",
     "notFound": "Gegevens niet gevonden.",
     "success": "Je voorkeuren zijn succesvol opgeslagen. Je mag deze pagina sluiten.",
     "generalError": "Er heeft zich een fout voorgedaan."
@@ -40,7 +40,7 @@
     "notInteresting": "Estos correos electrónicos no son relevantes para mí.",
     "manyEmails": "Vuestros correos electrónicos son demasiado frecuentes.",
     "childOld": "Ya no me interesan los productos infantiles.",
-    "submitBtn.value": "Eliminar la suscripción",
+    "submitBtn.value": "Guardar",
     "notFound": "Datos no encontrados.",
     "success": "Sus preferencias se han guardado correctamente. Puede cerrar esta página.",
     "generalError": "Ha habido un error."
@@ -63,7 +63,7 @@
     "notInteresting": "Vos e-mails ne sont pas pertinents",
     "manyEmails": "Vos e-mails sont trop fréquents",
     "childOld": "Je ne suis plus intéressé(e) par les produits pour enfants",
-    "submitBtn.value": "Se désinscrire",
+    "submitBtn.value": "Enregistrer",
     "notFound": "Données non trouvées .",
     "success": "Vos préférences ont été enregistrées avec succès . Vous pouvez fermer cette page .",
     "generalError": "Une erreur s'est produite ."
@@ -86,7 +86,7 @@
     "notInteresting": "Le vostre e-mail non sono di mio interesse",
     "manyEmails": "Le vostre e-mail sono troppo frequenti",
     "childOld": "Non mi interessano più i prodotti per l'infanzia",
-    "submitBtn.value": "Annullare l'iscrizione",
+    "submitBtn.value": "Salva",
     "notFound": "Dati non trovati.",
     "success": "Le tue preferenze sono state salvate con successo. Puoi chiudere questa pagina.",
     "generalError": "C'è stato un errore."
@@ -109,7 +109,7 @@
     "notInteresting": "Eure E-Mails sind nicht relevant",
     "manyEmails": "Eure E-Mails sind zu häufig",
     "childOld": "Ich interessiere mich nicht mehr für Kinderprodukte",
-    "submitBtn.value": "Abmelden",
+    "submitBtn.value": "Speichern",
     "notFound": "Daten nicht gefunden.",
     "success": "Ihre Einstellungen wurden erfolgreich gespeichert. Sie können diese Seite schließen.",
     "generalError": "Es ist ein Fehler aufgetreten."

@@ -208,7 +208,7 @@ set @Language = field(@infoRow,"Language__c")
         </tbody>
     </table>
     <p>
-        Welcome to the Preference centre of Dutch Design Foundation (DDF). Here you can
+        Welcome to the Preference Centre of Dutch Design Foundation (DDF). Here you can
         specify your preferences for newsletters from DDF and all underlying labels. We
         would like to learn more about your interests. The more specific you fill in the form
         below, the better we can tailor our content to your needs.
@@ -222,19 +222,19 @@ set @Language = field(@infoRow,"Language__c")
         <div>
             <table>
                 <tr>
-                    <td>First name:</td>
+                    <td><b>First Name:</b></td>
                     <td>%%=v(@FirstName)=%%</td>
                 </tr>
                 <tr>
-                    <td>Last name:</td>
+                    <td><b>Last Name:</b></td>
                     <td>%%=v(@LastName)=%%</td>
                 </tr>
                 <tr>
-                    <td>E-mail address:</td>
+                    <td><b>E-mail Address:</b></td>
                     <td>%%=v(@Email)=%%</td>
                 </tr>
                 <tr>
-                    <td>Preferred language:</td>
+                    <td><b>Preferred Language:</b></td>
                     <td>
                         <fieldset style="border: none; padding-block-end: 6px;">
                             <table role="presentation">
@@ -531,7 +531,7 @@ set @Language = field(@infoRow,"Language__c")
         </div>
         <hr>
         <div>
-            <h4 style="margin-bottom: 15px;">Would you no longer like to receive our emails?</h4>
+            <h4 style="margin-bottom: 15px;">Do you no longer wish to receive newsletters from us?</h4>
             <input id="unsubBtn" class="submit-btn" type="button" value="Unsubscribe to all" style="font-size:23px; padding:10px 20px 10px 20px;
                 color:white;border:none;" onclick="unsub()">
             <input id="submitBtn" class="submit-btn" type="submit" value="Save" disabled
@@ -635,6 +635,7 @@ set @Language = field(@infoRow,"Language__c")
     unsubBtn.setAttribute("disabled", true);
 
     var payload = {};
+    var formData = new FormData(form);
     payload['DDW_Topics__c'] = '';
     payload['DDA_Topics__c'] = '';
     payload['WDE_Topics__c'] = '';
@@ -687,13 +688,14 @@ set @Language = field(@infoRow,"Language__c")
   function isFormFilled() {
     var nbr_checked_radios = document.querySelectorAll('input[type=radio]:checked').length;
     var nbr_radios = document.querySelectorAll('input[type=radio]').length;
+    var button = document.querySelector('#submitBtn');
 
     if (nbr_checked_radios === (nbr_radios / 2)) {
-      var button = document.querySelector('#submitBtn');
       button.disabled = false;
+    } else {
+        button.disabled = true;
     }
   }
-
   isFormFilled();
 </script>
 </body>

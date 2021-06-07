@@ -48,8 +48,7 @@
 
                 if (parsedData.listId && parsedData.listId.length > 0) {
                     var field = listIdDict[parsedData.listId];
-                    var newTopics = parsedData['Opt_in_topics_Maxi_Cosi__c'];
-                    if (newTopics && newTopics.indexOf(field) < 0) {
+                    if (parsedData.Opt_in_topics_Maxi_Cosi__c.indexOf(field) < 0) {
                         var prox = new Script.Util.WSProxy();
                         var props = [
                             {Name: "SubscriberKey", Value: parsedData.subId},
@@ -57,7 +56,7 @@
                             {Name: "ListID", Value: parsedData.listId},
                             {Name: "BatchID", Value: ''}
                         ];
-                        Write('unsubEvent: ' + JSON.stringify(props));
+                        Write('unsubEvent: ' + Stringify(props));
                         prox.execute(props, "LogUnsubEvent");
                     }
                 }
@@ -74,8 +73,6 @@
             toRemove: []
         };
 
-        var today = new Date();
-
         if (!data.Opt_in_topics_Maxi_Cosi__c || !data.Opt_in_topics_Maxi_Cosi__c.length) {
             props.toRemove.push('Opt_in_topics_Maxi_Cosi__c');
             props.toUpdate.push('Opt_in_status_Maxi_Cosi__c');
@@ -84,7 +81,7 @@
             props.toUpdate.push(data.Opt_out_reason_Maxi_Cosi__c);
             if (data.topics && data.topics.length) {
                 props.toUpdate.push('Date_time_stamp_of_opt_out_Maxi_Cosi__c');
-                props.toUpdate.push(today.toISOString());
+                props.toUpdate.push(data.currentDate);
             }
         } else {
             props.toUpdate.push('Opt_in_topics_Maxi_Cosi__c');
@@ -95,7 +92,7 @@
                 props.toUpdate.push('Opt_in_source_Maxi_Cosi__c');
                 props.toUpdate.push('Preference center');
                 props.toUpdate.push('Date_time_stamp_of_opt_in_Maxi_Cosi__c');
-                props.toUpdate.push(today.toISOString());
+                props.toUpdate.push(data.currentDate);
                 props.toUpdate.push('Opt_in_type_Maxi_Cosi__c');
                 props.toUpdate.push('Single');
             }

@@ -236,7 +236,7 @@ set @Language = field(@infoRow,"Language__c")
                 <tr>
                     <td><b>Preferred Language:</b></td>
                     <td>
-                        <fieldset style="border: none; padding-block-end: 6px;">
+                        <fieldset style="border: none; padding-block-end: 6px; padding: 0;">
                             <table role="presentation">
                                 <tbody>
                                 <tr>
@@ -329,22 +329,22 @@ set @Language = field(@infoRow,"Language__c")
                 <div style="margin: 1rem 0 1rem 1rem;">
                     <div id="designWeekExtraContent" style="display: none;">
                         <div>
-                            <input type="checkbox" %%=v(Iif(IndexOf(@DDWTopics,'Artistic')> 0, 'checked', ''))=%% name="DDW_Topics__c_art" value="Artistic exploration and training"
+                            <input type="checkbox" style="vertical-align:bottom;" %%=v(Iif(IndexOf(@DDWTopics,'Artistic')> 0, 'checked', ''))=%% name="DDW_Topics__c_art" value="Artistic exploration and training"
                             id="DDW_Topics__c_art">
                             <label for="DDW_Topics__c_art">Artistic exploration and creation</label>
                         </div>
                         <div>
-                            <input type="checkbox" %%=v(Iif(IndexOf(@DDWTopics,'Creative')> 0, 'checked', ''))=%% name="DDW_Topics__c_crea" value="Creative craftsmanship and product design"
+                            <input type="checkbox" style="vertical-align:bottom;" %%=v(Iif(IndexOf(@DDWTopics,'Creative')> 0, 'checked', ''))=%% name="DDW_Topics__c_crea" value="Creative craftsmanship and product design"
                             id="DDW_Topics__c_crea">
                             <label for="DDW_Topics__c_crea">Creative craftsmanship and product design</label>
                         </div>
                         <div>
-                            <input type="checkbox" %%=v(Iif(IndexOf(@DDWTopics,'Innovative')> 0, 'checked', ''))=%% name="DDW_Topics__c_inno" value="Innovative solutions for todays world"
+                            <input type="checkbox" style="vertical-align:bottom;" %%=v(Iif(IndexOf(@DDWTopics,'Innovative')> 0, 'checked', ''))=%% name="DDW_Topics__c_inno" value="Innovative solutions for todays world"
                             id="DDW_Topics__c_inno">
                             <label for="DDW_Topics__c_inno">Innovative solutions for today’s world</label>
                         </div>
                         <div>
-                            <input type="checkbox" %%=v(Iif(IndexOf(@DDWTopics,'Speculative')> 0, 'checked', ''))=%% name="DDW_Topics__c_specu" value="Speculative ideas for tomorrows world"
+                            <input type="checkbox" style="vertical-align:bottom;" %%=v(Iif(IndexOf(@DDWTopics,'Speculative')> 0, 'checked', ''))=%% name="DDW_Topics__c_specu" value="Speculative ideas for tomorrows world"
                             id="DDW_Topics__c_specu">
                             <label for="DDW_Topics__c_specu">Speculative ideas for tomorrow’s world</label>
                         </div>
@@ -391,37 +391,37 @@ set @Language = field(@infoRow,"Language__c")
                 <div style="margin: 1rem 0 1rem 1rem;">
                     <div id="designAwardsExtraContent" style="display: none;">
                         <div>
-                            <input type="checkbox" %%=v(Iif(IndexOf(@DDATopics,'Product')> 0, 'checked', ''))=%% name="DDA_Topics__c_prod" value="Product"
+                            <input type="checkbox" style="vertical-align:bottom;" %%=v(Iif(IndexOf(@DDATopics,'Product')> 0, 'checked', ''))=%% name="DDA_Topics__c_prod" value="Product"
                             id="DDA_Topics__c_prod">
                             <label for="DDA_Topics__c_prod">Product</label>
                         </div>
                         <div>
-                            <input type="checkbox" %%=v(Iif(IndexOf(@DDATopics,'Habitat')> 0, 'checked', ''))=%% name="DDA_Topics__c_hab" value="Habitat"
+                            <input type="checkbox" style="vertical-align:bottom;" %%=v(Iif(IndexOf(@DDATopics,'Habitat')> 0, 'checked', ''))=%% name="DDA_Topics__c_hab" value="Habitat"
                             id="DDA_Topics__c_hab">
                             <label for="DDA_Topics__c_hab">Habitat</label>
                         </div>
                         <div>
-                            <input type="checkbox" %%=v(Iif(IndexOf(@DDATopics,'Communication')> 0, 'checked', ''))=%% name="DDA_Topics__c_comm" value="Communication"
+                            <input type="checkbox" style="vertical-align:bottom;" %%=v(Iif(IndexOf(@DDATopics,'Communication')> 0, 'checked', ''))=%% name="DDA_Topics__c_comm" value="Communication"
                             id="DDA_Topics__c_comm">
                             <label for="DDA_Topics__c_comm">Communication</label>
                         </div>
                         <div>
-                            <input type="checkbox" %%=v(Iif(IndexOf(@DDATopics,'Fashion')> 0, 'checked', ''))=%% name="DDA_Topics__c_fash" value="Fashion"
+                            <input type="checkbox" style="vertical-align:bottom;" %%=v(Iif(IndexOf(@DDATopics,'Fashion')> 0, 'checked', ''))=%% name="DDA_Topics__c_fash" value="Fashion"
                             id="DDA_Topics__c_fash">
                             <label for="DDA_Topics__c_fash">Fashion</label>
                         </div>
                         <div>
-                            <input type="checkbox" %%=v(Iif(IndexOf(@DDATopics,'Design Research')> 0, 'checked', ''))=%% name="DDA_Topics__c_desr" value="Design Research"
+                            <input type="checkbox" style="vertical-align:bottom;" %%=v(Iif(IndexOf(@DDATopics,'Design Research')> 0, 'checked', ''))=%% name="DDA_Topics__c_desr" value="Design Research"
                             id="DDA_Topics__c_desr">
                             <label for="DDA_Topics__c_desr">Design Research</label>
                         </div>
                         <div>
-                            <input type="checkbox" %%=v(Iif(IndexOf(@DDATopics,'Data & Interaction')> 0, 'checked', ''))=%% name="DDA_Topics__c_di" value="Data & Interaction"
+                            <input type="checkbox" style="vertical-align:bottom;" %%=v(Iif(IndexOf(@DDATopics,'Data & Interaction')> 0, 'checked', ''))=%% name="DDA_Topics__c_di" value="Data & Interaction"
                             id="DDA_Topics__c_di">
                             <label for="DDA_Topics__c_di">Data & Interaction</label>
                         </div>
                         <div>
-                            <input type="checkbox" %%=v(Iif(IndexOf(@DDATopics,'Best Commissioning')> 0, 'checked', ''))=%% name="DDA_Topics__c_bcm" value="Best Commissioning"
+                            <input type="checkbox" style="vertical-align:bottom;" %%=v(Iif(IndexOf(@DDATopics,'Best Commissioning')> 0, 'checked', ''))=%% name="DDA_Topics__c_bcm" value="Best Commissioning"
                             id="DDA_Topics__c_bcm">
                             <label for="DDA_Topics__c_bcm">Best Commissioning</label>
                         </div>
@@ -469,37 +469,37 @@ set @Language = field(@infoRow,"Language__c")
                 <div style="margin: 1rem 0 1rem 1rem;">
                     <div id="WorldDesignEmbassiesContent" style="display: none;">
                         <div>
-                            <input type="checkbox" %%=v(Iif(IndexOf(@WDETopics,'Safety')> 0, 'checked', ''))=%% name="WDE_Topics__c_saf" value="Safety"
+                            <input type="checkbox" style="vertical-align:bottom;" %%=v(Iif(IndexOf(@WDETopics,'Safety')> 0, 'checked', ''))=%% name="WDE_Topics__c_saf" value="Safety"
                             id="WDE_Topics__c_saf">
                             <label for="WDE_Topics__c_saf">Safety</label>
                         </div>
                         <div>
-                            <input type="checkbox" %%=v(Iif(IndexOf(@WDETopics,'Mobility')> 0, 'checked', ''))=%% name="WDE_Topics__c_mob" value="Mobility"
+                            <input type="checkbox" style="vertical-align:bottom;" %%=v(Iif(IndexOf(@WDETopics,'Mobility')> 0, 'checked', ''))=%% name="WDE_Topics__c_mob" value="Mobility"
                             id="WDE_Topics__c_mob">
                             <label for="WDE_Topics__c_mob">Mobility</label>
                         </div>
                         <div>
-                            <input type="checkbox" %%=v(Iif(IndexOf(@WDETopics,'Water')> 0, 'checked', ''))=%% name="WDE_Topics__c_wat" value="Water"
+                            <input type="checkbox" style="vertical-align:bottom;" %%=v(Iif(IndexOf(@WDETopics,'Water')> 0, 'checked', ''))=%% name="WDE_Topics__c_wat" value="Water"
                             id="WDE_Topics__c_wat">
                             <label for="WDE_Topics__c_wat">Water</label>
                         </div>
                         <div>
-                            <input type="checkbox" %%=v(Iif(IndexOf(@WDETopics,'Rethinking Plastic')> 0, 'checked', ''))=%% name="WDE_Topics__c_plas" value="Rethinking Plastic"
+                            <input type="checkbox" style="vertical-align:bottom;" %%=v(Iif(IndexOf(@WDETopics,'Rethinking Plastic')> 0, 'checked', ''))=%% name="WDE_Topics__c_plas" value="Rethinking Plastic"
                             id="WDE_Topics__c_plas">
                             <label for="WDE_Topics__c_plas">Rethinking Plastic</label>
                         </div>
                         <div>
-                            <input type="checkbox" %%=v(Iif(IndexOf(@WDETopics,'Health')> 0, 'checked', ''))=%% name="WDE_Topics__c_heal" value="Health"
+                            <input type="checkbox" style="vertical-align:bottom;" %%=v(Iif(IndexOf(@WDETopics,'Health')> 0, 'checked', ''))=%% name="WDE_Topics__c_heal" value="Health"
                             id="WDE_Topics__c_heal">
                             <label for="WDE_Topics__c_heal">Health</label>
                         </div>
                         <div>
-                            <input type="checkbox" %%=v(Iif(IndexOf(@WDETopics,'Biobased Building')> 0, 'checked', ''))=%% name="WDE_Topics__c_circ" value="Circular & Biobased Building"
+                            <input type="checkbox" style="vertical-align:bottom;" %%=v(Iif(IndexOf(@WDETopics,'Biobased Building')> 0, 'checked', ''))=%% name="WDE_Topics__c_circ" value="Circular & Biobased Building"
                             id="WDE_Topics__c_circ">
                             <label for="WDE_Topics__c_circ">Circular & Biobased Building</label>
                         </div>
                         <div>
-                            <input type="checkbox" %%=v(Iif(IndexOf(@WDETopics,'Food')> 0, 'checked', ''))=%% name="WDE_Topics__c_food" value="Food"
+                            <input type="checkbox" style="vertical-align:bottom;" %%=v(Iif(IndexOf(@WDETopics,'Food')> 0, 'checked', ''))=%% name="WDE_Topics__c_food" value="Food"
                             id="WDE_Topics__c_food">
                             <label for="WDE_Topics__c_food">Food</label>
                         </div>

@@ -85,10 +85,13 @@
         if (data.World_Design_Embassies__c === 'No') {
             data.WDE_Topics__c = '';
         }
+        if (data.What_if_Lab__c === 'No') {
+            data.WiL_Topics__c = '';
+        }
 
         for (key in data) {
             if (key !== 'refId' && key !== 'job' && key !== 'subId' && key !== 'listId' && key !== 'Language__c' && key !== 'subType') {
-                if ((key === 'DDW_Topics__c' || key === 'DDA_Topics__c' || key === 'WDE_Topics__c') && (!data[key] || !data[key].length)) {
+                if ((key === 'DDW_Topics__c' || key === 'DDA_Topics__c' || key === 'WDE_Topics__c' || key === 'WiL_Topics__c') && (!data[key] || !data[key].length)) {
                     props.toRemove.push(key);
                 } else {
                     props.toUpdate.push(key);

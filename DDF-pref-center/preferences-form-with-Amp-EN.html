@@ -160,7 +160,7 @@ set @subType = "Contact"
 endif
 
 if @rowCount > 0 and @infoRowCount > 0 then
-var @DutchDesignFoundation, @DutchDesignWeek, @DutchDesignAwards, @WhatIfLab, @DDWTopics, @DDATopics, @WorldDesignEmbassies, @WDETopics, @FirstName, @LastName, @Email, @Language
+var @DutchDesignFoundation, @DutchDesignWeek, @DutchDesignAwards, @WhatIfLab, @DDWTopics, @DDATopics, @WiLTopics, @WorldDesignEmbassies, @WDETopics, @FirstName, @LastName, @Email, @Language
 set @row = row(@rows, 1) /* only use first row */
 set @DutchDesignFoundation = field(@row,"Dutch_Design_Foundation__c")
 set @DutchDesignWeek = field(@row,"Dutch_Design_Week__c")
@@ -170,6 +170,7 @@ set @WorldDesignEmbassies = field(@row,"World_Design_Embassies__c")
 set @WDETopics = field(@row,"WDE_Topics__c")
 set @DDWTopics = field(@row,"DDW_Topics__c")
 set @DDATopics = field(@row,"DDA_Topics__c")
+set @WiLTopics = field(@row,"WiL_Topics__c")
 
 set @infoRow = row(@infoRows, 1)
 set @FirstName = field(@infoRow,"FirstName")
@@ -528,6 +529,31 @@ set @Language = field(@infoRow,"Language__c")
                     </tbody>
                 </table>
             </fieldset>
+            <div style="margin-left: 1rem; margin-top: 10px;%%=v(Iif(@WhatIfLab == 'yes', 'display:inline-block', 'display:none'))=%%" id="whatIfLabExtra">
+                <div onclick="showHide([document.getElementById('whatIfLabExtraContent'),
+            document.getElementById('whatIfLabCarretRight'), document.getElementById('whatIfLabCarretDown')])">
+                    <svg id="whatIfLabCarretRight" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em"
+                         height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet"
+                         viewBox="0 0 8 8">
+                        <path d="M2 0v8l4-4l-4-4z" fill="#000000"/>
+                    </svg>
+                    <svg id="whatIfLabCarretDown" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em"
+                         height="1em" style="display:none; -ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);"
+                         preserveAspectRatio="xMidYMid meet" viewBox="0 0 8 8">
+                        <path d="M0 2l4 4l4-4H0z" fill="#000000"/>
+                    </svg>
+                    What topics are you most interested in?
+                </div>
+                <div style="margin: 1rem 0 1rem 1rem;">
+                    <div id="whatIfLabExtraContent" style="display: none;">
+                        <div>
+                            <input type="checkbox" style="vertical-align:bottom;" %%=v(Iif(IndexOf(@WiLTopics,'Open Calls')> 0, 'checked', ''))=%% name="WiL_Topics__c_open" value="Open Calls What if Labs"
+                            id="WiL_Topics__c_open">
+                            <label for="WiL_Topics__c_open">Open Calls What if Labs</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <hr>
         <div>
@@ -591,6 +617,8 @@ set @Language = field(@infoRow,"Language__c")
     var DDWTopics = '';
     var DDATopics = '';
     var WDETopics = '';
+    var WILTopics = '';
+
     for (var pair of formData.entries()) {
       if (pair[0].startsWith('DDW_Topics__c')) {
         DDWTopics += pair[1] + ';';
@@ -598,6 +626,8 @@ set @Language = field(@infoRow,"Language__c")
         DDATopics += pair[1] + ';';
       } else if (pair[0].startsWith('WDE_Topics__c')) {
         WDETopics += pair[1] + ';';
+      } else if (pair[0].startsWith('WiL_Topics__c')) {
+          WILTopics += pair[1] + ';';
       } else {
         payload[pair[0]] = pair[1];
       }
@@ -605,9 +635,11 @@ set @Language = field(@infoRow,"Language__c")
     DDWTopics = DDWTopics.length ? DDWTopics.slice(0, -1) : '';
     DDATopics = DDATopics.length ? DDATopics.slice(0, -1) : '';
     WDETopics = WDETopics.length ? WDETopics.slice(0, -1) : '';
+    WILTopics = WILTopics.length ? WILTopics.slice(0, -1) : '';
     payload['DDW_Topics__c'] = DDWTopics;
     payload['DDA_Topics__c'] = DDATopics;
     payload['WDE_Topics__c'] = WDETopics;
+    payload['WiL_Topics__c'] = WILTopics;
 
     fetch(form.getAttribute("action"), {
       method: "POST",
@@ -639,6 +671,7 @@ set @Language = field(@infoRow,"Language__c")
     payload['DDW_Topics__c'] = '';
     payload['DDA_Topics__c'] = '';
     payload['WDE_Topics__c'] = '';
+    payload['WiL_Topics__c'] = '';
     payload['Dutch_Design_Awards__c'] = 'No';
     payload['Dutch_Design_Foundation__c'] = 'No';
     payload['Dutch_Design_Week__c'] = 'No';

@@ -146,7 +146,7 @@ set @job = Base64Decode(RequestParameter('job'),'UTF-8');
 set @listId = Base64Decode(RequestParameter('listid'),'UTF-8');
 
 set @rows = RetrieveSalesforceObjects("Individual", "Dutch_Design_Awards__c,Dutch_Design_Foundation__c,Dutch_Design_Week__c,What_if_Lab__c,DDW_Topics__c,DDA_Topics__c,
-WDE_Topics__c,World_Design_Embassies__c","Id","=",@prefid)
+WDE_Topics__c,World_Design_Embassies__c,WiL_Topics__c","Id","=",@prefid)
 set @rowCount = rowcount(@rows)
 
 set @infoRows = RetrieveSalesforceObjects("Lead", "FirstName,LastName,Email,Language__c","Id","=",@subId)
@@ -517,12 +517,12 @@ set @Language = field(@infoRow,"Language__c")
                     <tr>
                         <td>
                             <input type="radio" %%=v(Iif(@WhatIfLab == 'Yes', 'checked', ''))=%% name="What_if_Lab__c" id="What_if_Lab__c_yes"
-                            value="Yes" onchange="isFormFilled()">
+                            value="Yes" onchange="showHide([document.getElementById('whatIfLabExtra')], true);isFormFilled()">
                             <label for="What_if_Lab__c_yes" style="margin-right: 10px;">Ja</label>
                         </td>
                         <td>
                             <input type="radio" %%=v(Iif(@WhatIfLab == 'No', 'checked', ''))=%% name="What_if_Lab__c" id="What_if_Lab__c_no"
-                            value="No" onchange="isFormFilled()">
+                            value="No" onchange="showHide([document.getElementById('whatIfLabExtra')], false);isFormFilled()">
                             <label for="What_if_Lab__c_no" style="margin-right: 10px;">Nee</label>
                         </td>
                     </tr>

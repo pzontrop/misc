@@ -54,10 +54,13 @@
                             {Name: "SubscriberKey", Value: parsedData.subId},
                             {Name: "JobID", Value: parsedData.job},
                             {Name: "ListID", Value: parsedData.listId},
-                            {Name: "BatchID", Value: ''}
+                            {Name: "BatchID", Value: ''},
+                            {Name: "Reason", Value: parsedData.Opt_out_reason_Maxi_Cosi__c}
                         ];
-                        Write('unsubEvent: ' + Stringify(props));
-                        prox.execute(props, "LogUnsubEvent");
+                        var data = prox.execute(props, "LogUnsubEvent");
+                        if (data.contains('error')) {
+                            Write(Stringify(data));
+                        }
                     }
                 }
             }
@@ -115,7 +118,6 @@
             updateSFObject += "]\%\%";
 
             try {
-                Write('save: ' + updateSFObject);
                 results = Platform.Function.TreatAsContent(updateSFObject);
             } catch (e2) {
                 Write("<br>e2: " + Stringify(e2));
@@ -138,7 +140,6 @@
                 updateSFObject += "output(concat(@SFUpdateResults)) ";
                 updateSFObject += "]\%\%";
                 try {
-                    Write('delete: ' + updateSFObject);
                     Platform.Function.TreatAsContent(updateSFObject);
                 } catch (e4) {
                     Write("<br>e4: " + Stringify(e4));

@@ -504,6 +504,12 @@ set @Language = field(@infoRow,"Language__c")
                             id="WDE_Topics__c_food">
                             <label for="WDE_Topics__c_food">Food</label>
                         </div>
+                        <div>
+                            <input type="checkbox" style="vertical-align:bottom;" %%=v(Iif(IndexOf(@WDETopics,'Inclusive')> 0, 'checked', ''))=%% name="WDE_Topics__c_incl" value="Inclusive Society"
+                            id="WDE_Topics__c_incl">
+                            <label for="WDE_Topics__c_incl">Inclusive Society</label>
+                        </div>
+
                     </div>
                 </div>
             </div>

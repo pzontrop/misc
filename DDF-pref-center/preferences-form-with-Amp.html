@@ -134,8 +134,8 @@
 </head>
 <body>
 <script runat="server">
-  Platform.Load("core", "1");
-  try {
+    Platform.Load("core", "1");
+    try {
 </script>
 %%[
 var @rows, @row, @rowCount, @prefid, @subId, @job, @listId, @infoRows, @infoRow, @infoRowCount, @subType
@@ -181,15 +181,15 @@ set @Language = field(@infoRow,"Language__c")
 ]%%
 
 <script>
-  function showHide(elements, show) {
-    for (x of elements) {
-      if (show || (show === undefined && x.style.display === "none")) {
-        x.style.display = "inline-block";
-      } else {
-        x.style.display = "none";
-      }
+    function showHide(elements, show) {
+        for (x of elements) {
+            if (show || (show === undefined && x.style.display === "none")) {
+                x.style.display = "inline-block";
+            } else {
+                x.style.display = "none";
+            }
+        }
     }
-  }
 </script>
 <div class="main--wrapper">
     <div style="float: right">
@@ -561,7 +561,7 @@ set @Language = field(@infoRow,"Language__c")
             <input id="unsubBtn" class="submit-btn" type="button" value="Schrijf mij uit voor alles" style="font-size:23px; padding:10px 20px 10px 20px;
                 color:white;border:none;" onclick="unsub()">
             <input id="submitBtn" class="submit-btn" type="submit" value="Opslaan" disabled
-                style="float:right; margin-right:2%; font-size:23px; padding:10px 20px 10px 20px; color:white; border:none;">
+                   style="float:right; margin-right:2%; font-size:23px; padding:10px 20px 10px 20px; color:white; border:none;">
         </div>
     </form>
 </div>
@@ -586,150 +586,151 @@ set @Language = field(@infoRow,"Language__c")
     </h1>
 </div>
 <script runat="server">
-  } catch
-  (err)
-  {
-    Variable.SetValue("@errorMessage", Stringify(err.message) + Stringify(err.description));
-    Write("Er heeft zich een fout voorgedaan.");
-  }
+    } catch
+    (err)
+    {
+        Variable.SetValue("@errorMessage", Stringify(err.message) + Stringify(err.description));
+        Write("Er heeft zich een fout voorgedaan.");
+    }
 </script>
 <script runat="client">
-  console.log(`%%=v(@errorMessage)=%%`);
+    console.log(`%%=v(@errorMessage)=%%`);
 </script>
 <script type="application/javascript">
-  var form = document.querySelector('form');
-  var submitBtn = document.querySelector('#submitBtn');
-  var unsubBtn = document.querySelector('#unsubBtn')
+    var form = document.querySelector('form');
+    var submitBtn = document.querySelector('#submitBtn');
+    var unsubBtn = document.querySelector('#unsubBtn')
 
-  if (form) {
-    form.addEventListener("submit", postFormData);
-  }
-
-  function postFormData(e) {
-    e.preventDefault();
-    submitBtn.setAttribute("disabled", true);
-    unsubBtn.setAttribute("disabled", true);
-    submitBtn.setAttribute("value", "Laden...");
-    submitBtn.classList.add('submit-btn__loading');
-
-    var payload = {};
-    var formData = new FormData(form);
-    var DDWTopics = '';
-    var DDATopics = '';
-    var WDETopics = '';
-    var WILTopics = '';
-
-    for (var pair of formData.entries()) {
-      if (pair[0].startsWith('DDW_Topics__c')) {
-        DDWTopics += pair[1] + ';';
-      } else if (pair[0].startsWith('DDA_Topics__c')) {
-        DDATopics += pair[1] + ';';
-      } else if (pair[0].startsWith('WDE_Topics__c')) {
-        WDETopics += pair[1] + ';';
-      } else if (pair[0].startsWith('WiL_Topics__c')) {
-        WILTopics += pair[1] + ';';
-      } else {
-        payload[pair[0]] = pair[1];
-      }
+    if (form) {
+        form.addEventListener("submit", postFormData);
     }
-    DDWTopics = DDWTopics.length ? DDWTopics.slice(0, -1) : '';
-    DDATopics = DDATopics.length ? DDATopics.slice(0, -1) : '';
-    WDETopics = WDETopics.length ? WDETopics.slice(0, -1) : '';
-    WILTopics = WILTopics.length ? WILTopics.slice(0, -1) : '';
-    payload['DDW_Topics__c'] = DDWTopics;
-    payload['DDA_Topics__c'] = DDATopics;
-    payload['WDE_Topics__c'] = WDETopics;
-    payload['WiL_Topics__c'] = WILTopics;
 
-    fetch(form.getAttribute("action"), {
-      method: "POST",
-      headers: {'Content-Type': 'application/json; charset=utf-8'},
-      body: JSON.stringify(payload)
-    })
-      .then(function (result) {
-        return result.text().then(function (text) {
-          text = text.substr(text.indexOf('{'), text.indexOf('<') - text.indexOf('{'));
-          return JSON.parse(text);
+    function postFormData(e) {
+        e.preventDefault();
+        submitBtn.setAttribute("disabled", true);
+        unsubBtn.setAttribute("disabled", true);
+        submitBtn.setAttribute("value", "Laden...");
+        submitBtn.classList.add('submit-btn__loading');
+
+        var payload = {};
+        var formData = new FormData(form);
+        var DDWTopics = '';
+        var DDATopics = '';
+        var WDETopics = '';
+        var WILTopics = '';
+
+        for (var pair of formData.entries()) {
+            if (pair[0].startsWith('DDW_Topics__c')) {
+                DDWTopics += pair[1] + ';';
+            } else if (pair[0].startsWith('DDA_Topics__c')) {
+                DDATopics += pair[1] + ';';
+            } else if (pair[0].startsWith('WDE_Topics__c')) {
+                WDETopics += pair[1] + ';';
+            } else if (pair[0].startsWith('WiL_Topics__c')) {
+                WILTopics += pair[1] + ';';
+            } else {
+                payload[pair[0]] = pair[1];
+            }
+        }
+        DDWTopics = DDWTopics.length ? DDWTopics.slice(0, -1) : '';
+        DDATopics = DDATopics.length ? DDATopics.slice(0, -1) : '';
+        WDETopics = WDETopics.length ? WDETopics.slice(0, -1) : '';
+        WILTopics = WILTopics.length ? WILTopics.slice(0, -1) : '';
+        payload['DDW_Topics__c'] = DDWTopics;
+        payload['DDA_Topics__c'] = DDATopics;
+        payload['WDE_Topics__c'] = WDETopics;
+        payload['WiL_Topics__c'] = WILTopics;
+
+        fetch(form.getAttribute("action"), {
+            method: "POST",
+            headers: {'Content-Type': 'application/json; charset=utf-8'},
+            body: JSON.stringify(payload)
         })
-          .then(function (data) {
-            toggleMessage(data.Status);
-          })
-          .catch(function (error) {
-            toggleMessage('Error');
-          });
-      });
-  }
-
-  function unsub() {
-    submitBtn.setAttribute("disabled", true);
-    submitBtn.setAttribute("value", "Laden...");
-    submitBtn.classList.add('submit-btn__loading');
-    unsubBtn.setAttribute("disabled", true);
-
-    var payload = {};
-    var formData = new FormData(form);
-    payload['DDW_Topics__c'] = '';
-    payload['DDA_Topics__c'] = '';
-    payload['WDE_Topics__c'] = '';
-    payload['WiL_Topics__c'] = '';
-    payload['Dutch_Design_Awards__c'] = 'No';
-    payload['Dutch_Design_Foundation__c'] = 'No';
-    payload['Dutch_Design_Week__c'] = 'No';
-    payload['What_if_Lab__c'] = 'No';
-    payload['World_Design_Embassies__c'] = 'No';
-    for (var pair of formData.entries()) {
-      if (pair[0].startsWith('refId') || pair[0].startsWith('subId') || pair[0].startsWith('job') || pair[0].startsWith('listId') || pair[0].startsWith('subType') ||
-        pair[0].startsWith('Language__c')) {
-        payload[pair[0]] = pair[1];
-      }
+            .then(function (result) {
+                return result.text().then(function (text) {
+                    text = text.substr(text.indexOf('{'), text.indexOf('<') - text.indexOf('{'));
+                    return JSON.parse(text);
+                })
+                    .then(function (data) {
+                        toggleMessage(data.Status);
+                    })
+                    .catch(function (error) {
+                        toggleMessage('Error');
+                    });
+            });
     }
 
-    fetch(form.getAttribute("action"), {
-      method: "POST",
-      headers: {'Content-Type': 'application/json; charset=utf-8'},
-      body: JSON.stringify(payload)
-    })
-      .then(function (result) {
-        return result.text().then(function (text) {
-          text = text.substr(text.indexOf('{'), text.indexOf('<') - text.indexOf('{'));
-          return JSON.parse(text);
+    function unsub() {
+        submitBtn.setAttribute("disabled", true);
+        submitBtn.setAttribute("value", "Laden...");
+        submitBtn.classList.add('submit-btn__loading');
+        unsubBtn.setAttribute("disabled", true);
+
+        var payload = {};
+        var formData = new FormData(form);
+        payload['DDW_Topics__c'] = '';
+        payload['DDA_Topics__c'] = '';
+        payload['WDE_Topics__c'] = '';
+        payload['WiL_Topics__c'] = '';
+        payload['Dutch_Design_Awards__c'] = 'No';
+        payload['Dutch_Design_Foundation__c'] = 'No';
+        payload['Dutch_Design_Week__c'] = 'No';
+        payload['What_if_Lab__c'] = 'No';
+        payload['World_Design_Embassies__c'] = 'No';
+        for (var pair of formData.entries()) {
+            if (pair[0].startsWith('refId') || pair[0].startsWith('subId') || pair[0].startsWith('job') || pair[0].startsWith('listId') || pair[0].startsWith('subType') ||
+                pair[0].startsWith('Language__c')) {
+                payload[pair[0]] = pair[1];
+            }
+        }
+
+        fetch(form.getAttribute("action"), {
+            method: "POST",
+            headers: {'Content-Type': 'application/json; charset=utf-8'},
+            body: JSON.stringify(payload)
         })
-          .then(function (data) {
-            toggleMessage(data.Status);
-          })
-          .catch(function (error) {
-            toggleMessage('Error');
-          });
-      });
-  }
-
-  function toggleMessage(status) {
-    if (status == 'OK') {
-      var mainForm = document.querySelector('.main--wrapper');
-      mainForm.classList.add("hidden");
-      var successMessage = document.querySelector('.success');
-      successMessage.classList.remove("hidden");
-    } else {
-      var errorMessage = document.querySelector('.error');
-      errorMessage.classList.remove("hidden");
+            .then(function (result) {
+                return result.text().then(function (text) {
+                    text = text.substr(text.indexOf('{'), text.indexOf('<') - text.indexOf('{'));
+                    return JSON.parse(text);
+                })
+                    .then(function (data) {
+                        toggleMessage(data.Status);
+                    })
+                    .catch(function (error) {
+                        toggleMessage('Error');
+                    });
+            });
     }
-    submitBtn.removeAttribute("disabled");
-    submitBtn.setAttribute("value", "Opslaan")
-    submitBtn.classList.remove('submit-btn__loading');
-  }
 
-  function isFormFilled() {
-    var nbr_checked_radios = document.querySelectorAll('input[type=radio]:checked').length;
-    var nbr_radios = document.querySelectorAll('input[type=radio]').length;
-    var button = document.querySelector('#submitBtn');
-
-    if (nbr_checked_radios === (nbr_radios / 2)) {
-      button.disabled = false;
-    } else {
-      button.disabled = true;
+    function toggleMessage(status) {
+        if (status == 'OK') {
+            var mainForm = document.querySelector('.main--wrapper');
+            mainForm.classList.add("hidden");
+            var successMessage = document.querySelector('.success');
+            successMessage.classList.remove("hidden");
+        } else {
+            var errorMessage = document.querySelector('.error');
+            errorMessage.classList.remove("hidden");
+        }
+        submitBtn.removeAttribute("disabled");
+        submitBtn.setAttribute("value", "Opslaan")
+        submitBtn.classList.remove('submit-btn__loading');
     }
-  }
-  isFormFilled();
+
+    function isFormFilled() {
+        var nbr_checked_radios = document.querySelectorAll('input[type=radio]:checked').length;
+        var nbr_radios = document.querySelectorAll('input[type=radio]').length;
+        var button = document.querySelector('#submitBtn');
+
+        if (nbr_checked_radios === (nbr_radios / 2)) {
+            button.disabled = false;
+        } else {
+            button.disabled = true;
+        }
+    }
+
+    isFormFilled();
 </script>
 </body>
 </html>

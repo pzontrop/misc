@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html>
+<head><!DOCTYPE html>
+    <html lang="nl">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="description" content="%%description%%" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <title>%%title%%</title>
+
+        <!-- Bootstrap CSS -->
+        <link
+                rel="stylesheet"
+                href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+                integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+                crossorigin="anonymous"
+        />
+        <!-- fontawesome -->
+        <link
+                rel="stylesheet"
+                href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+
+        <style>
+            html,
+            body {
+                overflow-x: hidden;
+            }
+
+            :root {
+                --orange: #e5531a;
+                --darkorange: #ff6600;
+                --grey: #969696;
+            }
+
+            /* in case we need classes for changing colors */
+            .theme-color {
+                color: #e5531a;
+            }
+
+            .theme-color-2 {
+                color: #969696;
+            }
+
+            .hide {
+                display: none !important;
+            }
+
+            .uppercase-text {
+                text-transform: uppercase;
+            }
+
+            /* header section */
+            .header {
+                -webkit-box-shadow: 0px 2px 5px 0px rgba(173, 173, 173, 1);
+                -moz-box-shadow: 0px 2px 5px 0px rgba(173, 173, 173, 1);
+                box-shadow: 0px 2px 5px 0px rgba(173, 173, 173, 1);
+            }
+
+            .navbar-brand .pImg {
+                position: absolute;
+                top: 0;
+                z-index: 1;
+                width: 287px !important;
+            }
+
+            .logo-extra-text {
+                position: relative;
+                width: 370px;
+                text-align: right;
+                left: -100px;
+                padding: 5px 20px;
+                z-index: 0;
+                background: var(--orange);
+                color: #ffffff;
+                font-size: 13px;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+
+            .navbar {
+                padding: 0.5rem 0;
+            }
+
+            .navbar-expand-lg .navbar-nav .nav-link {
+                padding: 22px 25px;
+                color: 66665e;
+                font-weight: bold;
+                text-transform: uppercase;
+                font-size: 13px;
+            }
+            /* header section */
+
+            /* body secion */
+            .body-content {
+                padding: 0 0 30px;
+                color: #000000;
+            }
+
+            .header-text {
+                font-size: 30px;
+                font-weight: bold;
+                text-transform: uppercase;
+                margin-bottom: 15px;
+            }
+
+            .banner img,
+            .banner .pImg {
+                width: 100%;
+            }
+
+            .page-form {
+                position: relative;
+                display: inline-block;
+                width: 100%;
+                overflow: hidden;
+            }
+            /* body secion */
+
+            /* footer section */
+            footer {
+                background-color: #323337;
+                color: #ffffff;
+                padding: 30px 0 10px;
+                font-size: 15px;
+            }
+
+            footer h5 {
+                font-size: 20px;
+            }
+
+            .footer-menu ul {
+                margin: 0;
+                padding: 0;
+            }
+
+            .footer-menu li {
+                display: inline-block;
+                width: 49%;
+                vertical-align: top;
+            }
+
+            .footer-right-menu {
+                width: auto;
+                float: right;
+            }
+
+            .social-media-icons {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+
+            .social-media-icons li {
+                display: inline-block;
+            }
+
+            .social-media-icons li img {
+                width: 50px;
+            }
+
+            .copyright {
+                font-size: 13px;
+                color: var(--grey);
+            }
+            /* footer section */
+
+            @media (max-width: 576px) {
+                .navbar-brand .pImg {
+                    width: 204px !important;
+                }
+
+                .logo-extra-text {
+                    display: none;
+                }
+
+                .theme-col {
+                    flex: unset;
+                    padding: 10px 30px;
+                }
+
+                .footer-right-menu {
+                    float: unset;
+                }
+            }
+
+            /* hide elements */
+
+            /* end hide elements */
+
+            /**100% width all content**/
+
+            .pHtmlText {
+                width: 100% !important;
+            }
+            /**end 100% width all content**/
+        </style>
+        <link
+                rel="shortcut icon"
+                href="https://pages.constructionproducts.saint-gobain.com/favicon.ico"
+                type="image/x-icon"
+        />
+        <link
+                rel="icon"
+                href="https://pages.constructionproducts.saint-gobain.com/favicon.ico"
+                type="image/x-icon"
+        />
+
+        <style>
+            .pGen.pImg {
+                display: inline-block;
+                line-height: 0;
+            }
+        </style>
+    </head>
+<body id="bodyId">
+<section class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="navbar-brand" href="#">
+                        <div class="pImg pGen" id="p_gen_logoImage">
+                            <img
+                                    class="pImg"
+                                    pardot-region="logo"
+                                    pardot-region-type="image"
+                                    id="logoImage"
+                                    src="https://go.demo.pardot.com/l/271452/2022-01-14/cvf/271452/1642147508kcSzicaB/logo_sg.png"
+                                    alt="saint gobain"
+                            />
+                        </div>
+                    </a>
+                    <button
+                            class="navbar-toggler"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div
+                            class="collapse navbar-collapse"
+                            id="navbarSupportedContent"
+                            pardot-region="nav"
+                    >
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a
+                                        class="nav-link"
+                                        href="https://www.saint-gobain-solutions.nl/over-ons"
+                                >Over Ons</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                        class="nav-link"
+                                        href="https://www.saint-gobain-solutions.nl/projects"
+                                >Saint-Gobain project</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                        class="nav-link"
+                                        href="https://www.saint-gobain-solutions.nl/solutions"
+                                >Solutions</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                        class="nav-link"
+                                        href="https://www.saint-gobain-solutions.nl/projecten"
+                                >Projecten</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                        class="nav-link"
+                                        href="https://www.saint-gobain-solutions.nl/documentatie"
+                                >Media Center</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                        class="nav-link"
+                                        href="https://www.saint-gobain-solutions.nl/contact"
+                                >Contact</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="body-content container">
+    <div class="row">
+        <div class="col-sm-12 mb-4">
+            <div class="banner">
+                <div class="pImg pGen" id="p_gen_banner">
+                    <img
+                            class="lpimg"
+                            pardot-region="img1"
+                            pardot-region-type="image"
+                            id="banner"
+                            src="https://go.demo.pardot.com/l/271452/2022-01-14/cvr/271452/16421484426mCHlHPe/Uitsnede_key_visual_liggend.jpeg"
+                            alt="banner"
+                    />
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12" pardot-region="main-title">
+            <div id="webinarname" class="pText header-text">
+                Afbouwpakketten&reg;: <br />Wij bouwen voor, u bouwt door
+            </div>
+        </div>
+
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col theme-col">
+                    <div id="bodyText" class="pText" pardot-region="text">
+                        <p>
+                            <strong
+                            >Als aannemer wilt u vooral d&oacute;&oacute;r bouwen. Maar
+                                tegenwoordig komen daar steeds meer uitdagingen bij kijken.
+                                Zaken als personeelstekort, arbo, verhoogde eisen met
+                                betrekking tot kwalitatief en duurzaam bouwen &eacute;n
+                                toenemende logistieke uitdagingen zijn allemaal van grote
+                                invloed op uw bedrijfsvoering.</strong
+                            ><br /><br />Om u daarbij te helpen introduceren Saint-Gobain
+                            Solutions en Gyproc: Afbouwpakketten&reg;.
+                            Afbouwpakketten&reg; zijn prefab op maat gemaakte
+                            werkpakketten die voldoen aan de hoogste eisen op het gebied
+                            van duurzaamheid en comfort. De pakketten bestaan uit
+                            beplating op maat, op werkvolgorde per ruimte geleverd voor
+                            maximaal rendement en productiviteit. Ofwel: wij bouwen voor,
+                            u bouwt door.<br /><br /><strong
+                        >Meer weten? Neem contact met ons op!</strong
+                        ><br />
+                        </p>
+                    </div>
+                </div>
+                <div class="col theme-col">
+                    <div>%%content%%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12">
+            <div class="row">
+                <div id="bodyTextfull" class="pText">
+                    <br />
+                    <table width="794" height="253">
+                        <tbody>
+                        <tr>
+                            <td>
+                                <h5
+                                        style="padding-left: 30px"
+                                        pardot-region="header-block-text1"
+                                >
+                                    Wij adviseren, u kunt rekenen op efficiency<br />
+                                </h5>
+                                <div
+                                        style="padding-left: 30px"
+                                        pardot-region="block-text1"
+                                >
+                                    <ul style="padding-left: 30px">
+                                        <li>
+                                            Wij adviseren welke vorm van prefab binnenafbouw het
+                                            beste bij uw project past.
+                                        </li>
+                                        <li>
+                                            Advies voor een gespecialiseerd afbouwbedrijf uit
+                                            ons netwerk van Gyproc Professionals.
+                                        </li>
+                                    </ul>
+                                </div>
+                                <row
+                                        style="
+                          color: #000000;
+                          font-family: -apple-system;
+                          font-size: 16px;
+                          font-style: normal;
+                          font-variant-ligatures: normal;
+                          font-variant-caps: normal;
+                          font-weight: 400;
+                          letter-spacing: normal;
+                          orphans: 2;
+                          text-align: start;
+                          text-indent: 0px;
+                          text-transform: none;
+                          white-space: normal;
+                          widows: 2;
+                          word-spacing: 0px;
+                          -webkit-text-stroke-width: 0px;
+                          text-decoration-style: initial;
+                          text-decoration-color: initial;
+                        "
+                                >
+                                    <h5 style="padding-left: 30px"><br /></h5> </row
+                                ><span
+                                    style="
+                          color: #000000;
+                          font-family: -apple-system;
+                          font-size: 16px;
+                          font-style: normal;
+                          font-variant-ligatures: normal;
+                          font-variant-caps: normal;
+                          font-weight: 400;
+                          letter-spacing: normal;
+                          orphans: 2;
+                          text-align: start;
+                          text-indent: 0px;
+                          text-transform: none;
+                          white-space: normal;
+                          widows: 2;
+                          word-spacing: 0px;
+                          -webkit-text-stroke-width: 0px;
+                          background-color: #ffffff;
+                          text-decoration-style: initial;
+                          text-decoration-color: initial;
+                          display: inline !important;
+                          float: none;
+                        "
+                            ></span
+                            ><row
+                                    style="
+                          color: #000000;
+                          font-family: -apple-system;
+                          font-size: 16px;
+                          font-style: normal;
+                          font-variant-ligatures: normal;
+                          font-variant-caps: normal;
+                          font-weight: 400;
+                          letter-spacing: normal;
+                          orphans: 2;
+                          text-align: start;
+                          text-indent: 0px;
+                          text-transform: none;
+                          white-space: normal;
+                          widows: 2;
+                          word-spacing: 0px;
+                          -webkit-text-stroke-width: 0px;
+                          text-decoration-style: initial;
+                          text-decoration-color: initial;
+                        "
+                            ></row>
+                            </td>
+                            <td>
+                                <h5 style="padding-left: 30px">
+                                    <img
+                                            pardot-region="img2"
+                                            pardot-region-type="image"
+                                            src="https://go.demo.pardot.com/l/271452/2022-01-14/cvt/271452/1642148606MUnv39WL/stap_1.jpeg"
+                                            alt="stap 1.jpg"
+                                            height="283"
+                                            width="400"
+                                            constrain="true"
+                                            imagepreview="false"
+                                            style="float: right"
+                                            hspace="10"
+                                    />
+                                </h5>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h5 style="padding-left: 30px">
+                                    <img
+                                            pardot-region="img3"
+                                            pardot-region-type="image"
+                                            src="https://go.demo.pardot.com/l/271452/2022-01-14/cvw/271452/1642148635zHkedJ6a/stap_2.jpeg"
+                                            alt="stap 2.jpg"
+                                            height="282"
+                                            width="400"
+                                            constrain="true"
+                                            imagepreview="false"
+                                            style="float: left"
+                                            align="left"
+                                            hspace="10"
+                                            vspace="10"
+                                    />
+                                </h5>
+                            </td>
+                            <td>
+                                <h5
+                                        style="padding-left: 30px"
+                                        pardot-region="header-block-text2"
+                                >
+                                    Wij doen het voorwerk, u voorkomt faalkosten <br />
+                                </h5>
+                                <row>
+                                    <div
+                                            style="padding-left: 30px"
+                                            pardot-region="block-text2"
+                                    >
+                                        <ul style="padding-left: 30px">
+                                            <li>Wij nemen het BIM-tekenwerk uit handen.</li>
+                                            <li>
+                                                Per ruimte delen we de wanden en plafonds op in
+                                                gipsplaten en bepalen de werkvolgorde.
+                                            </li>
+                                            <li>
+                                                We werken met alle partijen vanuit
+                                                &eacute;&eacute;n BIM-bronbestand.
+                                            </li>
+                                            <li>
+                                                Hoge kwaliteit met een maatvaste uitvoering is
+                                                gewaarborgd.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </row>
+                                <row> </row>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h5
+                                        style="padding-left: 30px"
+                                        pardot-region="header-block-text3"
+                                >
+                                    Wij snijden de platen, u snijdt in het bouwafval <br />
+                                </h5>
+                                <div
+                                        style="padding-left: 30px"
+                                        pardot-region="block-text3"
+                                >
+                                    <ul style="padding-left: 30px">
+                                        <li>
+                                            Wij snijden alle platen op maat en recyclen direct
+                                            het restmateriaal.
+                                        </li>
+                                        <li>U snijdt hiermee in het bouwafval.</li>
+                                        <li>De bouwplaats is schoon en vrij van stof.</li>
+                                        <li>
+                                            De platen kunnen direct worden voorzien van
+                                            sparingen voor installaties.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <row>
+                                    <h5 style="padding-left: 30px">
+                                        <img
+                                                pardot-region="img4"
+                                                pardot-region-type="image"
+                                                src="https://go.demo.pardot.com/l/271452/2022-01-14/cvy/271452/16421487343rZiQTOh/stap_3.jpeg"
+                                                alt="stap 3.jpg"
+                                                height="283"
+                                                width="400"
+                                                align="right"
+                                                hspace="10"
+                                                vspace="10"
+                                                constrain="true"
+                                                imagepreview="false"
+                                        />
+                                    </h5>
+                                </row>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <row>
+                                    <h5 style="padding-left: 30px"><br /></h5>
+                                </row>
+                                <row>
+                                    <img
+                                            pardot-region="img5"
+                                            pardot-region-type="image"
+                                            src="https://go.demo.pardot.com/l/271452/2022-01-14/cw1/271452/1642148767vW6GSZlA/stap_4.jpeg"
+                                            alt="stap 4.jpg"
+                                            height="282"
+                                            width="400"
+                                            style="float: left"
+                                            constrain="true"
+                                            imagepreview="false"
+                                            hspace="10"
+                                            vspace="10"
+                                    />
+                                </row>
+                            </td>
+                            <td>
+                                <h5
+                                        style="padding-left: 30px"
+                                        pardot-region="header-block-text4"
+                                >
+                                    Wij ordenen de platen, u ordent het werkproces <br />
+                                </h5>
+                                <row>
+                                    <div
+                                            style="padding-left: 30px"
+                                            pardot-region="block-text4"
+                                    >
+                                        <ul style="padding-left: 30px">
+                                            <li>
+                                                Wij sorteren de platen op de juiste werkvolgorde
+                                                en maken per ruimte één pakket.
+                                            </li>
+                                            <li>
+                                                U kunt uw project binnen planning afronden, zonder
+                                                onverwachte vertragingen.
+                                            </li>
+                                        </ul>
+                                    </div> </row
+                                ><br />
+                                <row></row><row></row>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h5
+                                        style="padding-left: 30px"
+                                        pardot-region="header-block-text6"
+                                >
+                                    Wij leveren de pakketten per ruimte, u behoudt uw
+                                    werkruimte <br />
+                                </h5>
+                                <div
+                                        style="padding-left: 30px"
+                                        pardot-region="block-text6"
+                                >
+                                    <ul style="padding-left: 30px">
+                                        <li>
+                                            Wij leveren de gipsplaten als weerbestendige
+                                            pakketten op de bouwplaats.
+                                        </li>
+                                        <li>
+                                            Daarna kunnen de pakketten in de juiste ruimtes
+                                            worden neergezet.
+                                        </li>
+                                        <li>
+                                            Voor u betekent dit minder logistieke bewegingen en
+                                            overzicht op de bouwplaats.
+                                        </li>
+                                        <li>
+                                            Hiermee werkt u veilig en behoudt u de werkruimte.
+                                        </li>
+                                    </ul>
+                                </div>
+                                <row> </row>
+                            </td>
+                            <td>
+                                <img
+                                        pardot-region="img6"
+                                        pardot-region-type="image"
+                                        src="https://go.demo.pardot.com/l/271452/2022-01-14/cw3/271452/1642148899J9E7yznD/stap_5.jpeg"
+                                        alt="stap 5.jpg"
+                                        height="283"
+                                        width="400"
+                                        hspace="10"
+                                        vspace="10"
+                                        constrain="true"
+                                        imagepreview="false"
+                                        style="float: right"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img
+                                        pardot-region="img7"
+                                        pardot-region-type="image"
+                                        src="https://go.demo.pardot.com/l/271452/2022-01-14/cw5/271452/1642148933b49QeOmG/stap_6.jpeg"
+                                        alt="stap 6.jpg"
+                                        height="282"
+                                        width="400"
+                                        constrain="true"
+                                        imagepreview="false"
+                                        hspace="10"
+                                        vspace="10"
+                                        style="float: left"
+                                />
+                            </td>
+                            <td>
+                                <h5
+                                        style="padding-left: 30px"
+                                        pardot-region="header-block-text7"
+                                >
+                                    Wij leveren het montageplan, u levert volgens
+                                    planning<br />
+                                </h5>
+                                <div
+                                        style="padding-left: 30px"
+                                        pardot-region="block-text7"
+                                >
+                                    <ul style="padding-left: 30px">
+                                        <li>
+                                            Wij leveren een montageplan met daarin exact
+                                            weergegeven welke plaat waar moet.
+                                        </li>
+                                        <li>
+                                            U blijft binnen planning dankzij de goede
+                                            werkvoorbereiding.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div style="padding-left: 30px">
+                        <p><br /><br /></p>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col theme-col">
+                            <div class="pText" pardot-region="block-text8">
+                                Zo bouwen we samen aan oplossingen voor vandaag en morgen.
+                                Wij bouwen voor, u bouwt door met Afbouwpakketten&reg; van
+                                Saint-Gobain Solutions en Gyproc.<br /><br /><strong
+                            >Benieuwd wat Afbouwpakketten&reg; voor uw project kunnen
+                                betekenen? Neem contact met ons op om de mogelijkheden te
+                                bespreken.</strong
+                            ><br /><br />
+                            </div>
+                        </div>
+                        <div class="col theme-col">
+                            <div>
+                                <div>
+                                    <iframe
+                                            width="420"
+                                            height="315"
+                                            src="https://www.youtube.com/embed/Gd-7JZrWl_I"
+                                            title="YouTube video player"
+                                            frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen
+                                    ></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-4 mb-4">
+                <div
+                        id="footerCol1Header"
+                        class="pText uppercase-text"
+                        pardot-region="footer-header"
+                >
+                    <h5>Saint-Gobain SOlutions</h5>
+                </div>
+
+                <div
+                        id="footerCol1Text"
+                        class="pText theme-color-2"
+                        pardot-region="footer-header-text"
+                >
+                    <p>
+                <span style="color: var(--darkorange)"
+                >SAINT-GOBAIN SOLUTIONS</span
+                >
+                        is de nieuwe activiteit van SAINT-GOBAIN die zich specifiek
+                        richt op het bieden van innovatieve systeemoplossingen en
+                        projectmatig advies. Onze oplossingen dragen bij aan een
+                        comfortabele, duurzame leefomgeving en beantwoorden de vragen op
+                        het gebied van energiezuinig, duurzaam, effici&euml;nt, snel en
+                        kwalitatief hoogwaardig bouwen.
+                    </p>
+                </div>
+            </div>
+            <div
+                    class="col-sm-12 col-md-4 mb-4"
+                    pardot-region="footer-header-links"
+            >
+                <div id="footerCol2Header" class="pText uppercase-text">
+                    <h5>Snel Naar</h5>
+                </div>
+
+                <div id="footerMenu" class="pText footer-menu">
+                    <ul>
+                        <li>
+                            <span style="color: var(--orange)">&bull;</span>
+                            <span style="color: #ffffff"
+                            ><a
+                                    href="https://www.saint-gobain-solutions.nl/over-ons"
+                                    target="_blank"
+                                    id=""
+                                    style="color: #ffffff"
+                            >Over ons</a
+                            ></span
+                            >
+                        </li>
+                        <li>
+                            <span style="color: var(--orange)">&bull;</span>
+                            <span style="color: #ffffff"
+                            ><a
+                                    href="https://www.saint-gobain-solutions.nl/sitemap"
+                                    target="_blank"
+                                    id=""
+                                    style="color: #ffffff"
+                            >Sitemap</a
+                            ></span
+                            >
+                        </li>
+                        <li>
+                            <span style="color: var(--orange)">&bull;</span>
+                            <span style="color: #ffffff"
+                            ><a
+                                    href="https://www.saint-gobain-solutions.nl/nieuws"
+                                    target="_blank"
+                                    id=""
+                                    style="color: #ffffff"
+                            >Nieuws</a
+                            ></span
+                            >
+                        </li>
+                        <li>
+                            <span style="color: var(--orange)">&bull;</span>
+                            <span style="color: #ffffff"
+                            ><a
+                                    href="https://www.saint-gobain-solutions.nl/privacy-cookiebeleid"
+                                    target="_blank"
+                                    id=""
+                                    style="color: #ffffff"
+                            >Privacy &amp; cookiebeleid</a
+                            ></span
+                            >
+                        </li>
+                        <li>
+                            <span style="color: var(--orange)">&bull;</span>
+                            <span style="color: #ffffff"
+                            ><a
+                                    href="https://www.saint-gobain-solutions.nl/events"
+                                    target="_blank"
+                                    id=""
+                                    style="color: #ffffff"
+                            >Events</a
+                            ></span
+                            >
+                        </li>
+                        <li>
+                            <span style="color: var(--orange)">&bull;</span>
+                            <span style="color: #ffffff"
+                            ><a
+                                    href="https://www.saint-gobain-solutions.nl/legal-disclaimer"
+                                    target="_blank"
+                                    id=""
+                                    style="color: #ffffff"
+                            >Disclaimer</a
+                            ></span
+                            >
+                        </li>
+                        <li>
+                            <span style="color: var(--orange)">&bull;</span>
+                            <span style="color: #ffffff"
+                            ><a
+                                    href="https://www.saint-gobain-solutions.nl/documentatie"
+                                    target="_blank"
+                                    id=""
+                                    style="color: #ffffff"
+                            >Documenten</a
+                            ></span
+                            >
+                        </li>
+                        <li>
+                            <span style="color: var(--orange)">&bull;</span>
+                            <span style="color: #ffffff"
+                            ><a
+                                    href="https://www.saint-gobain-solutions.nl/contact"
+                                    target="_blank"
+                                    id=""
+                                    style="color: #ffffff"
+                            >Contact</a
+                            ></span
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 mb-4">
+                <div class="footer-right-menu" pardot-region="socials">
+                    <div id="footerCol3Header" class="pText uppercase-text">
+                        <h5>Volg Ons</h5>
+                    </div>
+
+                    <ul class="social-media-icons">
+                        <li>
+                            <div class="pImg pGen">
+                                <img
+                                        class="pImg"
+                                        mktoname="LinkedIn Icon"
+                                        id="linkedinIcon"
+                                        src="https://go.demo.pardot.com/l/271452/2022-01-14/cvk/271452/1642147835f9GJsNh0/sm_youtube.png"
+                                        alt="linkedin"
+                                />
+                            </div>
+                        </li>
+                        <li>
+                            <div class="pImg pGen">
+                                <img
+                                        class="pImg"
+                                        id="youtubeIcon"
+                                        src="https://go.demo.pardot.com/l/271452/2022-01-14/cvh/271452/1642147721e4OFhU2k/sm_linkedin.png"
+                                        alt="youtube"
+                                />
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12 col-md-4"></div>
+
+            <div
+                    class="col-sm-12 col-md-4 mb-4"
+                    pardot-region="footer-header-main-link"
+            >
+                <div
+                        id="footerCol2EndText"
+                        class="pText theme-color uppercase-text"
+                >
+                    <h5>
+                <span style="color: var(--darkorange)"
+                ><a
+                        href="https://pages.constructionproducts.saint-gobain.com/CP-NL-I-20190306-03-LV-GTC-Saint-Gobain-Solutions_01-Contact-request.html"
+                        target="_blank"
+                        id=""
+                        style="color: var(--darkorange)"
+                >Aanmelden Nieuwsbrief</a
+                ></span
+                >
+                    </h5>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-4 mb-4">
+                <div
+                        id="footerCol3EndText"
+                        class="pText footer-right-menu theme-color uppercase-text"
+                >
+                    <h5 pardot-region="footer-contact">
+                        <i class="fa fa-envelope"></i
+                        ><span style="color: var(--darkorange)"
+                    >&nbsp;<a
+                            href="https://www.saint-gobain-solutions.nl/contact"
+                            target="_blank"
+                            id=""
+                            style="color: var(--darkorange)"
+                    >Contact</a
+                    ></span
+                    ><br />
+                    </h5>
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                <div
+                        id="copyrightText"
+                        class="pText copyright"
+                        pardot-region="footer-copyright"
+                >
+                    © Copyright Saint-Gobain 2022. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script
+        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"
+></script>
+<script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"
+></script>
+<script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"
+></script>
+</body>
+</html>

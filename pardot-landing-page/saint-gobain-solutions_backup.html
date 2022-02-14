@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="description" content="%%description%%" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>%%title%%</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous"
+    />
+    <!-- fontawesome -->
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+        html,
+        body {
+            overflow-x: hidden;
+        }
+
+        :root {
+            --orange: #e5531a;
+            --darkorange: #ff6600;
+            --grey: #969696;
+        }
+
+        .theme-color {
+            color: #e5531a;
+        }
+
+        .theme-color-2 {
+            color: #969696;
+        }
+
+        .hide {
+            display: none !important;
+        }
+
+        .uppercase-text {
+            text-transform: uppercase;
+        }
+
+        /* header section */
+        .header {
+            -webkit-box-shadow: 0px 2px 5px 0px rgba(173, 173, 173, 1);
+            -moz-box-shadow: 0px 2px 5px 0px rgba(173, 173, 173, 1);
+            box-shadow: 0px 2px 5px 0px rgba(173, 173, 173, 1);
+        }
+
+        .navbar-brand .pImg {
+            position: absolute;
+            top: 0;
+            z-index: 1;
+            width: 287px !important;
+        }
+
+        .logo-extra-text {
+            position: relative;
+            width: 370px;
+            text-align: right;
+            left: -100px;
+            padding: 5px 20px;
+            z-index: 0;
+            background: var(--orange);
+            color: #ffffff;
+            font-size: 13px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .navbar {
+            padding: 0.5rem 0;
+        }
+
+        .navbar-expand-lg .navbar-nav .nav-link {
+            padding: 22px 25px;
+            color: 66665e;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 13px;
+        }
+        /* header section */
+
+        /* body secion */
+        .body-content {
+            padding: 0 0 30px;
+            color: #000000;
+        }
+
+        .header-text {
+            font-size: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .banner img,
+        .banner .pImg {
+            width: 100%;
+        }
+
+        .page-form {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            overflow: hidden;
+        }
+        /* body secion */
+
+        /* footer section */
+        footer {
+            background-color: #323337;
+            color: #ffffff;
+            padding: 30px 0 10px;
+            font-size: 15px;
+        }
+
+        footer h5 {
+            font-size: 20px;
+        }
+
+        .footer-menu ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer-menu li {
+            display: inline-block;
+            width: 49%;
+            vertical-align: top;
+        }
+
+        .footer-right-menu {
+            width: auto;
+            float: right;
+        }
+
+        .social-media-icons {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .social-media-icons li {
+            display: inline-block;
+        }
+
+        .social-media-icons li img {
+            width: 50px;
+        }
+
+        .copyright {
+            font-size: 13px;
+            color: #969696;
+        }
+        /* footer section */
+
+        @media (max-width: 576px) {
+            .navbar-brand .pImg {
+                width: 204px !important;
+            }
+
+            .logo-extra-text {
+                display: none;
+            }
+
+            .theme-col {
+                flex: unset;
+                padding: 10px 30px;
+            }
+
+            .footer-right-menu {
+                float: unset;
+            }
+        }
+
+        /* hide elements */
+
+        /* end hide elements */
+
+        /**100% width all content**/
+
+        .pHtmlText {
+            width: 100% !important;
+        }
+        /**end 100% width all content**/
+    </style>
+    <link
+            rel="shortcut icon"
+            href="https://pages.constructionproducts.saint-gobain.com/favicon.ico"
+            type="image/x-icon"
+    />
+    <link
+            rel="icon"
+            href="https://pages.constructionproducts.saint-gobain.com/favicon.ico"
+            type="image/x-icon"
+    />
+
+    <style>
+        .pGen.pImg {
+            display: inline-block;
+            line-height: 0;
+        }
+    </style>
+</head>
+<body id="bodyId">
+<section class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="navbar-brand" href="#">
+                        <div class="pImg pGen" id="p_gen_logoImage">
+                            <img
+                                    class="pImg"
+                                    pardot-region="logo"
+                                    pardot-region-type="image"
+                                    id="logoImage"
+                                    src="https://go.demo.pardot.com/l/271452/2022-01-14/cvf/271452/1642147508kcSzicaB/logo_sg.png"
+                                    alt="saint gobain"
+                            />
+                        </div>
+                    </a>
+                    <button
+                            class="navbar-toggler"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div
+                            class="collapse navbar-collapse"
+                            id="navbarSupportedContent"
+                            pardot-region="nav"
+                    >
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a
+                                        class="nav-link"
+                                        href="https://www.saint-gobain-solutions.nl/over-ons"
+                                >Over Ons</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                        class="nav-link"
+                                        href="https://www.saint-gobain-solutions.nl/projects"
+                                >Saint-Gobain project</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                        class="nav-link"
+                                        href="https://www.saint-gobain-solutions.nl/solutions"
+                                >Solutions</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                        class="nav-link"
+                                        href="https://www.saint-gobain-solutions.nl/projecten"
+                                >Projecten</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                        class="nav-link"
+                                        href="https://www.saint-gobain-solutions.nl/documentatie"
+                                >Media Center</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                        class="nav-link"
+                                        href="https://www.saint-gobain-solutions.nl/contact"
+                                >Contact</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="body-content container">
+    <div class="row">
+        <div class="col-sm-12 mb-4">
+            <div class="banner">
+                <div class="pImg pGen" id="p_gen_banner">
+                    <img
+                            class="lpimg"
+                            pardot-region="img1"
+                            pardot-region-type="image"
+                            id="banner"
+                            src="https://go.demo.pardot.com/l/271452/2022-01-14/cvm/271452/16421479166EsNz6AB/EnergyFac__ade_LP_banner_1200x450.jpeg"
+                            alt="banner"
+                    />
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12" pardot-region="main-title">
+          <span style="color: #808080; font-size: 10px"
+          ><em>Foto's: Albrecht Vos | AVANCIS GmbH</em></span
+          >
+            <div id="webinarname" class="pText header-text">
+                Lorem&reg;: <br />Lorem ipsum dolor sit amet.
+            </div>
+        </div>
+
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col theme-col">
+                    <div id="bodyText" class="pText" pardot-region="text">
+                        <p>
+                            <strong
+                            >Lorem ipsum dolor sit amet consectetur
+                                adipisicing.&oacute;&oacute;Lorem ipsum dolor sit amet
+                                consectetur adipisicing elit. Quos incidunt dignissimos
+                                culpa delectus sed. &eacute;Lorem ipsum dolor sit amet
+                                consectetur adipisicing elit. Unde, cumque vero! Delectus
+                                rem laudantium cumque. </strong
+                            ><br /><br />Lorem, ipsum dolor sit amet consectetur
+                            adipisicing elit. Dolor, eius.&reg;. Lorem&reg; Lorem ipsum
+                            dolor sit amet consectetur adipisicing elit. Ipsum hic quasi
+                            numquam provident quisquam repudiandae!<br /><br />
+                            <strong
+                            ><span style="line-height: 107%; color: var(--orange)"
+                            >MAAK EEN AFSPRAAK.</span
+                            ></strong
+                            >
+                            <br />
+                            Heeft u interesse in de mogelijkheden van ENERGYFAÇADE. Of
+                            wilt u een integraal projectadvies? Wij gaan graag met u in
+                            gesprek. Vul het formulier hiernaast in en een van onze
+                            adviseurs neemt zo snel mogelijk contact met u op.
+                            <br />
+                            <br />
+                            <span style="color: var(--orange)"
+                            ><strong>MEER INFORMATIE.</strong></span
+                            >
+                            <br />
+                            Op onze
+                            <a
+                                    href="https://www.saint-gobain-solutions.nl/solutions/facade-solutions/energyfacade"
+                                    target="_blank"
+                                    title="Meer informatie over ENERGYFA&Ccedil;ADE"
+                                    id=""
+                            >website </a
+                            >vindt u meer informatie over ENERGYFA&Ccedil;ADE.U kunt ook
+                            <a
+                                    href="https://pages.constructionproducts.saint-gobain.com/rs/925-XNQ-916/images/ENERGYFACADE drieluikbrochure %28mei 2021%29.pdf"
+                                    target="_blank"
+                                    title="Brochure ENERGYFA&Ccedil;ADE"
+                                    id=""
+                            >hier </a
+                            >onze brochure downloaden.<a
+                                href="https://pages.constructionproducts.saint-gobain.com/rs/925-XNQ-916/images/ENERGYFACADE%20drieluikbrochure %28mei 2021%29.pdf"
+                                target="_blank"
+                                title="Download brochure ENERGYFA&Ccedil;ADE"
+                        ><img
+                                src="https://go.demo.pardot.com/l/271452/2022-01-14/cvp/271452/16421481186ocAcfjt/Brochure_ENERGYFAC__ADE_500x310.jpeg"
+                                alt="Brochure ENERGYFA&Ccedil;ADE"
+                                width="500"
+                                height="310"
+                                constrain="true"
+                                imagepreview="false"
+                                border="" /></a
+                        ><br />
+
+                            <br />
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col theme-col">
+                    <div>%%content%%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-4 mb-4">
+                <div
+                        id="footerCol1Header"
+                        class="pText uppercase-text"
+                        pardot-region="footer-header"
+                >
+                    <h5>Saint-Gobain SOlutions</h5>
+                </div>
+
+                <div
+                        id="footerCol1Text"
+                        class="pText theme-color-2"
+                        pardot-region="footer-header-text"
+                >
+                    <p>
+                <span style="color: var(--darkorange)"
+                >SAINT-GOBAIN SOLUTIONS</span
+                >
+                        is de nieuwe activiteit van SAINT-GOBAIN die zich specifiek
+                        richt op het bieden van innovatieve systeemoplossingen en
+                        projectmatig advies. Onze oplossingen dragen bij aan een
+                        comfortabele, duurzame leefomgeving en beantwoorden de vragen op
+                        het gebied van energiezuinig, duurzaam, effici&euml;nt, snel en
+                        kwalitatief hoogwaardig bouwen.
+                    </p>
+                </div>
+            </div>
+            <div
+                    class="col-sm-12 col-md-4 mb-4"
+                    pardot-region="footer-header-links"
+            >
+                <div id="footerCol2Header" class="pText uppercase-text">
+                    <h5>Snel Naar</h5>
+                </div>
+
+                <div id="footerMenu" class="pText footer-menu">
+                    <ul>
+                        <li>
+                            <span style="color: var(--orange)">&bull;</span>
+                            <span style="color: #ffffff"
+                            ><a
+                                    href="https://www.saint-gobain-solutions.nl/over-ons"
+                                    target="_blank"
+                                    id=""
+                                    style="color: #ffffff"
+                            >Over ons</a
+                            ></span
+                            >
+                        </li>
+                        <li>
+                            <span style="color: var(--orange)">&bull;</span>
+                            <span style="color: #ffffff"
+                            ><a
+                                    href="https://www.saint-gobain-solutions.nl/sitemap"
+                                    target="_blank"
+                                    id=""
+                                    style="color: #ffffff"
+                            >Sitemap</a
+                            ></span
+                            >
+                        </li>
+                        <li>
+                            <span style="color: var(--orange)">&bull;</span>
+                            <span style="color: #ffffff"
+                            ><a
+                                    href="https://www.saint-gobain-solutions.nl/nieuws"
+                                    target="_blank"
+                                    id=""
+                                    style="color: #ffffff"
+                            >Nieuws</a
+                            ></span
+                            >
+                        </li>
+                        <li>
+                            <span style="color: var(--orange)">&bull;</span>
+                            <span style="color: #ffffff"
+                            ><a
+                                    href="https://www.saint-gobain-solutions.nl/privacy-cookiebeleid"
+                                    target="_blank"
+                                    id=""
+                                    style="color: #ffffff"
+                            >Privacy &amp; cookiebeleid</a
+                            ></span
+                            >
+                        </li>
+                        <li>
+                            <span style="color: var(--orange)">&bull;</span>
+                            <span style="color: #ffffff"
+                            ><a
+                                    href="https://www.saint-gobain-solutions.nl/events"
+                                    target="_blank"
+                                    id=""
+                                    style="color: #ffffff"
+                            >Events</a
+                            ></span
+                            >
+                        </li>
+                        <li>
+                            <span style="color: var(--orange)">&bull;</span>
+                            <span style="color: #ffffff"
+                            ><a
+                                    href="https://www.saint-gobain-solutions.nl/legal-disclaimer"
+                                    target="_blank"
+                                    id=""
+                                    style="color: #ffffff"
+                            >Disclaimer</a
+                            ></span
+                            >
+                        </li>
+                        <li>
+                            <span style="color: var(--orange)">&bull;</span>
+                            <span style="color: #ffffff"
+                            ><a
+                                    href="https://www.saint-gobain-solutions.nl/documentatie"
+                                    target="_blank"
+                                    id=""
+                                    style="color: #ffffff"
+                            >Documenten</a
+                            ></span
+                            >
+                        </li>
+                        <li>
+                            <span style="color: var(--orange)">&bull;</span>
+                            <span style="color: #ffffff"
+                            ><a
+                                    href="https://www.saint-gobain-solutions.nl/contact"
+                                    target="_blank"
+                                    id=""
+                                    style="color: #ffffff"
+                            >Contact</a
+                            ></span
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 mb-4">
+                <div class="footer-right-menu" pardot-region="socials">
+                    <div id="footerCol3Header" class="pText uppercase-text">
+                        <h5>Volg Ons</h5>
+                    </div>
+
+                    <ul class="social-media-icons">
+                        <li>
+                            <div class="pImg pGen">
+                                <img
+                                        class="pImg"
+                                        id="linkedinIcon"
+                                        src="https://go.demo.pardot.com/l/271452/2022-01-14/cvh/271452/1642147721e4OFhU2k/sm_linkedin.png"
+                                        alt="linkedin"
+                                />
+                            </div>
+                        </li>
+                        <li>
+                            <div class="pImg pGen" >
+                                <img
+                                        class="pImg"
+                                        id="youtubeIcon"
+                                        src="https://go.demo.pardot.com/l/271452/2022-01-14/cvk/271452/1642147835f9GJsNh0/sm_youtube.png"
+                                        alt="youtube"
+                                />
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12 col-md-4"></div>
+
+            <div
+                    class="col-sm-12 col-md-4 mb-4"
+                    pardot-region="footer-header-main-link"
+            >
+                <div
+                        id="footerCol2EndText"
+                        class="pText theme-color uppercase-text"
+                >
+                    <h5>
+                <span style="color: var(--darkorange)"
+                ><a
+                        href="https://pages.constructionproducts.saint-gobain.com/CP-NL-I-20190306-03-LV-GTC-Saint-Gobain-Solutions_01-Contact-request.html"
+                        target="_blank"
+                        id=""
+                        style="color: var(--darkorange)"
+                >Aanmelden Nieuwsbrief</a
+                ></span
+                >
+                    </h5>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-4 mb-4">
+                <div
+                        id="footerCol3EndText"
+                        class="pText footer-right-menu theme-color uppercase-text"
+                >
+                    <h5 pardot-region="footer-contact">
+                        <i class="fa fa-envelope"></i
+                        ><span style="color: var(--darkorange)"
+                    >&nbsp;<a
+                            href="https://www.saint-gobain-solutions.nl/contact"
+                            target="_blank"
+                            id=""
+                            style="color: var(--darkorange)"
+                    >Contact</a
+                    ></span
+                    ><br />
+                    </h5>
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                <div
+                        id="copyrightText"
+                        class="pText copyright"
+                        pardot-region="footer-copyright"
+                >
+                    © Copyright Saint-Gobain 2022. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script
+        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"
+></script>
+<script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"
+></script>
+<script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"
+></script>
+</body>
+</html>

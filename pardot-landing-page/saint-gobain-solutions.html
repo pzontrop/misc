@@ -216,7 +216,7 @@
 
         /* Pardot Form Styles */
         form.form {
-            padding: 20px !important;
+            padding: 0 20px 20px !important;
             margin: 0 !important;
         }
 
@@ -234,10 +234,12 @@
             margin-bottom: 10px;
         }
 
-        form.form p:not(.form-field) {
+        form.form p:not(.form-field):first-of-type {
             font-size: 24px;
             font-weight: bold;
-            color: black;
+            color: #66665E;
+            padding-top: 0;
+            margin-top: 0;
         }
 
         form.form input[type=text], form.form textarea {
@@ -313,6 +315,10 @@
         form.form p.required label:after, form.form span.required label:after {
             content: " *";
         }
+
+        .menu-margin {
+            margin-left: 270px;
+        }
     </style>
 </head>
 <body id="bodyId">
@@ -341,53 +347,22 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
-                    <div
-                            class="collapse navbar-collapse"
-                            id="navbarSupportedContent"
-                            pardot-region="nav"
-                    >
-                        <ul class="navbar-nav ml-auto">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent" pardot-region="nav">
+                        <ul class="navbar-nav ml-xl-auto menu-margin">
                             <li class="nav-item">
-                                <a
-                                        class="nav-link"
-                                        href="https://www.saint-gobain-solutions.nl/over-ons"
-                                >Over Ons</a
-                                >
+                                <a class="nav-link" href="https://www.saint-gobain-solutions.nl/over-ons">Over Ons</a>
                             </li>
                             <li class="nav-item">
-                                <a
-                                        class="nav-link"
-                                        href="https://www.saint-gobain-solutions.nl/projects"
-                                >Saint-Gobain project</a
-                                >
+                                <a class="nav-link" href="https://www.saint-gobain-solutions.nl/projects">Saint-Gobain projects</a>
                             </li>
                             <li class="nav-item">
-                                <a
-                                        class="nav-link"
-                                        href="https://www.saint-gobain-solutions.nl/solutions"
-                                >Solutions</a
-                                >
+                                <a class="nav-link" href="https://www.saint-gobain-solutions.nl/solutions">Solutions</a>
                             </li>
                             <li class="nav-item">
-                                <a
-                                        class="nav-link"
-                                        href="https://www.saint-gobain-solutions.nl/projecten"
-                                >Projecten</a
-                                >
+                                <a class="nav-link" href="https://www.saint-gobain-solutions.nl/projecten">Projecten</a>
                             </li>
                             <li class="nav-item">
-                                <a
-                                        class="nav-link"
-                                        href="https://www.saint-gobain-solutions.nl/documentatie"
-                                >Media Center</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a
-                                        class="nav-link"
-                                        href="https://www.saint-gobain-solutions.nl/contact"
-                                >Contact</a
-                                >
+                                <a class="nav-link" href="https://www.saint-gobain-solutions.nl/documentatie">Media Center</a>
                             </li>
                         </ul>
                     </div>
@@ -504,6 +479,30 @@
                 Vestibulum lacinia arcu id porttitor lobortis. Nunc consequat lobortis dui, id fringilla nulla porta eu. In eleifend ex orci,
                 in congue tellus mollis non. Fusce dapibus nulla at laoreet dictum. Proin molestie gravida erat, at pellentesque mauris malesuada in.
                 Aenean ullamcorper suscipit purus sagittis posuere. In hac habitasse platea dictumst.
+            </div>
+            <div class="row mt-3">
+                <div class="col-12 col-md-6">
+                    <h5 pardot-region="header-block-text81">
+                        Lorem Ipsum
+                    </h5>
+                    <div pardot-region="block-text81">
+                        <ul class="ml-1">
+                            <li>Lorem ipsum dolor sit amet.</li>
+                            <li>Consectetur adipiscing elit.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <h5 pardot-region="header-block-text82">
+                        Lorem Ipsum
+                    </h5>
+                    <div pardot-region="block-text82">
+                        <ul class="ml-1">
+                            <li>Lorem ipsum dolor sit amet.</li>
+                            <li>Consectetur adipiscing elit.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

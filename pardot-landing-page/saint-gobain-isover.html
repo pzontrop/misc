@@ -6,6 +6,12 @@
     <link rel="shortcut icon" href="//www.isover.nl/profiles/isover/themes/isover/favicon.ico" type="image/vnd.microsoft.icon">
     <meta name="description" content="%%description%%"/>
     <title>%%title%%</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous"
+    />
 
     <style>
         :root {
@@ -199,10 +205,12 @@
             content: " *";
         }
 
-        form.form p:not(.form-field) {
+        form.form p:not(.form-field):first-of-type {
             font-size: 24px;
             font-weight: bold;
-            color: black;
+            color: #66665E;
+            padding-top: 0;
+            margin-top: 0;
         }
 
         .footer {
@@ -266,6 +274,30 @@
             molestie, fringilla nunc et, dapibus massa. Vivamus bibendum turpis eget nisi ultrices gravida. Morbi eu commodo ante, vitae maximus orci. Integer lorem sapien,
             interdum vitae molestie id, placerat ac urna. Donec blandit lectus at rhoncus viverra. Nullam bibendum vel lectus vel sagittis. Suspendisse nec ipsum quam.
             Aliquam sit amet aliquam enim. Fusce et sapien sagittis, sodales lorem finibus, rhoncus mauris.
+        </div>
+        <div class="row mt-3 mx-0">
+            <div class="col-12 col-md-6">
+                <h5 pardot-region="header-block-text81">
+                    Lorem Ipsum
+                </h5>
+                <div pardot-region="block-text81">
+                    <ul class="ml-1">
+                        <li>Lorem ipsum dolor sit amet.</li>
+                        <li>Consectetur adipiscing elit.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <h5 pardot-region="header-block-text82">
+                    Lorem Ipsum
+                </h5>
+                <div pardot-region="block-text82">
+                    <ul class="ml-1">
+                        <li>Lorem ipsum dolor sit amet.</li>
+                        <li>Consectetur adipiscing elit.</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </section>

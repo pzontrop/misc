@@ -165,7 +165,7 @@
 
         /* Pardot Form Styles */
         form.form {
-            padding: 20px !important;
+            padding: 0 20px 20px !important;
             margin: 0 !important;
         }
 
@@ -183,10 +183,12 @@
             margin-bottom: 10px;
         }
 
-        form.form p:not(.form-field) {
+        form.form p:not(.form-field):first-of-type {
             font-size: 24px;
             font-weight: bold;
-            color: black;
+            color: #66665E;
+            padding-top: 0;
+            margin-top: 0;
         }
 
         form.form input[type=text], form.form textarea {
@@ -267,6 +269,10 @@
             max-width: 100%;
             max-height: 100%;
         }
+
+        .menu-margin {
+            margin-left: 270px;
+        }
     </style>
 </head>
 <body>
@@ -295,12 +301,12 @@
                     <div class="collapse navbar-collapse"
                          id="navbarSupportedContent"
                          pardot-region="nav">
-                        <ul class="navbar-nav ml-auto">
+                        <ul class="navbar-nav ml-xl-auto menu-margin">
                             <li class="nav-item">
                                 <a class="nav-link" href="https://www.saint-gobain-solutions.nl/over-ons">Over Ons</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="https://www.saint-gobain-solutions.nl/projects">Saint-Gobain project</a>
+                                <a class="nav-link" href="https://www.saint-gobain-solutions.nl/projects">Saint-Gobain projects</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="https://www.saint-gobain-solutions.nl/solutions">Solutions</a>
@@ -310,9 +316,6 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="https://www.saint-gobain-solutions.nl/documentatie">Media Center</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://www.saint-gobain-solutions.nl/contact">Contact</a>
                             </li>
                         </ul>
                     </div>

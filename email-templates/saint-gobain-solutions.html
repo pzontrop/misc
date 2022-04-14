@@ -18,6 +18,115 @@
 <meta name="format-detection" content="telephone=no"><!--[if !mso]><!-->
 <link href="./css" rel="stylesheet"><!--<![endif]-->
 <style type="text/css">
+    /* cyrillic-ext */
+    @font-face {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/ubuntu/v19/4iCv6KVjbNBYlgoCjC3jvWyNPYZvg7UI.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+    }
+    /* cyrillic */
+    @font-face {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/ubuntu/v19/4iCv6KVjbNBYlgoCjC3jtGyNPYZvg7UI.woff2) format('woff2');
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+    /* greek-ext */
+    @font-face {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/ubuntu/v19/4iCv6KVjbNBYlgoCjC3jvGyNPYZvg7UI.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF;
+    }
+    /* greek */
+    @font-face {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/ubuntu/v19/4iCv6KVjbNBYlgoCjC3js2yNPYZvg7UI.woff2) format('woff2');
+        unicode-range: U+0370-03FF;
+    }
+    /* latin-ext */
+    @font-face {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/ubuntu/v19/4iCv6KVjbNBYlgoCjC3jvmyNPYZvg7UI.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* latin */
+    @font-face {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/ubuntu/v19/4iCv6KVjbNBYlgoCjC3jsGyNPYZvgw.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    /* cyrillic-ext */
+    @font-face {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/ubuntu/v19/4iCv6KVjbNBYlgoCxCvjvWyNPYZvg7UI.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+    }
+    /* cyrillic */
+    @font-face {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/ubuntu/v19/4iCv6KVjbNBYlgoCxCvjtGyNPYZvg7UI.woff2) format('woff2');
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+    /* greek-ext */
+    @font-face {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/ubuntu/v19/4iCv6KVjbNBYlgoCxCvjvGyNPYZvg7UI.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF;
+    }
+    /* greek */
+    @font-face {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/ubuntu/v19/4iCv6KVjbNBYlgoCxCvjs2yNPYZvg7UI.woff2) format('woff2');
+        unicode-range: U+0370-03FF;
+    }
+    /* latin-ext */
+    @font-face {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/ubuntu/v19/4iCv6KVjbNBYlgoCxCvjvmyNPYZvg7UI.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* latin */
+    @font-face {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/ubuntu/v19/4iCv6KVjbNBYlgoCxCvjsGyNPYZvgw.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
     body {
         margin: 0 auto;
         padding: 0;
@@ -188,7 +297,7 @@
                 <tbody>
                 <tr bgcolor="#222222">
                     <td align="center" class="em_color_u" style="font-family:Ubuntu, Arial, sans-serif; padding: 10px; font-size:12px; line-height:16px; color:#ffffff; letter-spacing:0.25px;" valign="top">
-                        <div id="txt_001" pardot-region="" pardot-repeatable="">Als u deze mail niet kan lezen <a href="#" pardot-region="pardot_link" pardot-region-type="link" style="text-decoration: underline; color: #ffffff;" target="_blank">klik hier</a></div>
+                        <div id="txt_001" pardot-region="" pardot-repeatable="">Als u deze mail niet kan lezen <a href="{{View_Online}}" pardot-region="pardot_link" pardot-region-type="link" style="text-decoration: underline; color: #ffffff;" target="_blank">klik hier</a></div>
                     </td>
                 </tr>
                 <tr>
@@ -253,12 +362,12 @@
                             </tbody>
                         </table>
 
-                        <table align="center" border="0" cellpadding="0" cellspacing="0" class="em_wrapper em_wrapper" id="Banner_600x200" style="width:600px; table-layout:fixed;" width="600">
+                        <table pardot-repeatable="" align="center" border="0" cellpadding="0" cellspacing="0" class="em_wrapper em_wrapper" id="Banner_600x200" style="width:600px; table-layout:fixed;" width="600">
                             <tbody>
                             <tr>
                                 <td style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:0 !important; margin:0 !important;">
                                     <div style="margin:0 auto; max-width:600px; background-color:#fff;">
-                                        <table align="center" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width:100%; font-size:0; background-color:#67b9b0;">
+                                        <table align="center" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width:100%; font-size:0;">
                                             <tbody>
                                             <tr>
                                                 <td style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-align:center; vertical-align:top; font-size:0;"><!--[if mso]>
@@ -270,7 +379,7 @@
                                                         <tbody>
                                                         <tr>
                                                             <td style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; ">
-                                                                <div id="image_banner_600x200" pardot-repeatable=""><img pardot-region="pardot_image" pardot-region-type="image" src="https://page.saint-gobain-solutions.nl/l/919413/2021-11-26/93bsg/919413/1637923237lYLQ7VgW/banner_verwerkers.png" style="border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border:none; display:block; outline:none; text-decoration:none; width:100%; max-width:600px; height:auto;" width="600"></div>
+                                                                <div id="image_banner_600x200"><img pardot-region="pardot_image" pardot-region-type="image" src="https://page.saint-gobain-solutions.nl/l/919413/2021-11-26/93bsg/919413/1637923237lYLQ7VgW/banner_verwerkers.png" style="border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border:none; display:block; outline:none; text-decoration:none; width:100%; max-width:600px; height:auto;" width="600"></div>
                                                             </td>
                                                         </tr>
                                                         </tbody>
@@ -891,7 +1000,7 @@
                                                         </td>
                                                     </tr>
                                                     <tr pardot-repeatable="" style="">
-                                                        <td align="center" bgcolor="#3399cc" class="em_hauto" height="164" style="background-color:#0044BA; border-bottom-right-radius:5px; padding:0px 18px 0px 12px; height:164px;" valign="top">
+                                                        <td align="center" bgcolor="#00448a" class="em_hauto" height="164" style="background-color:#00448a; border-bottom-right-radius:5px; padding:0px 18px 0px 12px; height:164px;" valign="top">
                                                             <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
                                                                 <tbody>
                                                                 <tr>
@@ -940,7 +1049,7 @@
                                                         </td>
                                                     </tr>
                                                     <tr pardot-repeatable="" style="">
-                                                        <td align="center" bgcolor="#3399cc" class="em_hauto" height="164" style="background-color:#0044BA; border-bottom-right-radius:5px; padding:0px 18px 0px 12px; height:164px;" valign="top">
+                                                        <td align="center" bgcolor="#00448a" class="em_hauto" height="164" style="background-color:#00448a; border-bottom-right-radius:5px; padding:0px 18px 0px 12px; height:164px;" valign="top">
                                                             <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
                                                                 <tbody>
                                                                 <tr>
@@ -989,7 +1098,7 @@
                                                         </td>
                                                     </tr>
                                                     <tr pardot-repeatable="" style="">
-                                                        <td align="center" bgcolor="#3399cc" class="em_hauto" height="164" style="background-color:#0044BA; border-bottom-right-radius:5px; padding:0px 18px 0px 12px; height:164px;" valign="top">
+                                                        <td align="center" bgcolor="#00448a" class="em_hauto" height="164" style="background-color:#00448a; border-bottom-right-radius:5px; padding:0px 18px 0px 12px; height:164px;" valign="top">
                                                             <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
                                                                 <tbody>
                                                                 <tr>
@@ -1871,7 +1980,7 @@
                         <table pardot-repeatable="" align="center" border="0" cellpadding="0" cellspacing="0" class="em_wrapper em_wrapper" id="Content_with_CTA_in_darkblue_background" style="width:600px; table-layout:fixed; " width="600">
                             <tbody>
                             <tr style="">
-                                <td align="center" bgcolor="#67b9b0" class="em_aside10" style="padding:0px 22px 0px 22px; background-color:#0044Ba;" valign="top">
+                                <td align="center" bgcolor="#67b9b0" class="em_aside10" style="padding:0px 22px 0px 22px; background-color:#00448a;" valign="top">
                                     <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
                                         <tbody>
                                         <tr style="">

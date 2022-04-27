@@ -8,15 +8,15 @@
     <title>%%title%%</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet"
-            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-            crossorigin="anonymous"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous"
     />
 
     <style>
         :root {
             --mainColor: #ffe602;
-            --submitColor: #80C31C;
+            --submitColor: #ffdc00;
         }
 
         html {
@@ -82,7 +82,7 @@
 
         .text-form .main-container {
             display: flex;
-            align-items: center;
+            align-items: start;
             max-width: 1200px;
             margin: 0 auto 20px;
         }
@@ -108,13 +108,15 @@
         }
 
         .text-form .right-form {
-            background-color: #C3C3C3;
+            background-color: #626157;
+            flex-grow: 1;
         }
 
         /* Pardot Form Styles */
         form.form {
             padding: 20px !important;
             margin: 0 !important;
+            color: #ffffff !important;
         }
 
         form.form p label {
@@ -148,7 +150,7 @@
         form.form input[type=submit] {
             background-color: var(--submitColor) !important;
             border: 1px solid var(--submitColor) !important;
-            color: #FFF;
+            color: #626157;
             font-size: 15px;
             padding: 10px 30px !important;
         }
@@ -208,7 +210,7 @@
         form.form p:not(.form-field):first-of-type {
             font-size: 24px;
             font-weight: bold;
-            color: #66665E;
+            color: #ffffff;
             padding-top: 0;
             margin-top: 0;
         }
@@ -249,10 +251,10 @@
 <section class="text-form">
     <div class="main-container clear-fix">
         <div class="left-content">
-            <div id="txt-info" pardot-region="main-body">
-                <p style="text-align: right;"><span style="font-size: 16px; color: #ff0000;"><em><a href="#" target="_self" title="fran&ccedil;ais" id="" style="color: #ff0000;">fran&ccedil;ais</a></em></span></p>
-                <p style="text-align: left;"><span style="font-size: 18px;"><strong><span style="color: #95c028;"><span style="color: #000000; font-size: 24px;">Lorem Ipsum</span></span></strong></span></p>
-                <p style="text-align: left;">
+            <div id="txt-info">
+                <div pardot-region="main-body-right" class="text-right" style="text-align: right;"><span style="font-size: 16px; color: #ff0000;"><em><a href="#" target="_self" title="fran&ccedil;ais" id="" style="color: #ff0000;">fran&ccedil;ais</a></em></span></div>
+                <div pardot-region="main-body-title" class="text-left mt-3"><span style="font-size: 18px;"><strong><span style="color: #333333;"><span style="color: #333333; font-size: 24px;">Lorem Ipsum</span></span></strong></span></div>
+                <div pardot-region="main-body" class="text-left"><span style="color: #333333">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel ornare quam. Morbi eget justo accumsan, consectetur velit sed, efficitur magna. Vestibulum in eros
                     molestie, fringilla nunc et, dapibus massa. Vivamus bibendum turpis eget nisi ultrices gravida. Morbi eu commodo ante, vitae maximus orci. Integer lorem sapien,
                     interdum vitae molestie id, placerat ac urna. Donec blandit lectus at rhoncus viverra. Nullam bibendum vel lectus vel sagittis. Suspendisse nec ipsum quam.
@@ -261,7 +263,8 @@
                     Donec nulla purus, facilisis ac interdum nec, ullamcorper a dolor. Curabitur et tempus enim. Suspendisse sit amet turpis ornare, varius erat sit amet,
                     venenatis metus. Donec semper, nibh non sodales volutpat, enim urna porta metus, vitae volutpat turpis metus vitae ligula. Vestibulum luctus ex sed orci
                     molestie feugiat. Integer non maximus erat. Cras sagittis commodo iaculis.
-                </p>
+                    </span>
+                </div>
             </div>
         </div>
         <div class="right-form">

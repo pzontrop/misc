@@ -18,6 +18,186 @@
 <meta name="format-detection" content="telephone=no"><!--[if !mso]><!-->
 <link href="./css" rel="stylesheet"><!--<![endif]-->
 <style type="text/css">
+    /* cyrillic-ext */
+    @font-face {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/ubuntu/v19/4iCs6KVjbNBYlgoKcg72nU6AF7xm.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+    }
+
+    /* cyrillic */
+    @font-face {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/ubuntu/v19/4iCs6KVjbNBYlgoKew72nU6AF7xm.woff2) format('woff2');
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+
+    /* greek-ext */
+    @font-face {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/ubuntu/v19/4iCs6KVjbNBYlgoKcw72nU6AF7xm.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF;
+    }
+
+    /* greek */
+    @font-face {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/ubuntu/v19/4iCs6KVjbNBYlgoKfA72nU6AF7xm.woff2) format('woff2');
+        unicode-range: U+0370-03FF;
+    }
+
+    /* latin-ext */
+    @font-face {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/ubuntu/v19/4iCs6KVjbNBYlgoKcQ72nU6AF7xm.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    /* latin */
+    @font-face {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/ubuntu/v19/4iCs6KVjbNBYlgoKfw72nU6AFw.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    /* cyrillic-ext */
+    @font-face {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/ubuntu/v19/4iCv6KVjbNBYlgoCjC3jvWyNPYZvg7UI.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+    }
+
+    /* cyrillic */
+    @font-face {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/ubuntu/v19/4iCv6KVjbNBYlgoCjC3jtGyNPYZvg7UI.woff2) format('woff2');
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+
+    /* greek-ext */
+    @font-face {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/ubuntu/v19/4iCv6KVjbNBYlgoCjC3jvGyNPYZvg7UI.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF;
+    }
+
+    /* greek */
+    @font-face {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/ubuntu/v19/4iCv6KVjbNBYlgoCjC3js2yNPYZvg7UI.woff2) format('woff2');
+        unicode-range: U+0370-03FF;
+    }
+
+    /* latin-ext */
+    @font-face {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/ubuntu/v19/4iCv6KVjbNBYlgoCjC3jvmyNPYZvg7UI.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    /* latin */
+    @font-face {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/ubuntu/v19/4iCv6KVjbNBYlgoCjC3jsGyNPYZvgw.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    /* cyrillic-ext */
+    @font-face {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/ubuntu/v19/4iCv6KVjbNBYlgoCxCvjvWyNPYZvg7UI.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+    }
+
+    /* cyrillic */
+    @font-face {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/ubuntu/v19/4iCv6KVjbNBYlgoCxCvjtGyNPYZvg7UI.woff2) format('woff2');
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+
+    /* greek-ext */
+    @font-face {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/ubuntu/v19/4iCv6KVjbNBYlgoCxCvjvGyNPYZvg7UI.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF;
+    }
+
+    /* greek */
+    @font-face {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/ubuntu/v19/4iCv6KVjbNBYlgoCxCvjs2yNPYZvg7UI.woff2) format('woff2');
+        unicode-range: U+0370-03FF;
+    }
+
+    /* latin-ext */
+    @font-face {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/ubuntu/v19/4iCv6KVjbNBYlgoCxCvjvmyNPYZvg7UI.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    /* latin */
+    @font-face {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/ubuntu/v19/4iCv6KVjbNBYlgoCxCvjsGyNPYZvgw.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
     body {
         margin: 0 auto;
         padding: 0;
@@ -188,24 +368,24 @@
                 <tbody>
                 <tr bgcolor="#f5f5f5">
                     <td align="center" class="em_color_u" style="font-family:Ubuntu, Arial, sans-serif; padding: 10px; font-size:12px; line-height:16px; color:#626157; letter-spacing:0.25px;" valign="top">
-                        <div id="txt_001" pardot-region="" pardot-repeatable="">Als u deze mail niet kan lezen <a href="#" pardot-region="pardot_link" pardot-region-type="link" style="text-decoration: underline; color: #626157;" target="_blank">klik hier</a></div>
+                        <div id="txt_001" pardot-region="">Als u deze mail niet kan lezen <a href="{{View_Online}}" pardot-region="pardot_link" pardot-region-type="link" style="text-decoration: underline; color: #626157;" target="_blank">klik hier</a></div>
                     </td>
                 </tr>
                 <tr>
                     <td align="center" id="template_wrapper" valign="top">
-                        <table align="center" border="0" cellpadding="0" cellspacing="0" class="em_wrapper em_wrapper" id="Header_Section" style="width:600px; table-layout:fixed;" width="600">
+                        <table pardot-repeatable="" align="center" border="0" cellpadding="0" cellspacing="0" class="em_wrapper em_wrapper" id="Header_Section" style="width:600px; table-layout:fixed;" width="600">
                             <tbody>
                             <tr>
                                 <td align="center" valign="top">
                                     <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
                                         <tbody>
-                                        <tr pardot-repeatable="" style="">
+                                        <tr style="">
                                             <td align="center" height="60" style="height:60px;" valign="top">
                                                 <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
                                                     <tbody>
                                                     <tr>
                                                         <td align="left" class="em_full_img" style="height:60px;" valign="middle" heigt="60">
-                                                            <div id="Image_1" pardot-repeatable="" style="padding: 15px 15px 0px">
+                                                            <div id="Image_1" style="padding: 15px 15px 0px">
                                                                 <a href="https://www.isover.nl/" pardot-region="pardot_link" pardot-region-type="link" style="text-decoration:none;" target="_blank">
                                                                     <img alt="SAINT-GOBAIN" border="0" pardot-region="pardot_image" pardot-region-type="image" src="https://page.saint-gobain-solutions.nl/l/919413/2021-11-24/934ql/919413/1637761267SlaWntz3/logo.png" style="display:block; font-family:Arial, sans-serif; font-size:14px; line-height:18px; color:#000000; max-height:50px;" height="50">
                                                                 </a>
